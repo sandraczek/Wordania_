@@ -1,0 +1,12 @@
+{
+    "files.exclude": {
+        "**/*.meta": true,
+        "**/*.unityproj": true,
+        "**/*.csproj": true,
+        "**/*.sln": true,
+        "**/*.userprefs": true,
+        "**/Library/": true,
+        "**/Temp/": true,
+        "**/obj/": true
+    }
+}

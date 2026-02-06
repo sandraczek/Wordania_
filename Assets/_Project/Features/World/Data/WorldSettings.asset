@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed81fbf14d0dd4cb287744e0bdef05f3, type: 3}
+  m_Name: WorldSettings
+  m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.World.WorldSettings
+  TileSize: 1
+  Width: 0
+  Height: 0
+  Seed: 0
+  ChunkSize: 0
+  HeightMultiplier: 0
+  SurfaceOffset: 0
+  SurfaceFrequency: 0
+  Octaves: 1
+  Persistence: 0
+  Lacunarity: 0
+  StoneNoiseScale: 0
+  StoneNoiseAmplitude: 0
+  MinDirtLayerDepth: 0
+  dirt_stoneTransitionMargin: 0
+  dirt_wall_Terrain_Scale: 0
+  dirt_wall_Terrain_Amplitude: 0
+  GlobalCaveDensity: 0
+  MacroScale: 0
+  MacroWeight: 0
+  MicroScale: 0
+  MicroWeight: 0
+  CaveStartDepth: 0
+  CaveFullDensityDepth: 0
+  GraniteScale: 0
+  GraniteThreshold: 0
+  DirtStoneScale: 0
+  DirtStoneThreshold: 0
+  PreventBuildingLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  GroundLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  MainLayerName: Main
+  BackgroundLayerName: Background
+  DamageLayerName: Damage
+  ForegroundLayerName: Foreground
