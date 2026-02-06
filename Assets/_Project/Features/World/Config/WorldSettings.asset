@@ -13,39 +13,39 @@ MonoBehaviour:
   m_Name: WorldSettings
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.World.WorldSettings
   TileSize: 1
-  Width: 0
-  Height: 0
-  Seed: 0
-  ChunkSize: 0
-  HeightMultiplier: 0
-  SurfaceOffset: 0
-  SurfaceFrequency: 0
-  Octaves: 1
-  Persistence: 0
-  Lacunarity: 0
-  StoneNoiseScale: 0
-  StoneNoiseAmplitude: 0
-  MinDirtLayerDepth: 0
-  dirt_stoneTransitionMargin: 0
-  dirt_wall_Terrain_Scale: 0
-  dirt_wall_Terrain_Amplitude: 0
-  GlobalCaveDensity: 0
-  MacroScale: 0
-  MacroWeight: 0
-  MicroScale: 0
-  MicroWeight: 0
-  CaveStartDepth: 0
-  CaveFullDensityDepth: 0
-  GraniteScale: 0
-  GraniteThreshold: 0
-  DirtStoneScale: 0
-  DirtStoneThreshold: 0
+  Width: 1280
+  Height: 640
+  Seed: 675
+  ChunkSize: 32
+  HeightMultiplier: 400
+  SurfaceOffset: 300
+  SurfaceFrequency: 0.001
+  Octaves: 7
+  Persistence: 0.6
+  Lacunarity: 1.8
+  StoneNoiseScale: 0.001
+  StoneNoiseAmplitude: 70
+  MinDirtLayerDepth: 30
+  dirt_stoneTransitionMargin: 4
+  dirt_wall_Terrain_Scale: 0.01
+  dirt_wall_Terrain_Amplitude: 16
+  GlobalCaveDensity: 0.52
+  MacroScale: 0.04
+  MacroWeight: 0.6
+  MicroScale: 0.14
+  MicroWeight: 0.4
+  CaveStartDepth: 0.9
+  CaveFullDensityDepth: 0.65
+  GraniteScale: 0.08
+  GraniteThreshold: 0.01
+  DirtStoneScale: 0.06
+  DirtStoneThreshold: 0.35
   PreventBuildingLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 192
   GroundLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   MainLayerName: Main
   BackgroundLayerName: Background
   DamageLayerName: Damage

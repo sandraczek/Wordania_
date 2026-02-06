@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3d0c3fc9360f4ac0af089a38225114e, type: 3}
   m_Name: BlockDatabase
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.World.BlockDatabase
-  _crackTiles: []
+  allBlocks:
+  - {fileID: 11400000, guid: 03949464310c74b2abb9910d4d1e237d, type: 2}
+  - {fileID: 11400000, guid: 5d154869ac4e94c23997e3d3d5cfbe3f, type: 2}
+  - {fileID: 11400000, guid: 1ecdcbddd74fc4a418dd65c9462987c2, type: 2}
+  - {fileID: 11400000, guid: c8d9887c8a618481093519ec5709ed59, type: 2}
+  - {fileID: 11400000, guid: 2c8c6a670e61a4dbb882e00f461fb8b9, type: 2}
+  - {fileID: 11400000, guid: 4e5be0d21a36b430aa237d04ae3b75fd, type: 2}
+  - {fileID: 11400000, guid: 28948730022624828ac5373b290d985d, type: 2}
+  - {fileID: 11400000, guid: a88a74e71c89c409e9726a50c901820b, type: 2}
+  _crackTiles:
+  - {fileID: 11400000, guid: b3a3d2ce4e4414cc99833c1c4b698bd1, type: 2}
+  - {fileID: 11400000, guid: e9edc5fe4a75145e980d0b2327024f0e, type: 2}
+  - {fileID: 11400000, guid: d4b342797336e49389dfb6e72be396f9, type: 2}
+  - {fileID: 11400000, guid: 8a7f24567d4664bf5b2485469add608c, type: 2}

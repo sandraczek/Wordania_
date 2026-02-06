@@ -115,8 +115,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1093911105
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -241,9 +241,9 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -285271005
+  m_SortingLayer: 1
+  m_SortingOrder: 2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -370,8 +370,8 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -285271005
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -541,10 +541,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 376b58a2233814179948db40754698e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.World.Chunk
-  _backgroundMap: {fileID: 0}
-  _mainMap: {fileID: 0}
-  _foregroundMap: {fileID: 0}
-  _damageMap: {fileID: 0}
+  _backgroundMap: {fileID: 330794226297824783}
+  _mainMap: {fileID: 5317485710595945176}
+  _foregroundMap: {fileID: 1828770216373489787}
+  _damageMap: {fileID: 8981717069783687727}
 --- !u!1 &8750568848805875996
 GameObject:
   m_ObjectHideFlags: 0
@@ -660,9 +660,9 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: -285271005
+  m_SortingLayer: 1
+  m_SortingOrder: 1
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16

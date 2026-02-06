@@ -6,6 +6,7 @@ using Wordania.Gameplay.Player;
 using Wordania.Core.Gameplay;
 using Wordania.Gameplay.World;
 using Wordania.Gameplay.Markers;
+using Wordania.Gameplay.Events;
 
 namespace Wordania.Gameplay
 {
@@ -13,10 +14,11 @@ namespace Wordania.Gameplay
     {
         
         [SerializeField] private GameObject _playerPrefab;
-        [SerializeField] private GameObject _chunkPrefab;
+        [SerializeField] private Chunk _chunkPrefab;
         [SerializeField] private WorldSettings _worldSettings;
         [SerializeField] private BlockDatabase _blockDatabase;
         [SerializeField] private WorldChunksRoot _chunksParent;
+        [SerializeField] private LootEvent _lootEvent;
 
         protected override void Configure(IContainerBuilder builder)
         {
@@ -29,9 +31,10 @@ namespace Wordania.Gameplay
             builder.Register<WorldPassVariations>(Lifetime.Scoped).As<IWorldGenerationPass>();
             builder.Register<WorldPassBarrier>(Lifetime.Scoped).As<IWorldGenerationPass>();
 
-            builder.Register<WorldGenerator>(Lifetime.Scoped);
+            builder.Register<WorldGenerator>(Lifetime.Scoped).As<IWorldGenerator>();
             builder.RegisterComponentInHierarchy<Grid>();
 
+            builder.RegisterInstance<LootEvent>(_lootEvent);
             builder.Register<WorldService>(Lifetime.Scoped).As<IWorldService>();
 
             builder.RegisterComponent(_chunksParent);
@@ -40,12 +43,15 @@ namespace Wordania.Gameplay
                 .As<IChunkFactory>()
                 .WithParameter(_chunkPrefab);
 
-            builder.RegisterEntryPoint<WorldRenderer>();
+            builder.RegisterEntryPoint<WorldRenderer>(Lifetime.Scoped);
 
-            builder.RegisterEntryPoint<PlayerSpawnerEntryPoint>(Lifetime.Singleton)
-                .AsSelf()
-                .As<IPlayerProvider>()
-                .WithParameter(_playerPrefab);
+            builder.Register<PlayerSpawner>(Lifetime.Scoped)
+            .As<IPlayerProvider>()
+            .WithParameter(_playerPrefab);;     
+
+
+
+            builder.RegisterEntryPoint<GameplayEntryPoint>(Lifetime.Scoped);
         }
     }
 }

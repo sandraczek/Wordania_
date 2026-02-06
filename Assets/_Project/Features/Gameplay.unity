@@ -153,10 +153,11 @@ MonoBehaviour:
   autoRun: 1
   autoInjectGameObjects: []
   _playerPrefab: {fileID: 8733844607985459286, guid: f7a912247bbdc40d8a4c3bd71cc2a4ff, type: 3}
-  _chunkPrefab: {fileID: 0}
-  _worldSettings: {fileID: 0}
-  _blockDatabase: {fileID: 0}
+  _chunkPrefab: {fileID: 8679379767168436347, guid: d18dcdfeb9d1d4daeb28cc178971393e, type: 3}
+  _worldSettings: {fileID: 11400000, guid: e9faa1548b60a48f4b02264a5b5776c8, type: 2}
+  _blockDatabase: {fileID: 11400000, guid: 4f9af77ca6df74fa98911a88ed095585, type: 2}
   _chunksParent: {fileID: 1027612558}
+  _lootEvent: {fileID: 11400000, guid: 689f400bcd7804a2db5dd1bc5cf8aa88, type: 2}
 --- !u!4 &109496047
 Transform:
   m_ObjectHideFlags: 0

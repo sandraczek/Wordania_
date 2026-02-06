@@ -6,6 +6,8 @@ using System;
 using TMPro;
 using VContainer;
 using Wordania.Gameplay.Events;
+using Cysharp.Threading.Tasks;
+using System.Threading.Tasks;
 
 namespace Wordania.Gameplay.World
 {
@@ -18,7 +20,7 @@ namespace Wordania.Gameplay.World
         //private readonly ISaveService _save;
 
         [Header("Data")]
-        public WorldData Data {get; private set;}
+        public WorldData _data {get; private set;}
         private readonly LootEvent _lootEvent; // TO change (Message pipe or signal bus)
 
         [Header("Save data")]
@@ -48,12 +50,13 @@ namespace Wordania.Gameplay.World
         {
             //_save.Unregister(this);
         }
-        public void StartWorldGeneration() // -------------------- TO DO - ASYNC ------------------
+        public async UniTask GenerateWorldAsync() // -------------------- TO DO - ASYNC ------------------
         {
-            Debug.Assert(Data == null);
+            Debug.Assert(_data == null);
             Debug.Assert(_settings.Width % _settings.ChunkSize == 0 && _settings.Height % _settings.ChunkSize == 0);
-            Data = _generator.GenerateWorld();
+            _data = _generator.GenerateWorld();
             OnWorldGenerated?.Invoke();
+            await UniTask.Yield();
         }
         // public void LoadWorldData(WorldData data)
         // {
@@ -76,13 +79,13 @@ namespace Wordania.Gameplay.World
         public WorldLayer DamageTile(int x, int y, float damagePower)
         {
             if(!IsWithinBounds(x,y)) return WorldLayer.None;
-            BlockData data = _blockDatabase.GetBlock(Data.GetTile(x,y).Main);
+            BlockData data = _blockDatabase.GetBlock(_data.GetTile(x,y).Main);
             if(data == null) return WorldLayer.None;
-            Data.GetTile(x,y).Damage += damagePower / data.Hardness;
+            _data.GetTile(x,y).Damage += damagePower / data.Hardness;
             WorldLayer changedLayers;
-            if(Data.GetTile(x,y).Damage >= 1f){
-                Data.GetTile(x,y).Main = 0;
-                Data.GetTile(x,y).Damage = 0f; 
+            if(_data.GetTile(x,y).Damage >= 1f){
+                _data.GetTile(x,y).Main = 0;
+                _data.GetTile(x,y).Damage = 0f; 
 
                 //DROPPING LOOT
                 _lootEvent.Raise(data.loot, data.lootAmount);
@@ -150,7 +153,7 @@ namespace Wordania.Gameplay.World
         {
             Vector2Int pos = _settings.WorldToGrid(worldPosition);
             if (!IsWithinBounds(pos.x, pos.y)) return false;
-            if(_blockDatabase.GetBlock(Data.GetTile(pos.x,pos.y).Main) != null) return false;
+            if(_blockDatabase.GetBlock(_data.GetTile(pos.x,pos.y).Main) != null) return false;
             Vector3 cellCenter = _settings.GridToWorld(pos.x,pos.y);
             Vector2 checkSize = new(0.9f, 0.9f);
 
@@ -158,7 +161,7 @@ namespace Wordania.Gameplay.World
 
             if (hit != null) return false;
 
-            Data.GetTile(pos.x,pos.y).Main = blockID;
+            _data.GetTile(pos.x,pos.y).Main = blockID;
             Vector2Int coord = GetChunkCoord(pos.x, pos.y);
             OnBlockChanged?.Invoke(coord, WorldLayer.Main);
             return true;
@@ -166,7 +169,7 @@ namespace Wordania.Gameplay.World
 
         public TileBase GetTileBase(int x, int y, WorldLayer layer)
         {
-            TileData data = Data.GetTile(x,y);
+            TileData data = _data.GetTile(x,y);
             int id = 0;
 
             if (layer == WorldLayer.Main) id = data.Main;
@@ -191,10 +194,14 @@ namespace Wordania.Gameplay.World
             int cy = y / _settings.ChunkSize;
             return new Vector2Int(cx,cy);
         }
+        public Vector2 GetSpawnPoint()
+        {
+            return _data.SpawnPoint;
+        }
 
         public object CaptureState()
         {
-            return Data;
+            return _data;
         }
 
         // public void RestoreState(object state)
@@ -212,8 +219,8 @@ namespace Wordania.Gameplay.World
         private void ApplyData(WorldData data)
         {
             if (data == null) return;
-            Debug.Assert(Data == null);
-            Data = data;
+            Debug.Assert(_data == null);
+            _data = data;
             OnWorldGenerated?.Invoke();
         }
     }

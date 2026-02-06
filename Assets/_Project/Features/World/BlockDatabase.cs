@@ -14,7 +14,8 @@ namespace Wordania.Gameplay.World
     [CreateAssetMenu(fileName = "BlockDatabase", menuName = "World/Block Database")]
     public class BlockDatabase : ScriptableObject, IBlockDatabase
     {
-        private readonly List<BlockData> allBlocks;
+        [SerializeField]
+        private List<BlockData> allBlocks = new();
         private Dictionary<int, BlockData> _blockMap;
         [SerializeField] TileBase[] _crackTiles;
 
@@ -25,6 +26,8 @@ namespace Wordania.Gameplay.World
             {
                 if (block != null) _blockMap.TryAdd(block.ID, block);
             }
+            Debug.Log(allBlocks.Count);
+            Debug.Log(_blockMap.Keys.Count);
         }
     //     public void Initialize()
     // {
@@ -49,7 +52,7 @@ namespace Wordania.Gameplay.World
         {
             if(id==0) return null;
             if (_blockMap.TryGetValue(id, out var block)) return block;
-            else Debug.LogError("No id " + id + "in block database");
+            else Debug.LogError("No id " + id + " in block database");
             return null;
         }
         public TileBase GetCracks(float damage)
@@ -67,6 +70,10 @@ namespace Wordania.Gameplay.World
         [ContextMenu("Auto-Find All Blocks")]
         public void FindAllBlocksInProject()
         {
+            if(allBlocks== null)
+            {
+                allBlocks = new();
+            }
             allBlocks.Clear();
 
             string[] guids = AssetDatabase.FindAssets("t:BlockData");

@@ -8,5 +8,7 @@ namespace Wordania.Core.Gameplay
     {
         Transform PlayerTransform { get; }
         bool IsPlayerSpawned { get; }
+
+        public void SpawnPlayer(Vector2 spawnPosition);
     }
 }

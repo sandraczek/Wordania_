@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 using System;
+using Cysharp.Threading.Tasks;
 
 namespace Wordania.Gameplay.World
 {
@@ -8,7 +9,7 @@ namespace Wordania.Gameplay.World
     {
         public event Action<Vector2Int, WorldLayer> OnBlockChanged;
         public event Action OnWorldGenerated;
-        public void StartWorldGeneration();
+        public UniTask GenerateWorldAsync();
         public bool TryDamageBlock(Vector3 worldPosition, float damagePower);
         public WorldLayer DamageTile(int x, int y, float damagePower);
         public bool TryDamageCircle(Vector2 worldPos, float radius, float damagePower);
@@ -16,5 +17,6 @@ namespace Wordania.Gameplay.World
         public bool TryPlaceBlock(Vector3 worldPosition, int blockID);
 
         public TileBase GetTileBase(int x, int y, WorldLayer layer);
+        public Vector2 GetSpawnPoint();
     }
 }
