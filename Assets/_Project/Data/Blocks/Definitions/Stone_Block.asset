@@ -15,6 +15,6 @@ MonoBehaviour:
   ID: 3
   Tile: {fileID: 11400000, guid: 7c880015cc8d145d18e5cb3f5f400eaa, type: 2}
   Hardness: 6
-  recipe: {fileID: 0}
-  loot: {fileID: 0}
-  lootAmount: 0
+  recipe: {fileID: 11400000, guid: 594b11ee8c9fc47edbdfe1311bc2d066, type: 2}
+  loot: {fileID: 11400000, guid: 98d0304250b7249699c37fdd4046cfc2, type: 2}
+  lootAmount: 3

@@ -5,23 +5,32 @@ using Wordania.Core.Gameplay;
 
 namespace Wordania.Gameplay.Player
 {
-    public sealed class PlayerSpawner : IPlayerProvider
+    public sealed class PlayerService : IPlayerProvider, IPlayerSpawner
     {
         private readonly GameObject _playerPrefab;
+        private readonly IObjectResolver _resolver;
         
         public Transform PlayerTransform { get; private set; }
         public bool IsPlayerSpawned => PlayerTransform != null; 
 
-        public PlayerSpawner(GameObject playerPrefab)
+        public PlayerService(GameObject playerPrefab, IObjectResolver resolver)
         {
             _playerPrefab = playerPrefab;
+            _resolver = resolver;
         }
 
         public void SpawnPlayer(Vector2 spawnPosition)
         {
-            var playerInstance = Object.Instantiate(_playerPrefab, spawnPosition, Quaternion.identity);
+            var playerInstance = _resolver.Instantiate(_playerPrefab, spawnPosition, Quaternion.identity);
             playerInstance.name = "Player";
             PlayerTransform = playerInstance.transform;
+
+
+            if(playerInstance.TryGetComponent<Player>(out Player player))
+            {
+                player.Initialize();
+            }
+            
             
             Debug.Log($"<color=#4AF626>[GAMEPLAY]:</color> Player spawned at {spawnPosition}");
         }

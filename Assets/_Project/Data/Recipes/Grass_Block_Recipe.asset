@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4ed10dd7bcc6453c83138ac8edf16e5, type: 3}
   m_Name: Grass_Block_Recipe
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.Inventory.Recipe
-  _requirements: []
+  _requirements:
+  - item: {fileID: 11400000, guid: cd4759eabb7074d0eb1afed3afc738f5, type: 2}
+    amount: 8

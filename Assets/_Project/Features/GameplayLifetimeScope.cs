@@ -7,16 +7,21 @@ using Wordania.Core.Gameplay;
 using Wordania.Gameplay.World;
 using Wordania.Gameplay.Markers;
 using Wordania.Gameplay.Events;
+using Wordania.Gameplay.Inventory;
+using Wordania.Gameplay.Player.States;
+using Wordania.Gameplay.Services;
+using Wordania.Core;
 
 namespace Wordania.Gameplay
 {
     public sealed class GameplayLifetimeScope : LifetimeScope
     {
-        
         [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private Chunk _chunkPrefab;
         [SerializeField] private WorldSettings _worldSettings;
+        [SerializeField] private PlayerConfig _playerConfig;
         [SerializeField] private BlockDatabase _blockDatabase;
+        [SerializeField] private ItemDatabase _itemDatabase;
         [SerializeField] private WorldChunksRoot _chunksParent;
         [SerializeField] private LootEvent _lootEvent;
 
@@ -25,6 +30,8 @@ namespace Wordania.Gameplay
             builder.RegisterInstance(_worldSettings);
             _blockDatabase.Initialize();
             builder.RegisterInstance<IBlockDatabase>(_blockDatabase);
+            _itemDatabase.Initialize();
+            builder.RegisterInstance<IItemDatabase>(_itemDatabase);
 
             builder.Register<WorldPassTerrain>(Lifetime.Scoped).As<IWorldGenerationPass>();
             builder.Register<WorldPassCave>(Lifetime.Scoped).As<IWorldGenerationPass>();
@@ -45,9 +52,15 @@ namespace Wordania.Gameplay
 
             builder.RegisterEntryPoint<WorldRenderer>(Lifetime.Scoped);
 
-            builder.Register<PlayerSpawner>(Lifetime.Scoped)
+            builder.RegisterInstance(_playerConfig);
+            builder.Register<PlayerInventoryService>(Lifetime.Scoped).As<IInventoryService>();
+            builder.Register<PlayerHealthProcessor>(Lifetime.Scoped).As<IPlayerHealth>();
+            builder.Register<PlayerHealthService>(Lifetime.Scoped).As<IHealthService>();
+            builder.Register<PlayerService>(Lifetime.Scoped)
+            .AsSelf()
             .As<IPlayerProvider>()
-            .WithParameter(_playerPrefab);;     
+            .As<IPlayerSpawner>()
+            .WithParameter(_playerPrefab);
 
 
 
