@@ -20,6 +20,7 @@ namespace Wordania.Gameplay
         [SerializeField] private Chunk _chunkPrefab;
         [SerializeField] private WorldSettings _worldSettings;
         [SerializeField] private PlayerConfig _playerConfig;
+        [SerializeField] private CameraService _cameraService;
         [SerializeField] private BlockDatabase _blockDatabase;
         [SerializeField] private ItemDatabase _itemDatabase;
         [SerializeField] private WorldChunksRoot _chunksParent;
@@ -32,6 +33,7 @@ namespace Wordania.Gameplay
             builder.RegisterInstance<IBlockDatabase>(_blockDatabase);
             _itemDatabase.Initialize();
             builder.RegisterInstance<IItemDatabase>(_itemDatabase);
+            builder.RegisterInstance<ICameraService>(_cameraService);
 
             builder.Register<WorldPassTerrain>(Lifetime.Scoped).As<IWorldGenerationPass>();
             builder.Register<WorldPassCave>(Lifetime.Scoped).As<IWorldGenerationPass>();
@@ -56,6 +58,7 @@ namespace Wordania.Gameplay
             builder.Register<PlayerInventoryService>(Lifetime.Scoped).As<IInventoryService>();
             builder.Register<PlayerHealthProcessor>(Lifetime.Scoped).As<IPlayerHealth>();
             builder.Register<PlayerHealthService>(Lifetime.Scoped).As<IHealthService>();
+            builder.Register<PlayerContext>(Lifetime.Scoped);
             builder.Register<PlayerService>(Lifetime.Scoped)
             .AsSelf()
             .As<IPlayerProvider>()

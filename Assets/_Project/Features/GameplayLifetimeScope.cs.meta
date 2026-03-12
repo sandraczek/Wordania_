@@ -1,2 +1,20 @@
 fileFormatVersion: 2
 guid: 8ca912500504f4d17ad71f0f877b2e69
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _playerPrefab: {instanceID: 0}
+  - _chunkPrefab: {instanceID: 0}
+  - _worldSettings: {instanceID: 0}
+  - _playerConfig: {instanceID: 0}
+  - _cameraService: {instanceID: 0}
+  - _blockDatabase: {instanceID: 0}
+  - _itemDatabase: {instanceID: 0}
+  - _chunksParent: {instanceID: 0}
+  - _lootEvent: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

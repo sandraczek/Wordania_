@@ -33,7 +33,7 @@ namespace Wordania.Boot
 
             Debug.Log($"<color=green>[BOOT] System Initialization Started...</color>");
 
-            await UniTask.Delay(1000); 
+            await UniTask.Delay(100); 
 
             Debug.Log($"<color=green>[BOOT] Initialization Complete. Loading Gameplay.</color>");
             await _sceneLoader.LoadGameplayAsync();

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2783559730655400501}
   - component: {fileID: 2024898440259636543}
   - component: {fileID: 172130715878715450}
+  - component: {fileID: -1011593029321735125}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -64,7 +65,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &6049481485268605299
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -75,7 +76,7 @@ BoxCollider2D:
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 076594103513c48b09454fc83caa4234, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -85,16 +86,16 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 152
   m_ForceReceiveLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 152
   m_ContactCaptureLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 152
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 152
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
@@ -162,6 +163,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d27be549f1f324aa1ab42f3331f2e324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.Player.PlayerHealthView
+--- !u!114 &-1011593029321735125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377237029528584182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9749c53c3fb247818f7100afeab830e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.Player.PlayerInteraction
+  _actionRange: 8
+  _actionRate: 0.05
+  _minePower: 1
+  _areaMine: 1
+  _areaRadius: 1.5
+  _currentBlockIndex: 0
+  _buildingBlocks:
+  - {fileID: 11400000, guid: 5d154869ac4e94c23997e3d3d5cfbe3f, type: 2}
+  - {fileID: 11400000, guid: 28948730022624828ac5373b290d985d, type: 2}
+  - {fileID: 11400000, guid: 2c8c6a670e61a4dbb882e00f461fb8b9, type: 2}
+  - {fileID: 11400000, guid: c8d9887c8a618481093519ec5709ed59, type: 2}
 --- !u!1 &7354028105140276930
 GameObject:
   m_ObjectHideFlags: 0
@@ -190,7 +214,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 857151325892820961}

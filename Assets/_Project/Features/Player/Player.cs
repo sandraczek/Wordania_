@@ -4,6 +4,7 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 using Wordania.Core;
+using Wordania.Core.Gameplay;
 using Wordania.Gameplay.Inventory;
 using Wordania.Gameplay.Player.States;
 
@@ -30,7 +31,7 @@ namespace Wordania.Gameplay.Player
         [Header("Save Data")]
         public string PersistenceId => "Player";  
         [Inject]
-        public void Construct(IInputReader inputs, PlayerConfig config, IInventoryService inventory)//, ISaveService save)
+        public void Construct(IInputReader inputs, PlayerConfig config, PlayerContext context, IInventoryService inventory, IPlayerProvider playerService)//, ISaveService save)
         {
             _controller = GetComponent<PlayerController>();
             _states = GetComponent<PlayerStateMachine>();
@@ -43,7 +44,7 @@ namespace Wordania.Gameplay.Player
             Debug.Log("Injecting to player");
             //_save.Register(this);
 
-            PlayerContext context = new(_states, _controller, _health, config, transform);
+            context.Bind(_states, _controller, _health, config, transform);
             _factory = new(context, inputs, inventory);
         }
         public void Initialize()

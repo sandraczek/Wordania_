@@ -32,6 +32,10 @@ namespace Wordania.Core
 
         private void OnDisable()
         {
+            DisableAllInput();
+        }
+        private void OnDestroy()
+        {
             Dispose();
         }
         public void Dispose()

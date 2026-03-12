@@ -16,7 +16,7 @@ namespace Wordania.Boot
             builder.Register<SceneLoaderService>(Lifetime.Singleton).As<ISceneLoaderService>();
             builder.Register<DebugService>(Lifetime.Singleton).As<IDebugService>();
             builder.RegisterInstance<IInputReader>(_inputReader);
-
+            _inputReader.Initialize();
             builder.RegisterEntryPoint<GameBootstrapper>();
         }
     }

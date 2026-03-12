@@ -16,7 +16,7 @@ namespace Wordania.Gameplay.Player.States
         public PlayerBaseState Fall { get; private set; }
         public PlayerBaseState InMenu { get; private set; }
         public PlayerBaseState Hurt { get; private set; }
-
+        // TODO: switch to DI
         public PlayerStateFactory(PlayerContext context, IInputReader inputs, IInventoryService inventoryService)
         {
             _context = context;
