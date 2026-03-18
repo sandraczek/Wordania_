@@ -10,20 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b49493b7ffcd44c0f8b3d3e295b654f3, type: 3}
-  m_Name: ZombieData
+  m_Name: ImpData
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.Enemies.Data.EnemyData
   Prefab: {fileID: 6478214868119159596, guid: fa29230d75902444887d2f905aa1cf16, type: 3}
   <EnemyId>k__BackingField: 4300c015-2b87-488f-886d-2984bd9d45f2
-  <DisplayName>k__BackingField: Zombie
+  <DisplayName>k__BackingField: Imp
   <Stats>k__BackingField:
     <MaxHealth>k__BackingField: 100
     <TouchDamage>k__BackingField: 10
     <KnockbackResistance>k__BackingField: 0
   <Movement>k__BackingField:
+    GravityScale: 5
+    AccelerationSpeed: 0.2
+    StoppingSpeed: 0.1
     <PatrolSpeed>k__BackingField: 2
+    PatrolIntervalTime: 5
     <ChaseSpeed>k__BackingField: 4.5
     <JumpForce>k__BackingField: 10
+    GroundLayer:
+      serializedVersion: 2
+      m_Bits: 8
+    GroundCheckSizeY: 0.1
+    GroundCheckDistance: 0.2
+    MaxStepHeight: 1.1
+    StepLookDistance: 0.2
     <AvoidsLedges>k__BackingField: 1
+    FallDamageThreshold: 60
+    FallDamageMultiplier: 2.5
   <Combat>k__BackingField:
     <DetectionRadius>k__BackingField: 10
     <LoseTargetRadius>k__BackingField: 15

@@ -10,6 +10,7 @@ using Wordania.Core.SaveSystem;
 using Wordania.Core.SaveSystem.Data;
 using Wordania.Core.SFM;
 using Wordania.Gameplay.Inventory;
+using Wordania.Gameplay.Movement;
 using Wordania.Gameplay.Player.FSM;
 using Wordania.Gameplay.Player.View;
 
@@ -49,13 +50,23 @@ namespace Wordania.Gameplay.Player
         }
         public void InitializeNew()
         {
-            _states.Initialize(_factory.InitialState);
+            Init();
             _health.SetInitial(_config.MaxHealth, _config.MaxHealth);
         }
         public void InitializeLoaded(float currentHealth, float maxHealth)
         {
-            _states.Initialize(_factory.InitialState);
+            Init();
             _health.SetInitial(currentHealth, maxHealth);
+        }
+        private void Init()
+        {
+            _states.Initialize(_factory.InitialState);
+
+            //to change
+            if(TryGetComponent(out FallDamageHandler fall))
+            {
+                fall.Initialize(_config.FallDamageThreshold,_config.FallDamageMultiplier);
+            }
         }
         public void OnDestroy()
         {

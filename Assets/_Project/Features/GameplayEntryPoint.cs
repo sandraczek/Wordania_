@@ -12,6 +12,8 @@ using Wordania.Gameplay.HUD;
 using Wordania.Core.SaveSystem;
 using Wordania.Gameplay.HUD.Loading;
 using Wordania.Gameplay.HUD.Saving;
+using Wordania.Gameplay.Enemies.Data;
+using Wordania.Gameplay.Enemies.Core;
 
 namespace Wordania.Gameplay
 {
@@ -25,6 +27,8 @@ namespace Wordania.Gameplay
         private readonly IInputReader _inputReader;
         private readonly ICameraService _camera;
         private readonly ILoadingScreenService _loadingScreen;
+        private readonly IEnemyFactory _enemyFactory;
+        private readonly EnemyTemplate _enemyToPrewarm;
         private readonly int _saveSlot;
         public GameplayEntryPoint(
             ISaveService saveService,
@@ -35,6 +39,8 @@ namespace Wordania.Gameplay
             IInputReader inputReader,
             ICameraService camera,
             ILoadingScreenService loadingScreen,
+            IEnemyFactory enemyFactory,
+            EnemyTemplate enemyTemplate, //DEBUG
             int loadFile
             )
         {
@@ -45,8 +51,11 @@ namespace Wordania.Gameplay
             _playerPrivider = playerProvider;
             _inputReader = inputReader;
             _camera = camera;
-            _saveSlot = loadFile;
             _loadingScreen = loadingScreen;
+            _enemyFactory = enemyFactory;
+            _enemyToPrewarm = enemyTemplate;
+            _saveSlot = loadFile;
+
         }
         public async UniTask StartAsync(System.Threading.CancellationToken cancellation)
         {
@@ -70,8 +79,10 @@ namespace Wordania.Gameplay
 
             Time.timeScale = 0f;
 
+            _loadingScreen.UpdateProgress(0.55f,"Prewarming Pools");
+            await _enemyFactory.PrewarmPoolAsync(_enemyToPrewarm);
+            
             _loadingScreen.UpdateProgress(0.7f,"Spawning Player");
-
             Vector3 spawnPos = _world.GetSpawnPoint(); 
             _playerSpawner.SpawnPlayer(spawnPos);
 

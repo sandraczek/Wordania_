@@ -1,6 +1,7 @@
 using UnityEngine;
 using VContainer;
 using Wordania.Core.Combat;
+using Wordania.Core.Gameplay;
 
 namespace Wordania.Gameplay.Movement
 {
@@ -13,8 +14,8 @@ namespace Wordania.Gameplay.Movement
         private HealthComponent _health;
         
         [Header("Configuration")]
-        [SerializeField] private float _minVelocityForDamage = 15f;
-        [SerializeField] private float _damageMultiplier = 2f;
+        private float _minVelocityForDamage = float.MaxValue;
+        private float _damageMultiplier = 0f;
         [SerializeField] private Vector2 _feetPosition;
 
         private void Awake()
@@ -29,6 +30,11 @@ namespace Wordania.Gameplay.Movement
                 return;
             }
         }
+        public void Initialize(float fallDamageThreshold, float fallDamageMultiplier)
+        {
+            _minVelocityForDamage = fallDamageThreshold;
+            _damageMultiplier = fallDamageMultiplier;
+        }
         private void OnEnable()
         {
             _movement.OnLanded += HandleLanding;
@@ -36,7 +42,8 @@ namespace Wordania.Gameplay.Movement
 
         private void OnDisable()
         {
-            _movement.OnLanded -= HandleLanding;
+            if(_movement!=null)
+                _movement.OnLanded -= HandleLanding;
         }
 
         private void HandleLanding(float absVelocity)
@@ -55,6 +62,7 @@ namespace Wordania.Gameplay.Movement
                 knockbackForce: 0f
             );
 
+            Debug.Log($"Applying damage: {payload.Amount}");
             _health.ApplyDamage(payload);
         }
     }

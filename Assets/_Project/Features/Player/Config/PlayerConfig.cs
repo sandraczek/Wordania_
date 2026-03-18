@@ -1,11 +1,12 @@
 using UnityEngine;
+using Wordania.Gameplay.Movement;
 
 namespace Wordania.Gameplay.Player
 {
     [CreateAssetMenu(fileName = "PlayerConfig", menuName = "Player/Config")]
     public sealed class PlayerConfig : ScriptableObject
     {   
-        [Header("Stats")]
+        [Header("Stats")] // TODO::::::: DIVIDE TO SMALLER CLASSES
         public float MaxHealth;
 
         [field: Header("Movement Stats")]
@@ -31,12 +32,12 @@ namespace Wordania.Gameplay.Player
 
         [field: Header("Ground Check")]
         public LayerMask GroundLayer;
-        public Vector2 GroundCheckSize; // = new(2.4f, 0.1f);
-        public float GroundCheckDistance; // = 0.1f;
+        public float GroundCheckSizeY; // = 0.1f;
+        public float GroundCheckDistance; // = 0.2f;
 
         [Header("Fall Damage")]
-        public float fallDamageThreshold; // = 60f;
-        public float fallDamageMultiplier; // = 2.5f;
+        public float FallDamageThreshold; // = 60f;
+        public float FallDamageMultiplier;// = 2.5f;
 
         [Header("Building")]
         public LayerMask PreventBuildingLayer;

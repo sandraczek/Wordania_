@@ -1,4 +1,5 @@
 using System;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
@@ -14,7 +15,7 @@ namespace Wordania.Gameplay.Enemies.Core
 
         //DEBUG
         private float _timer = 0f;
-        private readonly float _timeToSpawn = 3f;
+        private readonly float _timeToSpawn = 5f;
         private readonly EnemyTemplate _enemyToSpawn;
 
         public EnemySpawnManager(IEnemyFactory enemyFactory, IPlayerProvider playerProvider, /*DEBUG*/EnemyTemplate enemyTemplate)
@@ -39,7 +40,6 @@ namespace Wordania.Gameplay.Enemies.Core
             //debug
             _factory.CreateEnemy(_enemyToSpawn, _playerProvider.PlayerTransform.position + new Vector3(10f,10f,0f));
             _timer -= _timeToSpawn;
-        }
-
+        }   
     }
 }

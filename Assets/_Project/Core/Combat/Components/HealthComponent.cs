@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using VContainer;
+using Wordania.Core.Gameplay;
 
 namespace Wordania.Core.Combat
 {

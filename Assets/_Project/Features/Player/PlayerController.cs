@@ -26,7 +26,7 @@ namespace Wordania.Gameplay.Player
         [HideInInspector] public float LastGroundedTime { get; private set; } = 0f;
         [field: SerializeField] public bool IsGrounded { get; private set; }
 
-        private float _maxFallSpeed;
+        private float _maxFallSpeed = 0f;
         public float VelocityX
         {
             get => _rb.linearVelocityX;
@@ -79,20 +79,21 @@ namespace Wordania.Gameplay.Player
             IsGrounded = CheckGrounded();
 
             if (IsGrounded)
-            {
+            {   
+
                 LastGroundedTime = Time.time;
-                
+
                 if (!wasGrounded)
                 {
-                    OnLanded?.Invoke(Mathf.Abs(_maxFallSpeed));
+                    OnLanded?.Invoke(Mathf.Abs(Mathf.Max(_maxFallSpeed, VelocityY)));
                     _maxFallSpeed = 0;
                 }
             }
             else
             {
-                if (_rb.linearVelocityY < _maxFallSpeed)
+                if (VelocityY < _maxFallSpeed)
                 {
-                    _maxFallSpeed = _rb.linearVelocityY;
+                    _maxFallSpeed = VelocityY;
                 }
             }
         }
@@ -114,9 +115,9 @@ namespace Wordania.Gameplay.Player
 
         private bool CheckGrounded()
         {
-            Vector2 origin = (Vector2)transform.position + new Vector2(0f, -(_config.GroundCheckSize.y / 2) + 0.1f);
+            Vector2 origin = new(_col.bounds.center.x, _col.bounds.min.y);
 
-            return Physics2D.BoxCast(origin, _config.GroundCheckSize, 0f, Vector2.down, _config.GroundCheckDistance + 0.1f, _config.GroundLayer);
+            return Physics2D.BoxCast(origin, new(_col.bounds.size.x, _config.GroundCheckSizeY), 0f, Vector2.down, _config.GroundCheckDistance, _config.GroundLayer);
         }
 
         public void CheckForFlip(float direction)

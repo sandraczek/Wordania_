@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using Wordania.Gameplay.Enemies.Core;
 using Wordania.Gameplay.Inventory;
+using Wordania.Gameplay.Movement;
 
 namespace Wordania.Gameplay.Enemies.Data
 {
@@ -35,5 +36,11 @@ namespace Wordania.Gameplay.Enemies.Data
                 }
             }
         }
+
+        //to change
+        public float FallDamageThreshold => Movement.FallDamageThreshold;
+        public float FallDamageMultiplier => Movement.FallDamageMultiplier;
+
+
     }
 }

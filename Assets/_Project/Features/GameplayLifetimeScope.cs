@@ -110,7 +110,9 @@ namespace Wordania.Gameplay
             if(TryGetComponent(out DebugSaveComponent saveComponent))
                 builder.RegisterComponent(saveComponent).WithParameter(_saveSlot);
 
-            builder.RegisterEntryPoint<GameplayEntryPoint>(Lifetime.Scoped).WithParameter(_saveSlot); // TEMPORARY withParameter
+            builder.RegisterEntryPoint<GameplayEntryPoint>(Lifetime.Scoped)
+            .WithParameter(_saveSlot)           // TEMPORARY withParameters
+            .WithParameter(_debugEnemyTemplate); //
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Pool;
 using VContainer;
@@ -13,8 +14,9 @@ namespace Wordania.Gameplay.Enemies.Core
     {
         private readonly IObjectResolver _resolver;
         private readonly IPlayerProvider _playerProvider;
-
         private readonly Dictionary<string, IObjectPool<EnemyController>> _pools = new();
+        private readonly int _defaultPoolSize = 20;
+        private readonly int _prewarmBatchSize = 5;
 
         public EnemyFactory(IObjectResolver resolver, IPlayerProvider playerProvider)
         {
@@ -52,10 +54,30 @@ namespace Wordania.Gameplay.Enemies.Core
                 createFunc: () => _resolver.Instantiate(prefab),
                 actionOnGet: enemy => enemy.gameObject.SetActive(true),
                 actionOnRelease: enemy => enemy.gameObject.SetActive(false),
-                actionOnDestroy: enemy => UnityEngine.Object.Destroy(enemy.gameObject),
-                defaultCapacity: 20,
+                actionOnDestroy: enemy => {if(enemy!= null) UnityEngine.Object.Destroy(enemy.gameObject);},
+                defaultCapacity: _defaultPoolSize,
                 maxSize: 100
             );
+        }
+
+        public async UniTask PrewarmPoolAsync(EnemyTemplate template)
+        {
+            var prewarmedObjects = new List<EnemyController>(_defaultPoolSize);
+
+            if(!_pools.ContainsKey(template.EnemyId))
+                _pools[template.EnemyId] = CreatePool(template.Prefab);
+
+            for (int i = 0; i < _defaultPoolSize; i++)
+            {
+                prewarmedObjects.Add(_pools[template.EnemyId].Get());
+                if((i+1) % _prewarmBatchSize == 0)
+                    await UniTask.Yield();
+            }
+
+            foreach (var enemy in prewarmedObjects)
+            {
+                _pools[template.EnemyId].Release(enemy);
+            }
         }
     }
 }

@@ -11,25 +11,25 @@ namespace Wordania.Core.SFM
         {
             CurrentState?.Exit();
             CurrentState = initialState;
-            CurrentState.Enter(); 
+            CurrentState?.Enter(); 
         }
 
         public void Update()
         {
-            CurrentState.Update();
-            CurrentState.CheckSwitchStates();
+            CurrentState?.Update();
+            CurrentState?.CheckSwitchStates();
         }
         
         public void FixedUpdate()
         {
-            CurrentState.FixedUpdate();
+            CurrentState?.FixedUpdate();
         }
 
         public void SwitchState(TState newState)
         {
-            CurrentState.Exit();
+            CurrentState?.Exit();
             CurrentState = newState;
-            CurrentState.Enter();
+            CurrentState?.Enter();
         }
     }
 }

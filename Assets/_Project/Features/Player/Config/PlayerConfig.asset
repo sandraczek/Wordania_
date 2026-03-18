@@ -31,10 +31,10 @@ MonoBehaviour:
   GroundLayer:
     serializedVersion: 2
     m_Bits: 8
-  GroundCheckSize: {x: 2.4, y: 0.1}
-  GroundCheckDistance: 0.1
-  fallDamageThreshold: 60
-  fallDamageMultiplier: 2.5
+  GroundCheckSizeY: 0.1
+  GroundCheckDistance: 0.2
+  FallDamageThreshold: 60
+  FallDamageMultiplier: 2.5
   PreventBuildingLayer:
     serializedVersion: 2
     m_Bits: 192

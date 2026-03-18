@@ -12,14 +12,14 @@ namespace Wordania.Gameplay.Enemies.Core
 {
     [RequireComponent(typeof(HealthComponent))]
     [RequireComponent(typeof(Rigidbody2D))]
-    [RequireComponent(typeof(BoxCollider2D))]
+    [RequireComponent(typeof(Collider2D))]
     public sealed class EnemyController : MonoBehaviour, IEnemy, ICharacterMovement
     {
         public EnemyTemplate Data;
         private IEnemyRegistryService _registry;
         private HealthComponent _health;
         private Rigidbody2D _rb;
-        private BoxCollider2D _col;
+        private Collider2D _col;
         private StateMachine<EnemyBaseState> _states;
         private EnemyStateFactory _stateFactory;
 
@@ -60,7 +60,8 @@ namespace Wordania.Gameplay.Enemies.Core
         {
             _health = GetComponent<HealthComponent>();
             _rb = GetComponent<Rigidbody2D>();
-            _col = GetComponent<BoxCollider2D>();
+            _col = GetComponent<Collider2D>();
+            
 
             _states = new();
             _stateFactory = new(this, _states);
@@ -73,6 +74,13 @@ namespace Wordania.Gameplay.Enemies.Core
             _maxFallSpeed = 0f;
             SetGravity(Data.Movement.GravityScale);
             _states.Initialize(_stateFactory.InitialState);
+
+            //to change
+            if(TryGetComponent(out FallDamageHandler fall))
+            {
+                fall.Initialize(Data.Movement.FallDamageThreshold,Data.Movement.FallDamageMultiplier);
+            }
+            
         }
         private void OnEnable()
         {
@@ -97,15 +105,15 @@ namespace Wordania.Gameplay.Enemies.Core
             {   
                 if (!wasGrounded)
                 {
-                    OnLanded?.Invoke(Mathf.Abs(_maxFallSpeed));
+                    OnLanded?.Invoke(Mathf.Abs(Mathf.Max(_maxFallSpeed, VelocityY)));
                     _maxFallSpeed = 0;
                 }
             }
             else
             {
-                if (_rb.linearVelocityY < _maxFallSpeed)
+                if (VelocityY < _maxFallSpeed)
                 {
-                    _maxFallSpeed = _rb.linearVelocityY;
+                    _maxFallSpeed = VelocityY;
                 }
             }
 
@@ -113,9 +121,9 @@ namespace Wordania.Gameplay.Enemies.Core
         }
         private bool CheckGrounded()
         {
-            Vector2 origin = (Vector2)transform.position + new Vector2(0f, -(Data.Movement.GroundCheckSize.y / 2) + 0.1f);
+            Vector2 origin = new(_col.bounds.center.x, _col.bounds.min.y);
 
-            return Physics2D.BoxCast(origin, Data.Movement.GroundCheckSize, 0f, Vector2.down, Data.Movement.GroundCheckDistance + 0.1f, Data.Movement.GroundLayer);
+            return Physics2D.BoxCast(origin, new(_col.bounds.size.x, Data.Movement.GroundCheckSizeY), 0f, Vector2.down, Data.Movement.GroundCheckDistance, Data.Movement.GroundLayer);
         }
         public void CheckForFlip()
         {
@@ -154,7 +162,7 @@ namespace Wordania.Gameplay.Enemies.Core
                 if (hitHigh.collider == null)
                 {
                     Vector2 targetPos = _rb.position + new Vector2(direction * 0.1f, Data.Movement.MaxStepHeight + 0.05f);
-                    Collider2D overlap = Physics2D.OverlapBox(targetPos + _col.offset, _col.size * 0.95f, 0, Data.Movement.GroundLayer);
+                    Collider2D overlap = Physics2D.OverlapBox(targetPos + _col.offset, _col.bounds.size * 0.95f, 0, Data.Movement.GroundLayer);
 
                     if (overlap == null)
                     {
@@ -175,6 +183,7 @@ namespace Wordania.Gameplay.Enemies.Core
         }
         private void HandleDeath()
         {
+            Debug.Log($"{Data.name} died");
             _onDeathAction.Invoke();
         }
     }
