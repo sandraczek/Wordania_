@@ -1,6 +1,8 @@
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
+using Wordania.Core.HUD;
+using Wordania.Core.Inputs;
 using Wordania.Gameplay.Inventory;
 
 namespace Wordania.Gameplay.HUD.Inventory
@@ -9,28 +11,49 @@ namespace Wordania.Gameplay.HUD.Inventory
     {
         [Header("Dependencies")]
         private IInventoryDisplay _display;
-        private IInventoryService _service;
+        private IInputReader _inputs;
+        private IHUDStateManager _hud;
+
+        private bool _isOpen = false;
 
         [Inject]
-        public void Construct(IInventoryService inventoryService, IInventoryDisplay inventoryDisplay)
+        public void Construct(IInventoryDisplay inventoryDisplay, IInputReader inputs, IHUDStateManager HUDManager)
         {
-            _service = inventoryService;
             _display = inventoryDisplay;
+            _inputs = inputs;
+            _hud = HUDManager;
+        }
+        void Start()
+        {
+            _isOpen = false;
+            SetVisibility(false);
         }
         private void OnEnable()
         {
-            _service.OnStateChanged += HandleStateChanged;
-            HandleStateChanged(_service.IsOpen);
+            _inputs.OnToggleInventory += HandleToggleInventory;
         }
 
-        private void OnDisable() => _service.OnStateChanged -= HandleStateChanged;
+        private void OnDisable(){
+            if(_inputs == null) return;
 
-        private void HandleStateChanged(bool isOpen)
+            _inputs.OnToggleInventory -= HandleToggleInventory;
+        }
+
+        private void HandleToggleInventory()
         {   
-            if(isOpen)
+            _isOpen = !_isOpen;
+            SetVisibility(_isOpen);
+        }
+        public void SetVisibility(bool open)
+        {
+            if(open){
                 _display.Show();
-            else
+                _hud.RegisterOpenWindow(this);
+            }
+            else{
                 _display.Hide();
+                _hud.UnregisterOpenWindow(this);
+            }
         }
     }
 }

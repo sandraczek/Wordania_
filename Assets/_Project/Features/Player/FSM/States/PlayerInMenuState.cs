@@ -1,5 +1,6 @@
 using UnityEngine;
 using Wordania.Core;
+using Wordania.Core.Inputs;
 using Wordania.Gameplay.Inventory;
 
 namespace Wordania.Gameplay.Player.FSM
@@ -19,12 +20,12 @@ namespace Wordania.Gameplay.Player.FSM
 
         public override void Enter()
         {
-            _inventoryService.SetVisibility(true);
+            
         }
 
         public override void Exit()
         {
-            _inventoryService.SetVisibility(false);
+            
         }
 
         public override void FixedUpdate()

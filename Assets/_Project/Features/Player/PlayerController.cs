@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using VContainer;
 using Wordania.Core;
+using Wordania.Core.Inputs;
 using Wordania.Core.SFM;
 using Wordania.Gameplay.Movement;
 using Wordania.Gameplay.Player.FSM;

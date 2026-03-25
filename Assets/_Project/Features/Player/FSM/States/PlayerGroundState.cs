@@ -1,5 +1,6 @@
 using UnityEngine;
 using Wordania.Core;
+using Wordania.Core.Inputs;
 
 namespace Wordania.Gameplay.Player.FSM
 {

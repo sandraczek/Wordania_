@@ -3,6 +3,7 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 using Wordania.Core;
+using Wordania.Core.Inputs;
 using Wordania.Gameplay.Inventory;
 using Wordania.Gameplay.World;
 

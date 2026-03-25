@@ -1,5 +1,6 @@
 using UnityEngine;
 using Wordania.Core;
+using Wordania.Core.Inputs;
 using Wordania.Core.SFM;
 using Wordania.Gameplay.Inventory;
 
@@ -22,7 +23,7 @@ namespace Wordania.Gameplay.Player.FSM
             Run = new PlayerRunState(context, inputs, this);
             Jump = new PlayerJumpState(context, inputs, this);
             Fall = new PlayerFallState(context, inputs, this);
-            InMenu = new PlayerInMenuState(context, inputs, this, inventoryService);
+            //InMenu = new PlayerInMenuState(context, inputs, this, inventoryService);
             Hurt = new PlayerHurtState(context, inputs, this);
             Spectate = new PlayerSpectateState(context, inputs, this);
 

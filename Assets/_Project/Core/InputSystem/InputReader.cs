@@ -2,11 +2,17 @@ using UnityEngine;
 using System;
 using UnityEngine.InputSystem;
 
-namespace Wordania.Core
+namespace Wordania.Core.Inputs
 {
 
     [CreateAssetMenu(fileName = "InputReader", menuName = "Game/Input Reader")]
-    public sealed class InputReader : ScriptableObject, GameInput.IPlayerActions, GameInput.IDebugActions, IInputReader, IDisposable
+    public sealed class InputReader : 
+        ScriptableObject,
+        GameInput.IPlayerActions,
+        GameInput.IDebugActions,
+        GameInput.IHUDActions,
+        IInputReader, 
+        IDisposable
     {
         private GameInput _inputActions;
 
@@ -21,6 +27,7 @@ namespace Wordania.Core
         public event Action<bool> OnPrimaryActionHeld;
         public event Action OnCycleActionSettings;
         public event Action OnToggleInventory;
+        public event Action OnToggleMap;
         public event Action OnToggleChunks;
         public void Initialize()
         {
@@ -28,6 +35,8 @@ namespace Wordania.Core
             _inputActions = new GameInput();
             
             _inputActions.Player.SetCallbacks(this);
+            _inputActions.Debug.SetCallbacks(this);
+            _inputActions.HUD.SetCallbacks(this);
         }
 
         private void OnDisable()
@@ -45,8 +54,6 @@ namespace Wordania.Core
             _inputActions?.Dispose();
             _inputActions = null;
         }
-
-        public void EnablePlayerInput() => _inputActions.Player.Enable();
         public void DisableAllInput()
         {
             if(_inputActions == null) return;
@@ -94,16 +101,42 @@ namespace Wordania.Core
         {
             if (context.performed) OnToggleInventory?.Invoke();
         }
-        
+        public void OnShowMap(InputAction.CallbackContext context)
+        {
+            if (context.performed) OnToggleMap?.Invoke();
+        }
 
         public void ConsumeJump()
         {
             JumpPressedTime = float.MinValue;
         }
 
-        void GameInput.IDebugActions.OnShowChunks(InputAction.CallbackContext context)
+        public void OnShowChunks(InputAction.CallbackContext context)
         {
             if(context.performed) OnToggleChunks?.Invoke();
+        }
+
+        public void SetGameplayMode()
+        {
+            Time.timeScale = 1f;
+            _inputActions.UI.Disable();
+            _inputActions.Player.Enable();
+
+            if(!_inputActions.HUD.enabled)
+                _inputActions.HUD.Enable();
+            if(!_inputActions.Debug.enabled)
+                _inputActions.Debug.Enable();
+        }
+        public void SetHUDMode()
+        {
+            Time.timeScale = 0f;
+            _inputActions.Player.Disable();
+            _inputActions.UI.Enable();
+
+            if(!_inputActions.HUD.enabled)
+                _inputActions.HUD.Enable();
+            if(!_inputActions.Debug.enabled)
+                _inputActions.Debug.Enable();
         }
     }
 }

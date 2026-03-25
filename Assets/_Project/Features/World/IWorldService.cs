@@ -8,7 +8,7 @@ namespace Wordania.Gameplay.World
 {
     public interface IWorldService
     {
-        public event Action<Vector2Int, WorldLayer> OnBlockChanged;
+        public event Action<Vector2Int, WorldLayer> OnChunkChanged;
 
         public void RandomizeSeed();
         public UniTask GenerateWorldAsync(CancellationToken token);
@@ -20,6 +20,7 @@ namespace Wordania.Gameplay.World
         public Vector2 GetCellCenter(Vector2 worldPosition);
 
         public TileBase GetTileBase(int x, int y, WorldLayer layer);
+        public Color32? GetTileColor(int x, int y, WorldLayer layer);
         public Vector2 GetSpawnPoint();
     }
 }

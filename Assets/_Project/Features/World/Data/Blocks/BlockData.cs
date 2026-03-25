@@ -12,6 +12,7 @@ namespace Wordania.Gameplay.World
 
         [Header("Visual")]
         public TileBase Tile;
+        public Color32 MapColor = new(0,0,0,0);
 
         [Header("Stats")]
         public float Hardness = 1;

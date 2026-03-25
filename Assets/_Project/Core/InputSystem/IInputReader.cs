@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 using VContainer.Unity;
 using System;
 
-namespace Wordania.Core
+namespace Wordania.Core.Inputs
 {
     public interface IInputReader
 {
@@ -18,9 +18,11 @@ namespace Wordania.Core
     event Action<bool> OnPrimaryActionHeld;
     event Action OnCycleActionSettings;
     event Action OnToggleInventory;
+    event Action OnToggleMap;
     event Action OnToggleChunks;
 
-    public void EnablePlayerInput();
+    public void SetGameplayMode();
+    public void SetHUDMode();
     public void DisableAllInput();
     public void ConsumeJump();
 }

@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.World.BlockData
   ID: 2
   Tile: {fileID: 11400000, guid: d7ba9659749144e478b9ca75918efd07, type: 2}
+  MapColor:
+    serializedVersion: 2
+    rgba: 4278727764
   Hardness: 3
   recipe: {fileID: 11400000, guid: 5c96946f895344e01ab9a89b117e98fb, type: 2}
   loot: {fileID: 11400000, guid: cd4759eabb7074d0eb1afed3afc738f5, type: 2}

@@ -52,15 +52,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "ShowInventory",
-                    "type": "Button",
-                    "id": "fed36bab-c7e4-4090-a883-6b1e92d42877",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Slot1",
                     "type": "Button",
                     "id": "2776c80d-3c14-4091-8c56-d04ced07a2b0",
@@ -209,17 +200,6 @@
                     "processors": "",
                     "groups": "Joystick",
                     "action": "Move",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "30ff02bc-1568-45b2-828f-d1da7b19a045",
-                    "path": "<Keyboard>/i",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "ShowInventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -890,6 +870,54 @@
                     "processors": "",
                     "groups": "XR",
                     "action": "TrackedDeviceOrientation",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "HUD",
+            "id": "ce26f8c2-a933-4969-b916-341a6756df46",
+            "actions": [
+                {
+                    "name": "ShowInventory",
+                    "type": "Button",
+                    "id": "45993c58-bbb3-4008-9c6f-886f5c754229",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "ShowMap",
+                    "type": "Button",
+                    "id": "a7889e77-73e4-47a6-849c-7961b8fb887c",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "40510c53-cf28-4d7a-be8e-70dc30f1a7a6",
+                    "path": "<Keyboard>/i",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShowInventory",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bcb0b42c-72a3-40e8-9efb-3b0cf47ba419",
+                    "path": "<Keyboard>/m",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShowMap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

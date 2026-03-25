@@ -14,6 +14,8 @@ using Wordania.Gameplay.HUD.Loading;
 using Wordania.Gameplay.HUD.Saving;
 using Wordania.Gameplay.Enemies.Data;
 using Wordania.Gameplay.Enemies.Core;
+using Wordania.Gameplay.Mapping;
+using Wordania.Core.Inputs;
 
 namespace Wordania.Gameplay
 {
@@ -29,6 +31,7 @@ namespace Wordania.Gameplay
         private readonly ILoadingScreenService _loadingScreen;
         private readonly IEnemyFactory _enemyFactory;
         private readonly EnemyTemplate _enemyToPrewarm;
+        private readonly IMapUpdateService _map;
         private readonly int _saveSlot;
         public GameplayEntryPoint(
             ISaveService saveService,
@@ -41,6 +44,7 @@ namespace Wordania.Gameplay
             ILoadingScreenService loadingScreen,
             IEnemyFactory enemyFactory,
             EnemyTemplate enemyTemplate, //DEBUG
+            IMapUpdateService mapUpdate, // temporary ?
             int loadFile
             )
         {
@@ -54,12 +58,16 @@ namespace Wordania.Gameplay
             _loadingScreen = loadingScreen;
             _enemyFactory = enemyFactory;
             _enemyToPrewarm = enemyTemplate;
+            _map = mapUpdate;
             _saveSlot = loadFile;
 
         }
         public async UniTask StartAsync(System.Threading.CancellationToken cancellation)
         {
             Debug.Log("<color=green>[GAMEPLAY] Start Sequence Initiated...</color>");
+            
+            _inputReader.DisableAllInput();
+
             _loadingScreen.Show();
             _loadingScreen.UpdateProgress(0f, "Loading");
             if(_saveSlot == 0){
@@ -79,6 +87,8 @@ namespace Wordania.Gameplay
 
             Time.timeScale = 0f;
 
+            await _map.RenderInitialMapAsync(cancellation); 
+
             _loadingScreen.UpdateProgress(0.55f,"Prewarming Pools");
             await _enemyFactory.PrewarmPoolAsync(_enemyToPrewarm);
             
@@ -92,8 +102,7 @@ namespace Wordania.Gameplay
             _loadingScreen.UpdateProgress(1f,"Ready");
             await _loadingScreen.Hide();
 
-            Time.timeScale = 1f;
-            _inputReader.EnablePlayerInput();
+            _inputReader.SetGameplayMode();
         }
     }
 }

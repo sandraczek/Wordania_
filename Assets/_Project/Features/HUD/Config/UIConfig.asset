@@ -15,3 +15,10 @@ MonoBehaviour:
   healthGhostDelayDuration: 0.5
   healthGhostShrinkSpeed: 2
   healthPrimaryFillSpeed: 10
+  LoadingFadeOutDuration: 1
+  LoadingBarFillSpeed: 2
+  SavingTimeForNextDot: 0.5
+  SavingPrefix: Saving
+  WorldMapMinZoom: 0.02
+  WorldMapMaxZoom: 1
+  WorldMapZoomSensitivity: 0.003

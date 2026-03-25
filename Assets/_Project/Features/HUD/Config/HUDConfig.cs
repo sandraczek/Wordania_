@@ -17,5 +17,10 @@ namespace Wordania.Gameplay.HUD
         [Header("Saving Icon")]
         public float SavingTimeForNextDot = 0.5f;
         public string SavingPrefix = "Saving";
+
+        [Header("WorldMap")]
+        public float WorldMapMinZoom = 0.05f;
+        public float WorldMapMaxZoom = 1.0f;
+        public float WorldMapZoomSensitivity = 0.05f;
     }
 }

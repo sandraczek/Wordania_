@@ -16,12 +16,10 @@ namespace Wordania.Gameplay.Player
     {
         private readonly InventoryData _data = new();
         private readonly IItemDatabase _database;
-        public bool IsOpen { get; private set; }
 
         public string SaveId => "PlayerInventory";
 
         private readonly LootEvent _lootChannel; // temporary
-        public event Action<bool> OnStateChanged;
         public event Action OnInventoryChanged;
         private ISaveService _saveService;
 
@@ -86,18 +84,6 @@ namespace Wordania.Gameplay.Player
 
         private void HandleLoot(ItemData item, int amount) {
             AddItem(item.Id, amount);
-        }
-
-        public void SetVisibility(bool isOpen)
-        {
-            if (IsOpen == isOpen) return;
-            
-            IsOpen = isOpen;
-            
-            // maybe later - move to ITimeService
-            Time.timeScale = isOpen ? 0f : 1f;
-            
-            OnStateChanged?.Invoke(IsOpen);
         }
 
         public void CaptureState(GameSaveData saveData)
