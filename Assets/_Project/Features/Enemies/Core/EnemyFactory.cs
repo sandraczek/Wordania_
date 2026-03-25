@@ -6,10 +6,10 @@ using UnityEngine.Pool;
 using VContainer;
 using VContainer.Unity;
 using Wordania.Core.Gameplay;
-using Wordania.Gameplay.Enemies.Data;
-using Wordania.Gameplay.Markers;
+using Wordania.Features.Enemies.Data;
+using Wordania.Features.Markers;
 
-namespace Wordania.Gameplay.Enemies.Core
+namespace Wordania.Features.Enemies.Core
 {
     public sealed class EnemyFactory : IEnemyFactory, IDisposable
     {

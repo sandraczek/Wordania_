@@ -4,7 +4,7 @@ using System;
 using Cysharp.Threading.Tasks;
 using System.Threading;
 
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     public interface IWorldService
     {

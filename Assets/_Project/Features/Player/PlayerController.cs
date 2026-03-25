@@ -4,11 +4,11 @@ using VContainer;
 using Wordania.Core;
 using Wordania.Core.Inputs;
 using Wordania.Core.SFM;
-using Wordania.Gameplay.Movement;
-using Wordania.Gameplay.Player.FSM;
-using Wordania.Gameplay.World;
+using Wordania.Features.Movement;
+using Wordania.Features.Player.FSM;
+using Wordania.Features.World;
 
-namespace Wordania.Gameplay.Player
+namespace Wordania.Features.Player
 {
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Collider2D))]

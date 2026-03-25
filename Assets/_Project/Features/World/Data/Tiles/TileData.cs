@@ -1,4 +1,4 @@
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     public struct TileData {
         public int B;

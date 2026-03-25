@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using VContainer;
 
-namespace Wordania.Gameplay.HUD.Saving
+namespace Wordania.Features.HUD.Saving
 {
     public sealed class SavingIcon : MonoBehaviour, IHUDSavingService
     {

@@ -1,6 +1,6 @@
 using System;
 
-namespace Wordania.Gameplay.Movement
+namespace Wordania.Features.Movement
 {
     public interface ICharacterMovement
     {

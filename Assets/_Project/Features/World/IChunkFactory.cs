@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     public interface IChunkFactory
     {

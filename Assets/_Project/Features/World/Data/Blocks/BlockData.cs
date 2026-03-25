@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using Wordania.Gameplay.Inventory;
+using Wordania.Features.Inventory;
 
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     [CreateAssetMenu(fileName = "NewBlock", menuName = "World/Block")]
     public sealed class BlockData : ScriptableObject

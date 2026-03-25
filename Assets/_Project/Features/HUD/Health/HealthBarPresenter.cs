@@ -6,7 +6,7 @@ using VContainer.Unity;
 using Wordania.Core.Combat;
 using Wordania.Core.Gameplay;
 
-namespace Wordania.Gameplay.HUD.Health
+namespace Wordania.Features.HUD.Health
 {
     public sealed class HealthBarPresenter : IStartable, IDisposable
     {

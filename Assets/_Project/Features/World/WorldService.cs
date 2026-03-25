@@ -5,7 +5,7 @@ using System.Data;
 using System;
 using TMPro;
 using VContainer;
-using Wordania.Gameplay.Events;
+using Wordania.Features.Events;
 using Cysharp.Threading.Tasks;
 using System.Threading.Tasks;
 using VContainer.Unity;
@@ -15,7 +15,7 @@ using System.Threading;
 using System.Security.Cryptography;
 using Wordania.Core.Config;
 
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     public sealed class WorldService :IWorldService, IStartable, IDisposable, ISaveable
     {

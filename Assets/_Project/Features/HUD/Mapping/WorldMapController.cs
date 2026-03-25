@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace Wordania.Gameplay.HUD.Mapping
+namespace Wordania.Features.HUD.Mapping
 {
     public class WorldMapController : MapRenderer, IDragHandler, IScrollHandler
     {

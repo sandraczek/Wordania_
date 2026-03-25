@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     public interface IBlockDatabase
     {

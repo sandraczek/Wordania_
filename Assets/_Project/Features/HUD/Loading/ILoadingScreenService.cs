@@ -2,7 +2,7 @@
 
 using Cysharp.Threading.Tasks;
 
-namespace Wordania.Gameplay.HUD.Loading
+namespace Wordania.Features.HUD.Loading
 {
     public interface ILoadingScreenService
     {

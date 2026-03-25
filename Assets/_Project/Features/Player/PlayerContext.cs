@@ -1,9 +1,9 @@
 using UnityEngine;
 using Wordania.Core.Combat;
 using Wordania.Core.SFM;
-using Wordania.Gameplay.Player.FSM;
+using Wordania.Features.Player.FSM;
 
-namespace Wordania.Gameplay.Player
+namespace Wordania.Features.Player
 {
     public sealed class PlayerContext
     {

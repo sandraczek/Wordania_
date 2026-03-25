@@ -1,7 +1,7 @@
 using UnityEngine;
-using Wordania.Gameplay.Enemies.Data;
+using Wordania.Features.Enemies.Data;
 
-namespace Wordania.Gameplay.Enemies.Spawning
+namespace Wordania.Features.Enemies.Spawning
 {
     public interface ISpawnValidator
     {

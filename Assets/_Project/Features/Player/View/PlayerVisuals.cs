@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace Wordania.Gameplay.Player.View
+namespace Wordania.Features.Player.View
 {
     [RequireComponent(typeof(SpriteRenderer))]
     public sealed class PlayerVisuals : MonoBehaviour

@@ -4,10 +4,10 @@ using VContainer;
 using VContainer.Unity;
 using Wordania.Core;
 using Wordania.Core.Inputs;
-using Wordania.Gameplay.Inventory;
-using Wordania.Gameplay.World;
+using Wordania.Features.Inventory;
+using Wordania.Features.World;
 
-namespace Wordania.Gameplay.Player{
+namespace Wordania.Features.Player{
     [RequireComponent(typeof(Player))]
     public sealed class PlayerInteraction : MonoBehaviour
     {

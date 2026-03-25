@@ -6,7 +6,7 @@ using System.Linq;
 using UnityEditor;
 #endif
 
-namespace Wordania.Gameplay.Inventory
+namespace Wordania.Features.Inventory
 {
     [CreateAssetMenu(fileName = "ItemDataBase", menuName = "Inventory/Item Database")]
     public sealed class ItemDatabase : ScriptableObject, IItemDatabase

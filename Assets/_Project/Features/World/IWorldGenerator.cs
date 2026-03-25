@@ -2,7 +2,7 @@ using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     public interface IWorldGenerator
     {

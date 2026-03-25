@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Wordania.Gameplay.Combat
+namespace Wordania.Features.Combat
 {
     public class InvincibilityController
     {

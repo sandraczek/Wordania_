@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Wordania.Core.Gameplay;
 
-namespace Wordania.Gameplay.Enemies.Core
+namespace Wordania.Features.Enemies.Core
 {
     public sealed class EnemyRegistryService : IEnemyRegistryService
     {
@@ -14,6 +14,10 @@ namespace Wordania.Gameplay.Enemies.Core
         public void Unregister(IEnemy enemy)
         {
             _enemies.Remove(enemy);
+        }
+        public IReadOnlyCollection<IEnemy> GetActiveEnemies()
+        {
+            return _enemies;
         }
     }
 }

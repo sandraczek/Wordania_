@@ -1,9 +1,9 @@
 using UnityEngine;
 
-namespace Wordania.Gameplay.Enemies.Config
+namespace Wordania.Features.Enemies.Config
 {
     [CreateAssetMenu(fileName = "NewEnemySpawnSettings", menuName = "Enemies/Enemy Spawn Settings")]
-    public class EnemySpawnSettings : ScriptableObject
+    public class EnemySystemSettings : ScriptableObject
     {
         [Header("Spawn Radii (Annulus)")]
         public float InnerViewportRadius = 50f;
@@ -16,5 +16,8 @@ namespace Wordania.Gameplay.Enemies.Config
         [Min(0.1f)] public float SpawnAttemptInterval = 1.5f;
         
         public int MaxActiveEnemies = 30;
+
+        [Header("Culling")]
+        public float CullingInterval = 1f;
     }
 }

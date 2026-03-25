@@ -3,14 +3,14 @@ using System;
 using System.Collections.Generic;
 using VContainer;
 using VContainer.Unity;
-using Wordania.Gameplay.Inventory;
-using Wordania.Gameplay.Events;
+using Wordania.Features.Inventory;
+using Wordania.Features.Events;
 using Wordania.Core.SaveSystem;
 using Wordania.Core.SaveSystem.Data;
 using System.Linq;
 using Codice.CM.WorkspaceServer.Lock;
 
-namespace Wordania.Gameplay.Player
+namespace Wordania.Features.Player
 {
     public sealed class PlayerInventoryService : IInventoryService, IDisposable, IStartable, ISaveable
     {

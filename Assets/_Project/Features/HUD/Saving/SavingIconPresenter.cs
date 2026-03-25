@@ -3,7 +3,7 @@ using VContainer;
 using VContainer.Unity;
 using Wordania.Core.SaveSystem;
 
-namespace Wordania.Gameplay.HUD.Saving
+namespace Wordania.Features.HUD.Saving
 {
     public sealed class SavingIconPresenter :IStartable, IDisposable
     {

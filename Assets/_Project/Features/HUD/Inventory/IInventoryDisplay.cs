@@ -1,6 +1,6 @@
 using Unity;
 
-namespace Wordania.Gameplay.HUD.Inventory
+namespace Wordania.Features.HUD.Inventory
 {
     public interface IInventoryDisplay
     {

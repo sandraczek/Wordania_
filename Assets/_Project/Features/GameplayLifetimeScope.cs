@@ -2,31 +2,30 @@ using UnityEngine;
 using System;
 using VContainer;
 using VContainer.Unity;
-using Wordania.Gameplay.Player;
+using Wordania.Features.Player;
 using Wordania.Core.Gameplay;
-using Wordania.Gameplay.World;
-using Wordania.Gameplay.Markers;
-using Wordania.Gameplay.Events;
-using Wordania.Gameplay.Inventory;
-using Wordania.Gameplay.Player.FSM;
-using Wordania.Gameplay.Services;
+using Wordania.Features.World;
+using Wordania.Features.Markers;
+using Wordania.Features.Events;
+using Wordania.Features.Inventory;
+using Wordania.Features.Player.FSM;
+using Wordania.Features.Services;
 using Wordania.Core;
-using Wordania.Gameplay.HUD;
-using Wordania.Gameplay.HUD.Health;
-using Wordania.Gameplay.HUD.Inventory;
-using Wordania.Gameplay.HUD.Loading;
-using Wordania.Gameplay.HUD.Saving;
-using Wordania.Gameplay.Enemies.Core;
-using Wordania.Gameplay.Enemies.Data;
-using Wordania.Gameplay.Enemies.Config;
-using Wordania.Gameplay.Enemies.Spawning;
+using Wordania.Features.HUD;
+using Wordania.Features.HUD.Health;
+using Wordania.Features.HUD.Inventory;
+using Wordania.Features.HUD.Loading;
+using Wordania.Features.HUD.Saving;
+using Wordania.Features.Enemies.Core;
+using Wordania.Features.Enemies.Data;
+using Wordania.Features.Enemies.Config;
+using Wordania.Features.Enemies.Spawning;
 using Wordania.Core.Mapping;
-using Wordania.Gameplay.Mapping;
-using Wordania.Gameplay.HUD.Mapping;
 using Wordania.Features.Mapping;
+using Wordania.Features.HUD.Mapping;
 using Wordania.Core.HUD;
 
-namespace Wordania.Gameplay
+namespace Wordania.Features
 {
     public sealed class GameplayLifetimeScope : LifetimeScope
     {
@@ -34,7 +33,7 @@ namespace Wordania.Gameplay
         [SerializeField] private MarkerDynamicParent _dynamicParent;
         [SerializeField] private MarkerChunkParent _chunksParent;
         [SerializeField] private PlayerConfig _playerConfig;
-        [SerializeField] private EnemySpawnSettings _enemySpawnSettings;
+        [SerializeField] private EnemySystemSettings _enemySpawnSettings;
         [SerializeField] private HUDConfig _uiConfig;
         [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private Chunk _chunkPrefab;
@@ -108,6 +107,7 @@ namespace Wordania.Gameplay
             builder.Register<SpaceClearanceValidator>(Lifetime.Scoped).As<ISpawnValidator>();
             
             builder.RegisterEntryPoint<EnemySpawnSystem>(Lifetime.Scoped).WithParameter(_debugEnemyTemplate);
+            builder.RegisterEntryPoint<EnemyCullingSystem>(Lifetime.Scoped);
 
             //TODO: move to HUD lifetime scope
             builder.RegisterInstance(_uiConfig);

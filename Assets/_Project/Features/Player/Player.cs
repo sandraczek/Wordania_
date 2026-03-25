@@ -10,13 +10,13 @@ using Wordania.Core.Inputs;
 using Wordania.Core.SaveSystem;
 using Wordania.Core.SaveSystem.Data;
 using Wordania.Core.SFM;
-using Wordania.Gameplay.Combat;
-using Wordania.Gameplay.Inventory;
-using Wordania.Gameplay.Movement;
-using Wordania.Gameplay.Player.FSM;
-using Wordania.Gameplay.Player.View;
+using Wordania.Features.Combat;
+using Wordania.Features.Inventory;
+using Wordania.Features.Movement;
+using Wordania.Features.Player.FSM;
+using Wordania.Features.Player.View;
 
-namespace Wordania.Gameplay.Player
+namespace Wordania.Features.Player
 {
     [RequireComponent(typeof(PlayerController))]
     [RequireComponent(typeof(HealthComponent))]

@@ -5,7 +5,7 @@ using VContainer;
 using VContainer.Unity;
 using Wordania.Core.Combat;
 
-namespace Wordania.Gameplay.HUD.Health
+namespace Wordania.Features.HUD.Health
 {
     public sealed class HealthBarUI : MonoBehaviour, IHUDHealthBarService
     {

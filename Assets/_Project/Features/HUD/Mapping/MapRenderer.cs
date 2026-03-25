@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using VContainer;
 using Wordania.Core.Mapping;
 
-namespace Wordania.Gameplay.HUD.Mapping
+namespace Wordania.Features.HUD.Mapping
 {
     [RequireComponent(typeof(RawImage))]
     public class MapRenderer : MonoBehaviour

@@ -7,9 +7,9 @@ using VContainer;
 using VContainer.Unity;
 using Wordania.Core.Config;
 using Wordania.Core.Mapping;
-using Wordania.Gameplay.World;
+using Wordania.Features.World;
 
-namespace Wordania.Gameplay.Mapping
+namespace Wordania.Features.Mapping
 {
     public interface IMapUpdateService
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Wordania.Gameplay.Inventory
+namespace Wordania.Features.Inventory
 {
     public interface IInventoryService
     {

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Wordania.Gameplay.Enemies.Data
+namespace Wordania.Features.Enemies.Data
 {
     [Serializable]
     public class EnemySpawnData

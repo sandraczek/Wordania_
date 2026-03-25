@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using VContainer;
 
-namespace Wordania.Gameplay.Inventory
+namespace Wordania.Features.Inventory
 {
     public sealed class InventoryData
     {

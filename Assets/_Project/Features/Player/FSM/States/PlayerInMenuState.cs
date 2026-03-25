@@ -1,9 +1,9 @@
 using UnityEngine;
 using Wordania.Core;
 using Wordania.Core.Inputs;
-using Wordania.Gameplay.Inventory;
+using Wordania.Features.Inventory;
 
-namespace Wordania.Gameplay.Player.FSM
+namespace Wordania.Features.Player.FSM
 {
     public sealed class PlayerInMenuState : PlayerBaseState
     {

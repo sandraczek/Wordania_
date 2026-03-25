@@ -2,7 +2,7 @@ using UnityEngine;
 using VContainer;
 using Wordania.Core.SaveSystem;
 
-namespace Wordania.Gameplay
+namespace Wordania.Features
 {
     public sealed class DebugSaveComponent : MonoBehaviour
     {

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Unity.Cinemachine;
 
-namespace Wordania.Gameplay.Services{
+namespace Wordania.Features.Services{
     [RequireComponent(typeof(CinemachineCamera))]
     public sealed class CameraService : MonoBehaviour, ICameraService
     {

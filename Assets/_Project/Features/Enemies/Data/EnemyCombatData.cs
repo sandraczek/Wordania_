@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 using Wordania.Core.Combat;
-using Wordania.Gameplay.Inventory;
+using Wordania.Features.Inventory;
 
-namespace Wordania.Gameplay.Enemies.Data
+namespace Wordania.Features.Enemies.Data
 {
     [Serializable]
     public sealed class EnemyCombatData

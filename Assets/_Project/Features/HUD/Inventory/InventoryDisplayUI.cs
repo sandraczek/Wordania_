@@ -2,9 +2,9 @@ using UnityEngine;
 using UnityEngine.Pool;
 using System.Collections.Generic;
 using VContainer;
-using Wordania.Gameplay.Inventory;
+using Wordania.Features.Inventory;
 
-namespace Wordania.Gameplay.HUD.Inventory
+namespace Wordania.Features.HUD.Inventory
 {
     public sealed class InventoryDisplayUI : MonoBehaviour, IInventoryDisplay
     {

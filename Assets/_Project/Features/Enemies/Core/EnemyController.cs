@@ -4,11 +4,11 @@ using VContainer;
 using Wordania.Core.Combat;
 using Wordania.Core.Gameplay;
 using Wordania.Core.SFM;
-using Wordania.Gameplay.Enemies.Data;
-using Wordania.Gameplay.Enemies.FSM;
-using Wordania.Gameplay.Movement;
+using Wordania.Features.Enemies.Data;
+using Wordania.Features.Enemies.FSM;
+using Wordania.Features.Movement;
 
-namespace Wordania.Gameplay.Enemies.Core
+namespace Wordania.Features.Enemies.Core
 {
     [RequireComponent(typeof(HealthComponent))]
     [RequireComponent(typeof(Rigidbody2D))]
@@ -208,7 +208,11 @@ namespace Wordania.Gameplay.Enemies.Core
             Debug.Log($"{Data.DisplayName} died");
             _onDeathAction.Invoke();
         }
-        
+        public void Remove()
+        {
+            Debug.Log($"{Data.DisplayName} removed");
+            _onDeathAction.Invoke();
+        }
         //TODO: move ?
         public void ApplyDamage(DamagePayload payload)
         {;

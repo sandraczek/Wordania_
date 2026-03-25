@@ -9,7 +9,7 @@ using System;
 using UnityEditor;
 #endif
 
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     [CreateAssetMenu(fileName = "BlockDatabase", menuName = "World/Block Database")]
     public sealed class BlockDatabase : ScriptableObject, IBlockDatabase

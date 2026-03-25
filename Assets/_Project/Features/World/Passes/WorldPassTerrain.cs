@@ -6,7 +6,7 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using Wordania.Core.Config;
 
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     public sealed class WorldPassTerrain : IWorldGenerationPass
     {

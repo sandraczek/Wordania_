@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Wordania.Gameplay.Services
+namespace Wordania.Features.Services
 {
     using UnityEngine;
     public interface ICameraService

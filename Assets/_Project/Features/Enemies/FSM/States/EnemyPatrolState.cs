@@ -2,9 +2,9 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Wordania.Core;
 using Wordania.Core.SFM;
-using Wordania.Gameplay.Enemies.Core;
+using Wordania.Features.Enemies.Core;
 
-namespace Wordania.Gameplay.Enemies.FSM
+namespace Wordania.Features.Enemies.FSM
 {
     public sealed class EnemyPatrolState : EnemyBaseState
     {

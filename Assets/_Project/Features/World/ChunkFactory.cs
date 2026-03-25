@@ -1,7 +1,7 @@
 using UnityEngine;
 using VContainer;
 
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     public sealed class ChunkFactory : IChunkFactory
     {

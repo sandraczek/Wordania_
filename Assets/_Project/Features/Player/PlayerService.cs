@@ -6,9 +6,9 @@ using Wordania.Core.Combat;
 using Wordania.Core.Gameplay;
 using Wordania.Core.SaveSystem;
 using Wordania.Core.SaveSystem.Data;
-using Wordania.Gameplay.Markers;
+using Wordania.Features.Markers;
 
-namespace Wordania.Gameplay.Player
+namespace Wordania.Features.Player
 {
     public sealed class PlayerService : IPlayerProvider, IPlayerSpawner, ISaveable, IStartable, IDisposable
     {

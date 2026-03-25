@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-namespace Wordania.Gameplay.Inventory{
+namespace Wordania.Features.Inventory{
     public sealed class InventorySlotUI : MonoBehaviour
     {
         [SerializeField] private Image _icon;

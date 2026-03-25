@@ -5,15 +5,16 @@ using UnityEngine;
 using VContainer;
 using VContainer.Unity;
 using Wordania.Core.Gameplay;
-using Wordania.Gameplay.Enemies.Config;
-using Wordania.Gameplay.Enemies.Core;
-using Wordania.Gameplay.Enemies.Data;
+using Wordania.Features.Enemies.Config;
+using Wordania.Features.Enemies.Core;
+using Wordania.Features.Enemies.Data;
 
-namespace Wordania.Gameplay.Enemies.Spawning
+namespace Wordania.Features.Enemies.Spawning
 {
-    public sealed class EnemySpawnSystem : IStartable, ITickable
+    public sealed class EnemySpawnSystem : ITickable
     {
-        private readonly EnemySpawnSettings _settings;
+        private readonly EnemySystemSettings _settings;
+        private readonly IEnemyRegistryService _registry;
         private readonly IEnemyFactory _factory;
         private readonly IPlayerProvider _playerProvider;
         private readonly IReadOnlyList<ISpawnValidator> _validators;
@@ -21,45 +22,22 @@ namespace Wordania.Gameplay.Enemies.Spawning
         private float _timeSinceLastSpawn;
 
         //DEBUG
-        private int _activeEnemyCount;
-        private float _timer = 0f;
-        private readonly float _timeToSpawn = 5f;
         private readonly EnemyTemplate _enemyToSpawn;
 
-        public EnemySpawnSystem(EnemySpawnSettings settings, IEnemyFactory enemyFactory, IPlayerProvider playerProvider, IReadOnlyList<ISpawnValidator> validators, /*DEBUG*/EnemyTemplate enemyTemplate)
+        public EnemySpawnSystem(EnemySystemSettings settings, IEnemyRegistryService registry, IEnemyFactory enemyFactory, IPlayerProvider playerProvider, IReadOnlyList<ISpawnValidator> validators, /*DEBUG*/EnemyTemplate enemyTemplate)
         {
             _settings = settings;
+            _registry = registry;
             _factory = enemyFactory;
             _playerProvider = playerProvider;
             _validators = validators;
 
             _enemyToSpawn = enemyTemplate; //DEBUG
         }
-
-        public void Start()
-        {
-            _timer = 0f;
-        }
-        public void DEBUGTick()
-        {
-            if(!_playerProvider.IsPlayerSpawned) return;
-            if(_timer < _timeToSpawn){
-                _timer+=Time.deltaTime;
-                return;
-            }
-
-            //debug
-            SpawnEnemyAt(_enemyToSpawn, _playerProvider.PlayerTransform.position + new Vector3(10f,10f,0f));
-            _timer -= _timeToSpawn;
-        }   
         public void Tick()
         {
             if(!_playerProvider.IsPlayerSpawned) return;
-
-            if (_activeEnemyCount >= _settings.MaxActiveEnemies)
-            {
-                return;
-            }
+            if(_registry.GetActiveEnemies().Count >= _settings.MaxActiveEnemies) return;
 
             _timeSinceLastSpawn += Time.deltaTime;
 
@@ -93,7 +71,6 @@ namespace Wordania.Gameplay.Enemies.Spawning
         private void SpawnEnemyAt(EnemyTemplate template, Vector2 position)
         {
             _factory.CreateEnemy(template, position);
-            _activeEnemyCount++;
         }
 
         private Vector2 GetRandomPointInAnnulus(Vector2 center, float minRadius, float maxRadius)

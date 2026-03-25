@@ -3,9 +3,9 @@ using VContainer;
 using VContainer.Unity;
 using Wordania.Core.HUD;
 using Wordania.Core.Inputs;
-using Wordania.Gameplay.Inventory;
+using Wordania.Features.Inventory;
 
-namespace Wordania.Gameplay.HUD.Inventory
+namespace Wordania.Features.HUD.Inventory
 {
     public sealed class InventoryView : MonoBehaviour
     {

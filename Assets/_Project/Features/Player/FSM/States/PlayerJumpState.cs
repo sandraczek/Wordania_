@@ -3,7 +3,7 @@ using Unity.Mathematics;
 using Wordania.Core;
 using Wordania.Core.Inputs;
 
-namespace Wordania.Gameplay.Player.FSM
+namespace Wordania.Features.Player.FSM
 {
     public sealed class PlayerJumpState : PlayerAirState
     {

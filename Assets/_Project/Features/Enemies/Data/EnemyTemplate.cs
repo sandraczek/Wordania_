@@ -1,10 +1,10 @@
 using System;
 using UnityEngine;
-using Wordania.Gameplay.Enemies.Core;
-using Wordania.Gameplay.Inventory;
-using Wordania.Gameplay.Movement;
+using Wordania.Features.Enemies.Core;
+using Wordania.Features.Inventory;
+using Wordania.Features.Movement;
 
-namespace Wordania.Gameplay.Enemies.Data
+namespace Wordania.Features.Enemies.Data
 {
     [CreateAssetMenu(fileName = "NewEnemyData", menuName = "Enemies/Data")]
     public sealed class EnemyTemplate : ScriptableObject

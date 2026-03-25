@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Wordania.Gameplay.Inventory
+namespace Wordania.Features.Inventory
 {
     [CreateAssetMenu(fileName = "Item_New", menuName = "Inventory/Item")]
     public sealed class ItemData : ScriptableObject

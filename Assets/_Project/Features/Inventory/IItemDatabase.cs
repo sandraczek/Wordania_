@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Wordania.Gameplay.Inventory
+namespace Wordania.Features.Inventory
 {
     public interface IItemDatabase
     {

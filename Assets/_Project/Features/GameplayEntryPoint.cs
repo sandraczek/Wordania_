@@ -3,21 +3,21 @@ using Cysharp.Threading.Tasks;
 using UnityEngine;
 using VContainer;
 using VContainer.Unity;
-using Wordania.Gameplay.World;
-using Wordania.Gameplay.Player;
+using Wordania.Features.World;
+using Wordania.Features.Player;
 using Wordania.Core.Gameplay;
 using Wordania.Core;
-using Wordania.Gameplay.Services;
-using Wordania.Gameplay.HUD;
+using Wordania.Features.Services;
+using Wordania.Features.HUD;
 using Wordania.Core.SaveSystem;
-using Wordania.Gameplay.HUD.Loading;
-using Wordania.Gameplay.HUD.Saving;
-using Wordania.Gameplay.Enemies.Data;
-using Wordania.Gameplay.Enemies.Core;
-using Wordania.Gameplay.Mapping;
+using Wordania.Features.HUD.Loading;
+using Wordania.Features.HUD.Saving;
+using Wordania.Features.Enemies.Data;
+using Wordania.Features.Enemies.Core;
+using Wordania.Features.Mapping;
 using Wordania.Core.Inputs;
 
-namespace Wordania.Gameplay
+namespace Wordania.Features
 {
     public sealed class GameplayEntryPoint : IAsyncStartable
     {

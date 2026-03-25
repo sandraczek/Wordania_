@@ -1,8 +1,8 @@
 using UnityEngine;
 using System;
-using Wordania.Gameplay.Inventory;
+using Wordania.Features.Inventory;
 
-namespace Wordania.Gameplay.Events
+namespace Wordania.Features.Events
 {
     [CreateAssetMenu(menuName = "Events/Loot Event")]
     public sealed class LootEvent : ScriptableObject

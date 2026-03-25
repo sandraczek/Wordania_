@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Wordania.Gameplay.Markers
+namespace Wordania.Features.Markers
 {
     public sealed class MarkerEntityParent : MonoBehaviour { }
 }

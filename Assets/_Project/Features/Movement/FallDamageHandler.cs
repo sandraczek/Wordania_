@@ -3,7 +3,7 @@ using VContainer;
 using Wordania.Core.Combat;
 using Wordania.Core.Gameplay;
 
-namespace Wordania.Gameplay.Movement
+namespace Wordania.Features.Movement
 {
     [RequireComponent(typeof(ICharacterMovement))]
     [RequireComponent(typeof(IDamageable))]

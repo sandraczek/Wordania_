@@ -3,7 +3,7 @@ using Wordania.Core;
 using Wordania.Core.Inputs;
 using Wordania.Core.SFM;
 
-namespace Wordania.Gameplay.Player.FSM
+namespace Wordania.Features.Player.FSM
 {
     public abstract class PlayerBaseState : IState
     {

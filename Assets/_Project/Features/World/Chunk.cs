@@ -3,7 +3,7 @@ using UnityEngine.Tilemaps;
 using VContainer;
 using Wordania.Core.Config;
 
-namespace Wordania.Gameplay.World
+namespace Wordania.Features.World
 {
     public sealed class Chunk : MonoBehaviour
     {

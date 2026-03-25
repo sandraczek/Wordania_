@@ -1,7 +1,7 @@
 using UnityEngine;
 using System;
 
-namespace Wordania.Gameplay.Inventory
+namespace Wordania.Features.Inventory
 {
     [Serializable]
     public struct Ingredient
