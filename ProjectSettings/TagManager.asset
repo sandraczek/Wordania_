@@ -47,6 +47,9 @@ TagManager:
   - name: MapMain
     uniqueID: 4009696291
     locked: 0
+  - name: Projectile
+    uniqueID: 657393709
+    locked: 0
   - name: Player
     uniqueID: 2846805143
     locked: 0

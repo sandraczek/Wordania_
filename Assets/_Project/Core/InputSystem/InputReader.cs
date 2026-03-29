@@ -96,6 +96,7 @@ namespace Wordania.Core.Inputs
 
         public void OnSlot1(InputAction.CallbackContext context) { if (context.performed) OnHotbarSlotPressed?.Invoke(1); }
         public void OnSlot2(InputAction.CallbackContext context) { if (context.performed) OnHotbarSlotPressed?.Invoke(2); }
+        public void OnSlot3(InputAction.CallbackContext context) { if (context.performed) OnHotbarSlotPressed?.Invoke(3); }
 
         public void OnShowInventory(InputAction.CallbackContext context)
         {

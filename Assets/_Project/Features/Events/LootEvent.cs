@@ -4,7 +4,7 @@ using Wordania.Features.Inventory;
 
 namespace Wordania.Features.Events
 {
-    [CreateAssetMenu(menuName = "Events/Loot Event")]
+    [CreateAssetMenu(menuName = "Signals/Loot Event")]
     public sealed class LootEvent : ScriptableObject
     {
         private Action<ItemData, int> _onLootTriggered;

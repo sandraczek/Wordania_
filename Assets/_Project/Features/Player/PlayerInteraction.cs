@@ -5,6 +5,7 @@ using VContainer.Unity;
 using Wordania.Core;
 using Wordania.Core.Inputs;
 using Wordania.Features.Inventory;
+using Wordania.Features.Player.Interaction;
 using Wordania.Features.World;
 
 namespace Wordania.Features.Player{
@@ -32,6 +33,9 @@ namespace Wordania.Features.Player{
         [Header("Building")]
         [SerializeField] private int _currentBlockIndex;
         [SerializeField] private BlockData[] _buildingBlocks; //temporary solution
+
+        //DEBUG
+        [SerializeField] private PlayerWeaponItem _weapon;
         public void Awake()
         {
             _nextActionTime = 0f;
@@ -65,7 +69,7 @@ namespace Wordania.Features.Player{
         {
             SubscribeInputs();
         }
-        public void OnDisable()
+        public void OnDisable()     //TODO: move building and  mining to a IItemActionExecutor -------------------
         {
             UnsubscribeInputs();
         }
@@ -78,6 +82,14 @@ namespace Wordania.Features.Player{
         }
         public bool ExecutePrimaryAction(Vector2 targetWorldPos)
         {
+            if(_interactionMode == InteractionMode.empty)
+            {
+                Debug.Log("Doing nothing");
+                return true;
+            }
+            
+            if(_interactionMode == InteractionMode.shoot) return _weapon.ExecutePrimaryAction(targetWorldPos);
+
             if (Time.time < _nextActionTime) return false;
             // checking range
             float deltaRoundX = Mathf.Abs(Mathf.Round(targetWorldPos.x - 0.5f) - Mathf.Round(transform.position.x));
@@ -149,16 +161,13 @@ namespace Wordania.Features.Player{
         public void SetTool(int i)
         {
             if(!_player.States.CurrentState.CanSetSlot) return;
-            if(i == 1)
+            _interactionMode = i switch
             {
-                _interactionMode = InteractionMode.build;
-                return;
-            }
-            if(i == 2)
-            {
-                _interactionMode = InteractionMode.mine;
-                return;
-            }
+                1 => InteractionMode.build,
+                2 => InteractionMode.mine,
+                3 => InteractionMode.shoot,
+                _ => InteractionMode.empty
+            };
         }
         private void SetPrimaryActionHeld(bool boo)
         {
@@ -167,8 +176,10 @@ namespace Wordania.Features.Player{
 
         private enum InteractionMode
         {
+            empty,
             mine,
-            build
+            build,
+            shoot
         }
     }
 }

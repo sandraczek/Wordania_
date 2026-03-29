@@ -18,6 +18,7 @@ namespace Wordania.Features.Enemies.Core
         private readonly Transform _parent;
         private readonly Dictionary<string, IObjectPool<EnemyController>> _pools = new();
         private readonly int _defaultPoolSize = 20;
+        private readonly int _maxPoolSize = 100;
         private readonly int _prewarmBatchSize = 5;
 
         public EnemyFactory(IObjectResolver resolver, IPlayerProvider playerProvider, MarkerEntityParent enemiesParent)
@@ -66,7 +67,7 @@ namespace Wordania.Features.Enemies.Core
                 actionOnRelease: enemy => enemy.gameObject.SetActive(false),
                 actionOnDestroy: enemy => {if(enemy!= null) UnityEngine.Object.Destroy(enemy.gameObject);},
                 defaultCapacity: _defaultPoolSize,
-                maxSize: 100
+                maxSize: _maxPoolSize
             );
         }
 

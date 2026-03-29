@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: -1011593029321735125}
   - component: {fileID: 6714544860898951420}
   - component: {fileID: 4436758731559536367}
+  - component: {fileID: 6168264530602995032}
+  - component: {fileID: 5239605058398882680}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -162,6 +164,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 28948730022624828ac5373b290d985d, type: 2}
   - {fileID: 11400000, guid: 2c8c6a670e61a4dbb882e00f461fb8b9, type: 2}
   - {fileID: 11400000, guid: c8d9887c8a618481093519ec5709ed59, type: 2}
+  _weapon: {fileID: 6168264530602995032}
 --- !u!114 &6714544860898951420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,6 +192,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.Movement.FallDamageHandler
   _feetPosition: {x: 0, y: 0}
+--- !u!114 &6168264530602995032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377237029528584182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1062856ba5cc41c1b81d6724fd6d13d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Player.Interaction.PlayerWeaponItem
+  _weaponConfig: {fileID: 11400000, guid: 72729b5c95586458992a515627c9b1a0, type: 2}
+--- !u!114 &5239605058398882680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377237029528584182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a400eaf713574e7aa9b6938b3f1ff3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Combat.Core.WeaponController
 --- !u!1 &7354028105140276930
 GameObject:
   m_ObjectHideFlags: 0

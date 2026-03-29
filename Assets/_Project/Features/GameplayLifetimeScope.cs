@@ -24,6 +24,7 @@ using Wordania.Core.Mapping;
 using Wordania.Features.Mapping;
 using Wordania.Features.HUD.Mapping;
 using Wordania.Core.HUD;
+using Wordania.Features.Combat.Core;
 
 namespace Wordania.Features
 {
@@ -41,6 +42,7 @@ namespace Wordania.Features
         [SerializeField] private BlockDatabase _blockDatabase;
         [SerializeField] private ItemDatabase _itemDatabase;
         [SerializeField] private LootEvent _lootEvent;
+        [SerializeField] private ProjectileFiredSignal _projectileFiredSignal;
         [SerializeField] private HealthBarUI _healthBarUI;
         [SerializeField] private InventoryView _inventoryView;
         [SerializeField] private InventoryDisplayUI _inventoryDisplayUI;
@@ -87,6 +89,11 @@ namespace Wordania.Features
                 .WithParameter(_chunkPrefab);
 
             builder.RegisterEntryPoint<WorldRenderer>(Lifetime.Scoped);
+
+            //projectiles
+            builder.RegisterInstance(_projectileFiredSignal);
+            builder.RegisterEntryPoint<ProjectileSimulationService>(Lifetime.Scoped).As<IProjectileSimulationService>();
+            builder.RegisterEntryPoint<ProjectileFactory>(Lifetime.Scoped).As<IProjectileFactory>();
 
             //player
             builder.RegisterInstance(_playerConfig);
