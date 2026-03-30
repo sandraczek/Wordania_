@@ -7,13 +7,15 @@ namespace Wordania.Features.Combat.FireStrategies
 {
     public sealed class StraightFireStrategy : IWeaponFireStrategy
     {
-        public int CalculateFireData(Vector2 position, Vector2 direction, WeaponData weaponData, List<ProjectileSpawnData> resultsBuffer)
+        public int CalculateFireData(Vector2 position, Vector2 direction, WeaponData weaponData, float damageMultiplier, int instigatorId, List<ProjectileSpawnData> resultsBuffer)
         {
             resultsBuffer.Add(new ProjectileSpawnData
             {
                 Position = position,
                 Direction = direction,
-                Data = weaponData.Projectile
+                Data = weaponData.Projectile,
+                DamageMultiplier = damageMultiplier,
+                InstigatorId = instigatorId
             });
 
             return 1;

@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Wordania.Features.Combat.Data;
 
-namespace Wordania.Core
+namespace Wordania.Features.Combat.Signals
 {
     [CreateAssetMenu(menuName = "Signals/ProjectileFired")]
     public sealed class ProjectileFiredSignal : ScriptableObject

@@ -11,6 +11,7 @@ using Wordania.Core.Combat;
 using Wordania.Core.Gameplay;
 using Wordania.Core.Identifiers;
 using Wordania.Features.Combat.Data;
+using Wordania.Features.Combat.Signals;
 using Wordania.Features.Markers;
 
 namespace Wordania.Features.Combat.Core
@@ -77,6 +78,7 @@ namespace Wordania.Features.Combat.Core
                 IsActive = true,
                 ViewInstanceId = view.GetInstanceID(),
                 DataId = spawnData.Data.Id.Hash,
+                InstigatorId = spawnData.InstigatorId,
                 
                 CurrentPosition = initialPosition,
                 PreviousPosition = initialPosition,
@@ -89,7 +91,7 @@ namespace Wordania.Features.Combat.Core
                 RemainingPierces = spawnData.Data.Piercing,
                 DamageMultiplier = spawnData.DamageMultiplier
             };
-
+            
             _simulationService.Register(ref runtimeData, view);
 
         }
@@ -105,7 +107,7 @@ namespace Wordania.Features.Combat.Core
         private IObjectPool<ProjectileView> CreatePool(ProjectileData data)
         {
             if(data == null) Debug.LogError("ObjectPool: Data is null");
-            
+
             GameObject poolParent = new($"Pool_{data.DisplayName}");
             poolParent.transform.SetParent(_parent);
 

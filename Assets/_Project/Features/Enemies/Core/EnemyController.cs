@@ -3,6 +3,7 @@ using UnityEngine;
 using VContainer;
 using Wordania.Core.Combat;
 using Wordania.Core.Gameplay;
+using Wordania.Core.Identifiers;
 using Wordania.Core.SFM;
 using Wordania.Features.Enemies.Data;
 using Wordania.Features.Enemies.FSM;
@@ -14,16 +15,19 @@ namespace Wordania.Features.Enemies.Core
     [RequireComponent(typeof(HealthComponent))]
     [RequireComponent(typeof(Rigidbody2D))]
     [RequireComponent(typeof(Collider2D))]
-    public sealed class EnemyController : MonoBehaviour, IEnemy, ICharacterMovement, IDamageable
+    public sealed class EnemyController : MonoBehaviour, IEnemy, ICharacterMovement, IDamageable, ITrackable
     {
         public EnemyTemplate Data;
         private IEnemyRegistryService _registry;
         private HealthComponent _health;
         private Rigidbody2D _rb;
         private Collider2D _col;
+        public Bounds Hitbox => _col.bounds;
         private StateMachine<EnemyBaseState> _states;
         private EnemyStateFactory _stateFactory;
         private readonly DamageMitigator _mitigation = new();
+        public int InstanceId => gameObject.GetInstanceID();
+        public EntityFaction Faction => EntityFaction.Enemy;
 
         public float VelocityX
         {
@@ -43,7 +47,6 @@ namespace Wordania.Features.Enemies.Core
         }
         public Vector2 Position => (Vector2)transform.position;
 
-        public int InstanceId => gameObject.GetInstanceID();
 
         public bool IsAlive => gameObject.activeSelf && !_health.IsDead;
         [field: SerializeField] public bool IsGrounded { get; private set; }

@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71bf6feee3ffc49789cec97aa0c75e77, type: 3}
   m_Name: TestProjectile
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Combat.Data.ProjectileData
+  <Id>k__BackingField:
+    _editorId: test_projectile
+    _hash: 1375304909
   BaseDamage: 10
-  Speed: 30
-  Lifetime: 3
-  Piercing: 0
-  GravityScale: 5
+  Knockback: {x: 15, y: 7}
+  Speed: 50
+  Lifetime: 4
+  Piercing: 1
+  GravityScale: 0
+  damageType: 0
   Prefab: {fileID: 790785413992721850, guid: 0acbba31dea22434fb7eea9d850c6648, type: 3}

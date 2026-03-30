@@ -6,6 +6,7 @@ using VContainer.Unity;
 using Wordania.Core;
 using Wordania.Core.Combat;
 using Wordania.Core.Gameplay;
+using Wordania.Core.Identifiers;
 using Wordania.Core.Inputs;
 using Wordania.Core.SaveSystem;
 using Wordania.Core.SaveSystem.Data;
@@ -20,7 +21,7 @@ namespace Wordania.Features.Player
 {
     [RequireComponent(typeof(PlayerController))]
     [RequireComponent(typeof(HealthComponent))]
-    public sealed class Player : MonoBehaviour, IDamageable
+    public sealed class Player : MonoBehaviour, IDamageable, ITrackable
     {
         [Header("Components")]
         private PlayerController _controller;
@@ -31,25 +32,30 @@ namespace Wordania.Features.Player
         [SerializeField] private PlayerVisuals visuals;
 
         [Header("Dependencies")]
-        private IInputReader _inputs;
         private PlayerStateFactory _factory;
         private PlayerConfig _config;
         private PlayerService _playerService;
+        public Bounds Hitbox => _controller.GetBounds();
+        public int InstanceId {get; private set;}
+        public EntityFaction Faction => EntityFaction.Player;
 
         [Inject]
-        public void Construct(IInputReader inputs, PlayerConfig config, PlayerContext context, IInventoryService inventory, PlayerService playerService)
+        public void Construct(PlayerConfig config, IInputReader inputs, PlayerContext context, IInventoryService inventory, PlayerService playerService)
         {
             _controller = GetComponent<PlayerController>();
             _health = GetComponent<HealthComponent>();
 
             _playerService = playerService; // TODO: make interface ?
-            _inputs = inputs;
             _config = config;
 
             _states = new StateMachine<PlayerBaseState>();
 
             context.Bind(_states, _controller, _health, config, transform);
             _factory = new(context, inputs, inventory);
+        }
+        private void Awake()
+        {
+            InstanceId = GetInstanceID();
         }
         public void InitializeNew()
         {

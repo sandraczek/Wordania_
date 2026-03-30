@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Unity.Collections;
 using Wordania.Core.Gameplay;
+using Wordania.Features.Combat.Core;
 
 namespace Wordania.Features.Enemies.Core
 {

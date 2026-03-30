@@ -8,7 +8,8 @@ using Wordania.Features.Inventory;
 using Wordania.Features.Player.Interaction;
 using Wordania.Features.World;
 
-namespace Wordania.Features.Player{
+namespace Wordania.Features.Player.Interaction
+{
     [RequireComponent(typeof(Player))]
     public sealed class PlayerInteraction : MonoBehaviour
     {
@@ -88,7 +89,7 @@ namespace Wordania.Features.Player{
                 return true;
             }
             
-            if(_interactionMode == InteractionMode.shoot) return _weapon.ExecutePrimaryAction(targetWorldPos);
+            if(_interactionMode == InteractionMode.shoot) return _weapon.ExecutePrimaryAction(targetWorldPos, gameObject.GetInstanceID());
 
             if (Time.time < _nextActionTime) return false;
             // checking range

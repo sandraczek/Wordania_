@@ -194,7 +194,7 @@ namespace Wordania.Features.Player
         {
             _rb.bodyType = type;
         }
-
+        public Bounds GetBounds() => _col.bounds;
         private void OnDrawGizmos()
         {
             //Gizmos.DrawWireCube(transform.position + new Vector3(0f, -_config.GroundCheckSize.y * 0.5f - _config.GroundCheckDistance * 0.5f, 0f), new Vector3(_config.GroundCheckSize.x, _config.GroundCheckDistance + _config.GroundCheckSize.y, 0f));

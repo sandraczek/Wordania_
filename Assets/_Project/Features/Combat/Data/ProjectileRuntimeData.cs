@@ -8,6 +8,7 @@ namespace Wordania.Features.Combat.Data
         public bool IsActive; 
         public int ViewInstanceId;
         public int DataId;
+        public int InstigatorId;
 
         // --- Physics & Transform ---
         public float2 CurrentPosition; // float2 instead of Vector2 for Burst Compiler optimizations
@@ -22,5 +23,6 @@ namespace Wordania.Features.Combat.Data
         // --- Combat Modifiers ---
         public int RemainingPierces;
         public float DamageMultiplier;
+
     }
 }

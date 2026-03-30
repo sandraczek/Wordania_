@@ -30,7 +30,7 @@ namespace Wordania.Core.Combat
         {
             if (target.TryGetComponent<IDamageable>(out var damageable))
             {
-                var damageData = new DamagePayload(_damageAmount, _damageType, _source, gameObject, contactPoint, _knockback);
+                var damageData = new DamagePayload(_damageAmount, _damageType, _source, gameObject.GetInstanceID(), contactPoint, _knockback);
                 damageable.ApplyDamage(damageData);
             }
         }

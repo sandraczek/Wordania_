@@ -12,15 +12,19 @@ namespace Wordania.Features.Inventory
     public sealed class ItemDatabase : ScriptableObject, IItemDatabase
     {
         [SerializeField]
-        private List<ItemData> allItems = new();
+        private List<ItemData> _allItems = new();
         private Dictionary<string, ItemData> _itemMap;
 
-        public void Initialize() // to do - upgrade like block database
+        public void Initialize()
         {
-            _itemMap = new Dictionary<string, ItemData>();
-            foreach (var item in allItems)
+            _itemMap = new Dictionary<string, ItemData>(_allItems.Count);
+            foreach (var item in _allItems)
             {
-                if (item != null) _itemMap.TryAdd(item.Id, item);
+                if (item == null) continue;
+                if (!_itemMap.TryAdd(item.Id, item))
+                {
+                    Debug.LogWarning($"[ItemDatabase] Duplicated ID: {item.Id} for item {item.name}.");
+                }
             }
         }
         public ItemData GetItem(string id)
@@ -35,7 +39,7 @@ namespace Wordania.Features.Inventory
         [ContextMenu("Auto-Find All Items")]
         public void FindAllItemsInProject()
         {
-            allItems.Clear();
+            _allItems.Clear();
 
             string[] guids = AssetDatabase.FindAssets("t:ItemData");
 
@@ -46,11 +50,11 @@ namespace Wordania.Features.Inventory
                 
                 if (item != null)
                 {
-                    allItems.Add(item);
+                    _allItems.Add(item);
                 }
             }
             
-            Debug.Log($"Success! Found and added {allItems.Count} items to database.");
+            Debug.Log($"Success! Found and added {_allItems.Count} items to database.");
             
             EditorUtility.SetDirty(this); 
         }

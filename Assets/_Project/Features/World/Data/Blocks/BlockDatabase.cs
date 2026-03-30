@@ -15,36 +15,33 @@ namespace Wordania.Features.World
     public sealed class BlockDatabase : ScriptableObject, IBlockDatabase
     {
         [SerializeField]
-        private List<BlockData> allBlocks = new();
+        private List<BlockData> _allBlocks = new();
         private Dictionary<int, BlockData> _blockMap;
         [SerializeField] TileBase[] _crackTiles;
 
-        public void Initialize() // TO BE REPLACED WITH BELOW
+        public void Initialize()
+        {
+
+            _blockMap = new Dictionary<int, BlockData>(_allBlocks.Count);
+
+            foreach (var block in _allBlocks)
+            {
+                if (block == null) continue;
+
+                if (!_blockMap.TryAdd(block.ID, block))
+                {
+                    Debug.LogWarning($"[BlockDatabase] Duplicated ID: {block.ID} for block {block.name}.");
+                }
+            }
+        }
+        public void InitializeOld()
         {
             _blockMap = new Dictionary<int, BlockData>();
-            foreach (var block in allBlocks)
+            foreach (var block in _allBlocks)
             {
                 if (block != null) _blockMap.TryAdd(block.ID, block);
             }
         }
-    //     public void Initialize()
-    // {
-    //     // Senior Level Optimization: 
-    //     // Podajemy 'Capacity' do słownika, aby uniknąć kosztownych operacji 'Resize' i rehashowania.
-    //     _blockMap = new Dictionary<int, BlockData>(allBlocks.Count);
-
-    //     foreach (var block in allBlocks)
-    //     {
-    //         if (block == null) continue;
-
-    //         // Używamy TryAdd lub jawnego sprawdzenia, aby uniknąć wyjątków 
-    //         // przy duplikacji ID w edytorze (częsty błąd przy SO).
-    //         if (!_blockMap.TryAdd(block.ID, block))
-    //         {
-    //             Debug.LogWarning($"[BlockDatabase] Duplicated ID: {block.ID} for block {block.name}.");
-    //         }
-    //     }
-    // }
 
         public BlockData GetBlock(int id)
         {
@@ -68,11 +65,8 @@ namespace Wordania.Features.World
         [ContextMenu("Auto-Find All Blocks")]
         public void FindAllBlocksInProject()
         {
-            if(allBlocks== null)
-            {
-                allBlocks = new();
-            }
-            allBlocks.Clear();
+            _allBlocks ??= new();
+            _allBlocks.Clear();
 
             string[] guids = AssetDatabase.FindAssets("t:BlockData");
 
@@ -83,11 +77,11 @@ namespace Wordania.Features.World
                 
                 if (block != null)
                 {
-                    allBlocks.Add(block);
+                    _allBlocks.Add(block);
                 }
             }
             
-            Debug.Log($"Success! Found and added {allBlocks.Count} blocks to database.");
+            Debug.Log($"Success! Found and added {_allBlocks.Count} blocks to database.");
             
             EditorUtility.SetDirty(this); 
         }

@@ -48,8 +48,6 @@ namespace Wordania.Features.Movement
 
         private void HandleLanding(float absVelocity)
         {
-            if(gameObject.name == "Player")
-                Debug.Log($"{absVelocity} < {_minVelocityForDamage}");
             if (absVelocity < _minVelocityForDamage) return;
 
             float excessSpeed = Mathf.Abs(absVelocity - _minVelocityForDamage);
@@ -59,12 +57,10 @@ namespace Wordania.Features.Movement
                 amount: damageAmount,
                 type: DamageType.FallDamage,
                 source: HealthChangeSource.Fall,
-                instigator: null,
+                instigatorId: DamagePayload.EnvironmentId,
                 hitPoint: _feetPosition,
                 knockback: Vector2.zero
             );
-
-            Debug.Log($"Applying damage: {payload.Amount}");
             _damageable.ApplyDamage(payload);
         }
     }

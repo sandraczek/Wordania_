@@ -4,10 +4,11 @@ namespace Wordania.Core.Combat
 {
     public readonly struct DamagePayload
     {
+        public const int EnvironmentId = -1;
         public readonly float Amount;
         public readonly DamageType Type;
         public readonly HealthChangeSource Source;
-        public readonly GameObject Instigator; 
+        public readonly int InstigatorId; 
         public readonly Vector2 HitPoint;      
         public readonly Vector2 Knockback;  
 
@@ -15,7 +16,7 @@ namespace Wordania.Core.Combat
             float amount, 
             DamageType type, 
             HealthChangeSource source,
-            GameObject instigator, 
+            int instigatorId, 
             Vector2 hitPoint, 
             Vector2 knockback)
         {
@@ -23,7 +24,7 @@ namespace Wordania.Core.Combat
             
             Type = type;
             Source = source;
-            Instigator = instigator;
+            InstigatorId = instigatorId;
             HitPoint = hitPoint;
             Knockback = knockback;
         }

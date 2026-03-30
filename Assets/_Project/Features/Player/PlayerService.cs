@@ -6,7 +6,9 @@ using Wordania.Core.Combat;
 using Wordania.Core.Gameplay;
 using Wordania.Core.SaveSystem;
 using Wordania.Core.SaveSystem.Data;
+using Wordania.Core.Services;
 using Wordania.Features.Markers;
+using Wordania.Features.Services;
 
 namespace Wordania.Features.Player
 {
@@ -15,6 +17,8 @@ namespace Wordania.Features.Player
         private readonly GameObject _playerPrefab;
         private readonly IObjectResolver _resolver;
         private readonly ISaveService _save;
+        private readonly IEntityRegistryService _entityRegistry;
+        private readonly IEntityTrackerService _entityTracker;
 
         public event Action OnPlayerRegistered;
         public event Action OnPlayerUnregistered;
@@ -27,12 +31,14 @@ namespace Wordania.Features.Player
         public bool IsPlayerSpawned => PlayerTransform != null; 
         public string SaveId => "Player";
 
-        public PlayerService(GameObject playerPrefab, IObjectResolver resolver, ISaveService save, MarkerEntityParent playerParent)
+        public PlayerService(GameObject playerPrefab, IObjectResolver resolver, ISaveService save, MarkerEntityParent playerParent, IEntityTrackerService entityTracker, IEntityRegistryService entityRegistry)
         {
             _playerPrefab = playerPrefab;
             _resolver = resolver;
             _save = save;
             _parent = playerParent.transform;
+            _entityRegistry = entityRegistry;
+            _entityTracker = entityTracker;
         }
         public void Start()
         {
@@ -63,7 +69,7 @@ namespace Wordania.Features.Player
             PlayerTransform = playerInstance.transform;
 
             
-            if(playerInstance.TryGetComponent<Player>(out Player player))
+            if(playerInstance.TryGetComponent(out Player player))
             {
                 if(_cachedSaveData != null)
                 {
@@ -76,7 +82,9 @@ namespace Wordania.Features.Player
                 _player = player;
                 ReadOnlyHealth = player.GetComponent<HealthComponent>();
             }
-            
+
+            _entityRegistry.Register(player.InstanceId, player);
+            _entityTracker.Register(player);
             
             Debug.Log($"<color=#4AF626>[GAMEPLAY]:</color> Player spawned at {position}");
 
@@ -84,6 +92,8 @@ namespace Wordania.Features.Player
         }
         public void UnregisterPlayer()
         {
+            _entityRegistry.Unregister(_player.InstanceId); // to move to on player destroy ?
+            _entityTracker.Unregister(_player.InstanceId);
             OnPlayerUnregistered?.Invoke();
             _player = null;
         }

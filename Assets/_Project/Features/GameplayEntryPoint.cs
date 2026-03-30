@@ -89,7 +89,7 @@ namespace Wordania.Features
 
             await _map.RenderInitialMapAsync(cancellation); 
 
-            _loadingScreen.UpdateProgress(0.55f,"Prewarming Pools");
+            _loadingScreen.UpdateProgress(0.55f,"Prewarming Pools"); //DEBUG - later biome based prewarm
             await _enemyFactory.PrewarmPoolAsync(_enemyToPrewarm);
             
             _loadingScreen.UpdateProgress(0.7f,"Spawning Player");

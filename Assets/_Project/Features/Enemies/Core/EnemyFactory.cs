@@ -6,8 +6,10 @@ using UnityEngine.Pool;
 using VContainer;
 using VContainer.Unity;
 using Wordania.Core.Gameplay;
+using Wordania.Core.Services;
 using Wordania.Features.Enemies.Data;
 using Wordania.Features.Markers;
+using Wordania.Features.Services;
 
 namespace Wordania.Features.Enemies.Core
 {
@@ -15,17 +17,21 @@ namespace Wordania.Features.Enemies.Core
     {
         private readonly IObjectResolver _resolver;
         private readonly IPlayerProvider _playerProvider;
+        private readonly IEntityRegistryService _entityRegistry;
+        private readonly IEntityTrackerService _entityTracker;
         private readonly Transform _parent;
         private readonly Dictionary<string, IObjectPool<EnemyController>> _pools = new();
         private readonly int _defaultPoolSize = 20;
         private readonly int _maxPoolSize = 100;
         private readonly int _prewarmBatchSize = 5;
 
-        public EnemyFactory(IObjectResolver resolver, IPlayerProvider playerProvider, MarkerEntityParent enemiesParent)
+        public EnemyFactory(IObjectResolver resolver, IPlayerProvider playerProvider, MarkerEntityParent enemiesParent, IEntityRegistryService entityRegistry, IEntityTrackerService entityTracker)
         {
             _resolver = resolver;
             _playerProvider = playerProvider;
             _parent = enemiesParent.transform;
+            _entityRegistry = entityRegistry;
+            _entityTracker = entityTracker;
         }
 
         public void Dispose()
@@ -47,7 +53,15 @@ namespace Wordania.Features.Enemies.Core
 
             EnemyController enemy = pool.Get();
             enemy.transform.position = position;
-            enemy.Initialize(() => pool.Release(enemy));
+            enemy.Initialize(() => 
+                {
+                    _entityRegistry.Unregister(enemy.InstanceId);
+                    _entityTracker.Unregister(enemy.InstanceId);
+                    pool.Release(enemy);
+                }); //to change
+
+            _entityRegistry.Register(enemy.InstanceId, enemy);
+            _entityTracker.Register(enemy);
 
             return enemy;
         }

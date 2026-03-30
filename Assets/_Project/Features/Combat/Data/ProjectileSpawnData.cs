@@ -8,5 +8,6 @@ namespace Wordania.Features.Combat.Data
         public Vector2 Direction;
         public ProjectileData Data;
         public float DamageMultiplier;
+        public int InstigatorId;
     }
 }

@@ -164,8 +164,10 @@ MonoBehaviour:
   _cameraService: {fileID: 2046067484}
   _blockDatabase: {fileID: 11400000, guid: 4f9af77ca6df74fa98911a88ed095585, type: 2}
   _itemDatabase: {fileID: 11400000, guid: 029601def52d947249da1fa34d026928, type: 2}
+  _projectileDatabase: {fileID: 11400000, guid: 27b90463f24c14661a2c805437eb06b0, type: 2}
   _lootEvent: {fileID: 11400000, guid: 689f400bcd7804a2db5dd1bc5cf8aa88, type: 2}
   _projectileFiredSignal: {fileID: 11400000, guid: 99493f51036f94aceb3a03d93cf88879, type: 2}
+  _hitRegisteredSignal: {fileID: 11400000, guid: 9dd452d2dba3949daad518d30903cf6a, type: 2}
   _healthBarUI: {fileID: 596826980}
   _inventoryView: {fileID: 1478385141}
   _inventoryDisplayUI: {fileID: 1644110971}

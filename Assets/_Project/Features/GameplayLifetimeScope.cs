@@ -25,6 +25,9 @@ using Wordania.Features.Mapping;
 using Wordania.Features.HUD.Mapping;
 using Wordania.Core.HUD;
 using Wordania.Features.Combat.Core;
+using Wordania.Features.Combat.Signals;
+using Wordania.Core.Services;
+using Wordania.Features.Combat.Data;
 
 namespace Wordania.Features
 {
@@ -41,8 +44,10 @@ namespace Wordania.Features
         [SerializeField] private CameraService _cameraService;
         [SerializeField] private BlockDatabase _blockDatabase;
         [SerializeField] private ItemDatabase _itemDatabase;
+        [SerializeField] private ProjectileDatabase _projectileDatabase;
         [SerializeField] private LootEvent _lootEvent;
         [SerializeField] private ProjectileFiredSignal _projectileFiredSignal;
+        [SerializeField] private HitRegisteredSignal _hitRegisteredSignal;
         [SerializeField] private HealthBarUI _healthBarUI;
         [SerializeField] private InventoryView _inventoryView;
         [SerializeField] private InventoryDisplayUI _inventoryDisplayUI;
@@ -64,6 +69,8 @@ namespace Wordania.Features
             builder.RegisterInstance<IBlockDatabase>(_blockDatabase);
             _itemDatabase.Initialize();
             builder.RegisterInstance<IItemDatabase>(_itemDatabase);
+            _projectileDatabase.Initialize();
+            builder.RegisterInstance<IProjectileDatabase>(_projectileDatabase);
             builder.RegisterInstance<ICameraService>(_cameraService);
 
             //markers
@@ -90,8 +97,14 @@ namespace Wordania.Features
 
             builder.RegisterEntryPoint<WorldRenderer>(Lifetime.Scoped);
 
+            //registries
+            builder.Register<EntityRegistryService>(Lifetime.Scoped).As<IEntityRegistryService>();
+            builder.RegisterEntryPoint<EntityTrackerService>(Lifetime.Scoped).As<IEntityTrackerService>();
+            builder.Register<EnemyRegistryService>(Lifetime.Scoped).As<IEnemyRegistryService>();
+
             //projectiles
             builder.RegisterInstance(_projectileFiredSignal);
+            builder.RegisterInstance(_hitRegisteredSignal);
             builder.RegisterEntryPoint<ProjectileSimulationService>(Lifetime.Scoped).As<IProjectileSimulationService>();
             builder.RegisterEntryPoint<ProjectileFactory>(Lifetime.Scoped).As<IProjectileFactory>();
 
@@ -108,7 +121,6 @@ namespace Wordania.Features
             //enemies
             builder.RegisterInstance(_enemySpawnSettings);
             builder.RegisterEntryPoint<EnemyFactory>(Lifetime.Scoped).As<IEnemyFactory>();
-            builder.Register<EnemyRegistryService>(Lifetime.Scoped).As<IEnemyRegistryService>();
 
             builder.Register<GroundCollisionValidator>(Lifetime.Scoped).As<ISpawnValidator>();
             builder.Register<SpaceClearanceValidator>(Lifetime.Scoped).As<ISpawnValidator>();
