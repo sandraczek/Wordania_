@@ -1,4 +1,7 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Wordania.Core.Identifiers;
 using Wordania.Features.Combat.Core;
 using Wordania.Features.Combat.Data;
 
@@ -20,7 +23,16 @@ namespace Wordania.Features.Player.Interaction
             Vector2 aimDirection = (targetWorldPos - (Vector2)_barrelTransform.position).normalized;
 
             // ----------------------------- TEMPORARY NO DMG MULTIPLIER
-            return _weaponController.Fire(_barrelTransform.position, aimDirection, _weaponConfig, 1f, instigatorId);
+            WeaponFireContext context = new()
+                {
+                    position = _barrelTransform.position,
+                    direction = aimDirection,
+                    weaponData = _weaponConfig,
+                    damageMultiplier = 1f,
+                    instigatorId = instigatorId,
+                    TargetFactionMask = EntityFaction.Enemy
+                };
+            return _weaponController.Fire(context);
         }
         public bool ExecuteSecondaryAction(Vector2 targetWorldPos, int instigatorId) {return false;}
 

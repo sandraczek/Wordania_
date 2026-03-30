@@ -79,6 +79,7 @@ namespace Wordania.Features.Combat.Core
                 ViewInstanceId = view.GetInstanceID(),
                 DataId = spawnData.Data.Id.Hash,
                 InstigatorId = spawnData.InstigatorId,
+                TargetFactionMask = (int)spawnData.TargetFactionMask,
                 
                 CurrentPosition = initialPosition,
                 PreviousPosition = initialPosition,

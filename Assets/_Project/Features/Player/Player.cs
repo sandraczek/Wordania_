@@ -122,8 +122,7 @@ namespace Wordania.Features.Player
         private void Handlehurt(DamageResult damage)
         {
             //Applying knockback even if fatal
-            float direction = Mathf.Sign(transform.position.x - damage.Payload.HitPoint.x);
-            _controller.VelocityX = direction * damage.Payload.Knockback.x;
+            _controller.VelocityX = damage.Payload.Knockback.x;
             _controller.VelocityY = damage.Payload.Knockback.y;
 
             if(_health.IsDead) return;

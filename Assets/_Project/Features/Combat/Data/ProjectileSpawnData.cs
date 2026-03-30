@@ -1,4 +1,5 @@
 using UnityEngine;
+using Wordania.Core.Identifiers;
 
 namespace Wordania.Features.Combat.Data
 {
@@ -9,5 +10,6 @@ namespace Wordania.Features.Combat.Data
         public ProjectileData Data;
         public float DamageMultiplier;
         public int InstigatorId;
+        public EntityFaction TargetFactionMask;
     }
 }

@@ -44,13 +44,17 @@ namespace Wordania.Features.Combat.Core
             {
                 TargetAABB target = Targets[i];
 
-                if (IsPointInsideAABB(data.CurrentPosition, target))
+                if (target.EntityInstanceId == data.InstigatorId) continue;
+                if ((target.FactionId & data.TargetFactionMask) == 0) continue;
+
+                if (LineIntersectsAABB(data.PreviousPosition, data.CurrentPosition, target.Min, target.Max, out float2 hitpoint))
                 {
                     HitEventsQueue.Enqueue(new ProjectileHitEvent
                     {
+                        Direction = math.normalizesafe(data.Velocity),
                         ProjectileDataId = data.DataId,
                         HitEntityId = target.EntityInstanceId,
-                        HitPosition = data.CurrentPosition,
+                        HitPosition = hitpoint,
                         DamageMultiplier = data.DamageMultiplier,
                         InstigatorId = data.InstigatorId
                     });
@@ -77,6 +81,32 @@ namespace Wordania.Features.Combat.Core
         {
             return point.x >= aabb.Min.x && point.x <= aabb.Max.x &&
                 point.y >= aabb.Min.y && point.y <= aabb.Max.y;
+        }
+
+        private readonly bool LineIntersectsAABB(float2 lineStart, float2 lineEnd, float2 aabbMin, float2 aabbMax, out float2 hitPoint)
+        {
+            hitPoint = float2.zero;
+
+            float2 dir = lineEnd - lineStart;
+            float2 invDir = math.rcp(dir); 
+
+            float2 t0 = (aabbMin - lineStart) * invDir;
+            float2 t1 = (aabbMax - lineStart) * invDir;
+
+            float2 tSmall = math.min(t0, t1);
+            float2 tBig = math.max(t0, t1);
+
+            float tNear = math.cmax(tSmall); 
+            float tFar = math.cmin(tBig);    
+
+            if (tNear <= tFar && tFar >= 0.0f && tNear <= 1.0f)
+            {
+                float hitTime = math.max(0.0f, tNear);
+                hitPoint = lineStart + (dir * hitTime);
+                return true;
+            }
+
+            return false;
         }
     }
 }

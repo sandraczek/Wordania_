@@ -6,6 +6,7 @@ namespace Wordania.Features.Combat.Signals
 {
     public struct ProjectileHitEvent
     {
+        public float2 Direction;
         public int ProjectileDataId;
         public int HitEntityId;
         public float2 HitPosition;

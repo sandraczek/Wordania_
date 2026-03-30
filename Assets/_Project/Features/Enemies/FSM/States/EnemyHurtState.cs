@@ -16,6 +16,7 @@ namespace Wordania.Features.Enemies.FSM
         public override void Enter()
         {
             _hitTime = Time.time;
+            _controller.GetComponentInChildren<SpriteRenderer>().color = Color.red;
         }
         public override void Update()
         {
@@ -27,7 +28,7 @@ namespace Wordania.Features.Enemies.FSM
         }
         public override void Exit()
         {
-            
+            _controller.GetComponentInChildren<SpriteRenderer>().color = Color.white;
         }
         public override void CheckSwitchStates()
         {

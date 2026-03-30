@@ -242,8 +242,7 @@ namespace Wordania.Features.Enemies.Core
             DamageResult damageResult = _mitigation.ProcessDamage(payload);
             _health.ApplyDamage(damageResult);
 
-            float direction = Mathf.Sign(transform.position.x - damageResult.Payload.HitPoint.x);
-            VelocityX = direction * damageResult.Payload.Knockback.x;
+            VelocityX = damageResult.Payload.Knockback.x;
             VelocityY = damageResult.Payload.Knockback.y;
 
             _states.SwitchState(_stateFactory.Hurt);

@@ -135,6 +135,7 @@ namespace Wordania.Features.Combat.Core
                 var data = _projectileDatabase.GetProjectile(hitEvent.ProjectileDataId);
                 if(data == null) Debug.LogError("Data is null");
                 float damage = data.BaseDamage * hitEvent.DamageMultiplier; 
+                Vector2 knockback = new(data.Knockback.x * Mathf.Sign(hitEvent.Direction.x), data.Knockback.y);
 
                 DamagePayload damagePayload = new
                     (
@@ -142,7 +143,7 @@ namespace Wordania.Features.Combat.Core
                     HealthChangeSource.Generic,
                     hitEvent.InstigatorId,
                     hitEvent.HitPosition,
-                    data.Knockback
+                    knockback
                     );
                 damageable.ApplyDamage(damagePayload);
 

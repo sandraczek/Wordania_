@@ -9,6 +9,7 @@ namespace Wordania.Features.Combat.Data
         public int ViewInstanceId;
         public int DataId;
         public int InstigatorId;
+        public int TargetFactionMask;
 
         // --- Physics & Transform ---
         public float2 CurrentPosition; // float2 instead of Vector2 for Burst Compiler optimizations

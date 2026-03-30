@@ -30,7 +30,9 @@ namespace Wordania.Core.Combat
         {
             if (target.TryGetComponent<IDamageable>(out var damageable))
             {
-                var damageData = new DamagePayload(_damageAmount, _damageType, _source, gameObject.GetInstanceID(), contactPoint, _knockback);
+                float direction = Mathf.Sign(target.transform.position.x - contactPoint.x);
+                Vector2 knockback = new(direction * _knockback.x, _knockback.y);
+                var damageData = new DamagePayload(_damageAmount, _damageType, _source, gameObject.GetInstanceID(), contactPoint, knockback);
                 damageable.ApplyDamage(damageData);
             }
         }

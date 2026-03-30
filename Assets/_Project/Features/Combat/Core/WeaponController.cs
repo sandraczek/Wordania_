@@ -24,14 +24,14 @@ namespace Wordania.Features.Combat.Core
             _firedSignal = firedSignal;
             _strategy = new StraightFireStrategy(); // DEBUG
         }
-        public bool Fire(Vector2 position, Vector2 direction, WeaponData data, float damageMultiplier, int instigatorId)
+        public bool Fire(WeaponFireContext context)
         {
-            if(Time.time < _lastFiredTime + data.FireRate) return false;
+            if(Time.time < _lastFiredTime + context.weaponData.FireRate) return false;
             
             _lastFiredTime = Time.time;
             _spawnBuffer.Clear();
 
-            int projectilesToSpawn = _strategy.CalculateFireData(position, direction, data, damageMultiplier, instigatorId, _spawnBuffer);
+            int projectilesToSpawn = _strategy.CalculateFireData(context, _spawnBuffer);
 
             for (int i = 0; i < projectilesToSpawn; i++)
             {
