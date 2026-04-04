@@ -12,7 +12,7 @@ namespace Wordania.Core.Identifiers
         [SerializeField, HideInInspector] 
         private int _hash;
 
-        public static readonly AssetId Empty = new AssetId(string.Empty);
+        public static readonly AssetId Empty = new(string.Empty);
 
         public readonly int Hash => _hash;
 
@@ -20,6 +20,11 @@ namespace Wordania.Core.Identifiers
         {
             _editorId = id;
             _hash = GenerateHash(id);
+        }
+        public AssetId(int savedHash)
+        {
+            _editorId = string.Empty;
+            _hash = savedHash;
         }
 
         public void EditorInitialize()

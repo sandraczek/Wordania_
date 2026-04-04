@@ -1,14 +1,19 @@
 using System;
+using System.Collections.Generic;
 using Unity.Collections;
+using Unity.Jobs;
 using UnityEngine;
 using VContainer.Unity;
 using Wordania.Core.Config;
 
 namespace Wordania.Features.World
 {
-    public class WorldCollisionJobService : IWorldCollisionJobService, IStartable, IDisposable
+    public class WorldCollisionJobService : IWorldCollisionJobService, IStartable, IDisposable, ILateTickable
     {
         private NativeArray<bool> _collisionGrid;
+        private JobHandle _job;
+        private readonly Queue<Vector2Int> _pendingModifications = new();
+
         private readonly IWorldService _world;
         private readonly WorldSettings _settings;
         public int Width => _settings.Width;
@@ -28,6 +33,10 @@ namespace Wordania.Features.World
             _world.OnChunkChanged -= HandleChunkChanged;
             if (_collisionGrid.IsCreated) _collisionGrid.Dispose();
         }
+        public void RegisterReadDependency(JobHandle dependency)
+        {
+            _job = JobHandle.CombineDependencies(_job, dependency);
+        }
         private void HandleChunkChanged(Vector2Int chunkPos, WorldLayer layer)
         {
             if(_collisionGrid == null)
@@ -37,6 +46,24 @@ namespace Wordania.Features.World
             }
             if((layer & WorldLayer.Main) == 0) return;
 
+            _pendingModifications.Enqueue(chunkPos);
+        }
+        public void LateTick()
+        {
+            if(_job == null) Debug.LogError("Job is Uninitialized");
+
+            if (_pendingModifications.Count > 0)
+            {
+                _job.Complete();
+
+                while (_pendingModifications.TryDequeue(out Vector2Int chunkPos))
+                {
+                    UpdateChunkDataInternal(chunkPos);
+                }
+            }
+        }
+        private void UpdateChunkDataInternal(Vector2Int chunkPos)
+        {
             int size = _settings.ChunkSize;
             int worldChunkI = chunkPos.y * size * _settings.Width + chunkPos.x * size;
 

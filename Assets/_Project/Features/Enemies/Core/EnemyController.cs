@@ -237,25 +237,27 @@ namespace Wordania.Features.Enemies.Core
         }
         private void HandleDeath()
         {
-            Debug.Log($"{Data.DisplayName} died");
+            //Debug.Log($"{Data.DisplayName} died");
             _onDeathAction.Invoke();
         }
         public void Remove()
         {
-            Debug.Log($"{Data.DisplayName} removed");
+            //Debug.Log($"{Data.DisplayName} removed");
             _onDeathAction.Invoke();
         }
         //TODO: move ?
         public void ApplyDamage(DamagePayload payload)
         {;
             if(_health.IsDead) return;
-            if(_invincibility != null && _invincibility.IsInvincible) return;
+                                        //Applying Damage even if invincible (only knockback affected)
             
             DamageResult damageResult = _mitigation.ProcessDamage(payload);
             _health.ApplyDamage(damageResult);
         }
         private void Handlehurt(DamageResult damage)
         {
+            if(_invincibility != null && _invincibility.IsInvincible) return;
+
             //Applying knockback even if fatal
             VelocityX = damage.Payload.Knockback.x;
             VelocityY = damage.Payload.Knockback.y;
@@ -272,13 +274,13 @@ namespace Wordania.Features.Enemies.Core
             Debug.DrawRay(Position + Vector2.up * 0.2f, Vector2.down * 0.4f);
             Debug.DrawRay(Position + Vector2.right * 0.2f, Vector2.left * 0.4f);
         }
-        private void OnInvincibilityStarted()
+        private void OnInvincibilityStarted() // Bullets die on enemy who does not get knockback (but gets damage)
         {
-            Faction = 0;
+            //Faction = 0;
         }
         private void OnInvincibilityEnded()
         {
-            Faction = EntityFaction.Enemy;
+            //Faction = EntityFaction.Enemy;
         }
         private void HandleHurtVisuals(DamageResult damage)
         {

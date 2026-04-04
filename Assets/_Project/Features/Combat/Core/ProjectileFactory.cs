@@ -109,13 +109,13 @@ namespace Wordania.Features.Combat.Core
         {
             if(data == null) Debug.LogError("ObjectPool: Data is null");
 
-            GameObject poolParent = new($"Pool_{data.DisplayName}");
+            GameObject poolParent = new($"Pool_{data.Name}");
             poolParent.transform.SetParent(_parent);
 
             return new ObjectPool<ProjectileView>(
                 createFunc: () => {
                     var projectile = _resolver.Instantiate(data.Prefab,poolParent.transform);
-                    projectile.name = data.DisplayName;
+                    projectile.name = data.Name;
                     return projectile;
                     },
                 actionOnGet: projectile => projectile.gameObject.SetActive(true),

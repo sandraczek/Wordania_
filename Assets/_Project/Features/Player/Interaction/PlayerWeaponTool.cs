@@ -41,11 +41,11 @@ namespace Wordania.Features.Player.Interaction
 
         public void ReleasePrimaryAction() { }
 
-        public void BindWeapon(WeaponController weaponController)
+        public void BindWeapon(WeaponData data)
         {
-            if(weaponController == null) UnbindWeapon();
+            if(data == null) UnbindWeapon();
 
-            _currentWeapon = weaponController;
+            _currentWeapon = _factory.GetWeapon(data);
             
             Transform weaponTransform = _currentWeapon.transform;
             weaponTransform.SetParent(_attachmentPoint);

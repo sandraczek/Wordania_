@@ -49,8 +49,14 @@ namespace Wordania.Features.Combat.Core
                 _pools[data.Id] = pool;
             }
 
-            var weapon =  pool.Get();
-            weapon.Initialize(data, _strategies[data.Type]);
+            if (!_strategies.TryGetValue(data.Type, out IWeaponFireStrategy strategy))
+            {
+                Debug.LogError($"No strategy for type: {data.Type}. Aborting!");
+                return null;
+            }
+
+            var weapon = pool.Get();
+            weapon.Initialize(data, strategy);
 
             return weapon;
         }
@@ -59,6 +65,8 @@ namespace Wordania.Features.Combat.Core
             if (!_pools.TryGetValue(controller.Data.Id, out IObjectPool<WeaponController> pool))
             {
                 Debug.LogError("Tried removing weapon - No Pool Associated with its data");
+                UnityEngine.Object.Destroy(controller.gameObject);
+                return;
             }
             
             pool.Release(controller);

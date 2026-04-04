@@ -41,7 +41,7 @@ namespace Wordania.Features.Enemies.Spawning
 
             _timeSinceLastSpawn += Time.deltaTime;
 
-            if (_timeSinceLastSpawn >= _settings.SpawnAttemptInterval)
+            if (_timeSinceLastSpawn >= _settings.SpawnIntervalAttempt)
             {
                 if(AttemptSpawn()){
                     _timeSinceLastSpawn = 0f;

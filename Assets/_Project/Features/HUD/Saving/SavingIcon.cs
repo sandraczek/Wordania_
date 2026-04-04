@@ -4,9 +4,11 @@ using VContainer;
 
 namespace Wordania.Features.HUD.Saving
 {
+    [RequireComponent(typeof(CanvasGroup))]
     public sealed class SavingIcon : MonoBehaviour, IHUDSavingService
     {
         private HUDConfig _config;
+        private CanvasGroup _canvasGroup;
         [SerializeField] private TextMeshProUGUI _text;
         private float timer = 0f;
         private int _lastDotCount = -1;
@@ -16,7 +18,11 @@ namespace Wordania.Features.HUD.Saving
         {
             _config = config;
         }
-        public void Update()
+        private void Awake()
+        {
+            _canvasGroup = GetComponent<CanvasGroup>();
+        }
+        private void Update()
         {   
             timer += Time.unscaledDeltaTime;
 
@@ -46,11 +52,18 @@ namespace Wordania.Features.HUD.Saving
         {
             timer = 0f;
             _text.text = _config.SavingPrefix + "";
-            gameObject.SetActive(true);
+            SetVisibility(true);
         }
         public void Hide()
         {
-            gameObject.SetActive(false);
+            SetVisibility(false);
+        }
+        public void SetVisibility(bool isVisible)
+        {
+            _canvasGroup.alpha = isVisible ? 1f : 0f;
+            _canvasGroup.interactable = isVisible;
+            _canvasGroup.blocksRaycasts = isVisible;
+            gameObject.SetActive(isVisible);
         }
     }
 }

@@ -1,16 +1,15 @@
 using UnityEngine;
+using Wordania.Core.Data;
 
 namespace Wordania.Features.Inventory
 {
     [CreateAssetMenu(fileName = "Item_New", menuName = "Inventory/Item")]
-    public sealed class ItemData : ScriptableObject
+    public sealed class ItemData : DataAsset
     {
-        [SerializeField] private string _id = "";
+        [Space]
         [SerializeField] private string _displayName;
         [SerializeField] private Sprite _icon;
         [SerializeField] private int _maxStackSize = 99;
-
-        public string Id => _id;
         public string DisplayName => _displayName;
         public Sprite Icon => _icon;
         public int MaxStackSize => _maxStackSize;

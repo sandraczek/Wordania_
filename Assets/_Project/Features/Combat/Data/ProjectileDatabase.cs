@@ -15,7 +15,7 @@ namespace Wordania.Features.Combat.Data
         private List<ProjectileData> _allProjectiles = new();
         private Dictionary<int, ProjectileData> _projectileMap;
 
-        public void Initialize() // TO BE REPLACED WITH BELOW
+        public void Initialize()
         {
             _projectileMap = new Dictionary<int, ProjectileData>(_allProjectiles.Count);
             foreach (var projectile in _allProjectiles)

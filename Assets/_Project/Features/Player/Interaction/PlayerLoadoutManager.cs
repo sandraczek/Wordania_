@@ -21,7 +21,6 @@ namespace Wordania.Features.Player.Interaction
         [Header("Dependencies")]
         private IInputReader _inputs;
         private PlayerContext _player;
-        private IWeaponFactory _factory;
 
         private PlayerWeaponTool _weapon;
         private PlayerBuildingTool _builder;
@@ -39,7 +38,6 @@ namespace Wordania.Features.Player.Interaction
         {
             _inputs = inputs;
             _player = playerContext;
-            _factory = factory;
         }
         private void Awake()
         {
@@ -91,7 +89,7 @@ namespace Wordania.Features.Player.Interaction
 
             if(_currentTool is PlayerWeaponTool) //EVEN MORE temporary
             {
-                _currentWeaponIndex +=1;
+                _currentWeaponIndex ++;
                 _currentWeaponIndex%= _weapons.Count();
 
                 EquipWeapon(_weapons[_currentWeaponIndex]);
@@ -123,7 +121,7 @@ namespace Wordania.Features.Player.Interaction
             }
             _currentTool?.OnUnequip();
             
-            _weapon.BindWeapon(_factory.GetWeapon(weaponData));
+            _weapon.BindWeapon(weaponData);
             
             _currentTool = _weapon;
             _currentTool.OnEquip();

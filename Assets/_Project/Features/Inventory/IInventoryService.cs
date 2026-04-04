@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Wordania.Core.Identifiers;
 
 namespace Wordania.Features.Inventory
 {
@@ -9,9 +10,9 @@ namespace Wordania.Features.Inventory
     {
         event Action OnInventoryChanged;
 
-        void AddItem(string itemId, int amount);
-        bool RemoveItem(string itemId, int amount);
-        int GetQuantity(string itemId);
+        void AddItem(AssetId itemId, int amount);
+        bool RemoveItem(AssetId itemId, int amount);
+        int GetQuantity(AssetId itemId);
         IEnumerable<InventoryEntry> GetAllEntries();
     }
 }

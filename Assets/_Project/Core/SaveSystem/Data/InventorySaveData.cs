@@ -1,4 +1,5 @@
 using System;
+using Wordania.Core.Identifiers;
 
 namespace Wordania.Core.SaveSystem.Data
 {
@@ -11,10 +12,10 @@ namespace Wordania.Core.SaveSystem.Data
     [Serializable]
     public readonly struct ItemSaveData
     {
-        public readonly string Id;
+        public readonly int Id;
         public readonly int Quantity;
 
-        public ItemSaveData(string id, int quantity)
+        public ItemSaveData(int id, int quantity)
         {
             Id = id;
             Quantity = quantity;

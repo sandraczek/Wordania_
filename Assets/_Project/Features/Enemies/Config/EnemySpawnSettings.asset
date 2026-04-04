@@ -15,6 +15,6 @@ MonoBehaviour:
   InnerViewportRadius: 40
   OuterSpawnRadius: 80
   DespawnRadius: 120
-  SpawnAttemptInterval: 1.5
+  SpawnIntervalAttempt: 0.5
   MaxActiveEnemies: 30
   CullingInterval: 1

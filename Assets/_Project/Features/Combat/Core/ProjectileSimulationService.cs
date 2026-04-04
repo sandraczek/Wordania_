@@ -25,7 +25,7 @@ namespace Wordania.Features.Combat.Core
         private NativeList<ProjectileRuntimeData> _projectilesData = new(1000, Allocator.Persistent);
         private NativeQueue<ProjectileHitEvent> _hitEventsQueue = new(Allocator.Persistent);
         private NativeArray<TargetAABB> _currentTargets;
-        private IWorldCollisionJobService _world;
+        private readonly IWorldCollisionJobService _world;
         private JobHandle _jobHandle;
         private readonly List<ProjectileView> _projectileViews = new();
         public event Action<ProjectileView> OnProjectileDeath;
@@ -59,10 +59,9 @@ namespace Wordania.Features.Combat.Core
 
         public void Tick()
         {
-            if (!_projectilesData.IsCreated) return;
-            if (!_hitEventsQueue.IsCreated) return;
+            if (!_projectilesData.IsCreated || !_hitEventsQueue.IsCreated) return;
 
-            _currentTargets = _trackables.GetTargetsForJob(Allocator.Persistent);
+            _currentTargets = _trackables.GetTargetsForJob(Allocator.TempJob);
 
             // 1. Schedule the Job across multiple CPU cores
             var job = new ProjectileSimulationJob
@@ -77,12 +76,16 @@ namespace Wordania.Features.Combat.Core
             };
 
             _jobHandle = job.Schedule(_projectilesData.Length, 64);
+            _world.RegisterReadDependency(_jobHandle);
         }
         public void LateTick()
         {
             _jobHandle.Complete();
 
-            if(!_projectilesData.IsCreated) return;
+            if (_projectilesData.IsCreated)
+            {
+                _currentTargets.Dispose();
+            }
 
             while (_spawnQueue.TryDequeue(out var newProjectile))
             {

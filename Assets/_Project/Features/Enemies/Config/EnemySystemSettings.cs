@@ -13,7 +13,7 @@ namespace Wordania.Features.Enemies.Config
         public float DespawnRadius = 150f;
 
         [Header("Timing & Limits")]
-        [Min(0.1f)] public float SpawnAttemptInterval = 1.5f;
+        [Min(0.1f)] public float SpawnIntervalAttempt = 1.5f;
         
         public int MaxActiveEnemies = 30;
 

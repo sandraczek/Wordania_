@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using Wordania.Core.Identifiers;
+
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -13,11 +15,11 @@ namespace Wordania.Features.Inventory
     {
         [SerializeField]
         private List<ItemData> _allItems = new();
-        private Dictionary<string, ItemData> _itemMap;
+        private Dictionary<AssetId, ItemData> _itemMap;
 
         public void Initialize()
         {
-            _itemMap = new Dictionary<string, ItemData>(_allItems.Count);
+            _itemMap = new Dictionary<AssetId, ItemData>(_allItems.Count);
             foreach (var item in _allItems)
             {
                 if (item == null) continue;
@@ -27,9 +29,9 @@ namespace Wordania.Features.Inventory
                 }
             }
         }
-        public ItemData GetItem(string id)
+        public ItemData GetItem(AssetId id)
         {
-            if(id=="") return null;
+            if(id.Hash==0) return null;
             if (_itemMap.TryGetValue(id, out var item)) return item;
             else Debug.LogError("No id " + id + "in item database");
             return null;

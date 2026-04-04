@@ -7,8 +7,8 @@ namespace Wordania.Features.HUD.Saving
 {
     public sealed class SavingIconPresenter :IStartable, IDisposable
     {
-        ISaveService _saveService;
-        IHUDSavingService _savingIcon;
+        private readonly ISaveService _saveService;
+        private readonly IHUDSavingService _savingIcon;
 
         public SavingIconPresenter(ISaveService saveService, IHUDSavingService savingIcon)
         {

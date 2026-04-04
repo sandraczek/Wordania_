@@ -9,6 +9,7 @@ using Wordania.Core.SaveSystem;
 using Wordania.Core.SaveSystem.Data;
 using System.Linq;
 using Codice.CM.WorkspaceServer.Lock;
+using Wordania.Core.Identifiers;
 
 namespace Wordania.Features.Player
 {
@@ -40,7 +41,7 @@ namespace Wordania.Features.Player
             _lootChannel.Unsubscribe(HandleLoot);
         }
                                                 // TO DO - SWITCH TO List<>
-        public void AddItem(string id, int amount) // to do - convert all to bool
+        public void AddItem(AssetId id, int amount) // to do - convert all to bool
         {       
             var data = _database.GetItem(id);   //to do - and also structural refactor HandleLoot
             if (data == null) return;
@@ -58,7 +59,7 @@ namespace Wordania.Features.Player
             OnInventoryChanged?.Invoke();
         }
 
-        public bool RemoveItem(string id, int amount)
+        public bool RemoveItem(AssetId id, int amount)
         {
             var data = _database.GetItem(id);
             if (data == null || amount <= 0) return false;
@@ -72,7 +73,7 @@ namespace Wordania.Features.Player
 
             return false;
         }
-        public int GetQuantity(string itemId)
+        public int GetQuantity(AssetId itemId)
         {
             return _data._content.TryGetValue(itemId, out InventoryEntry entry) ? entry.Quantity : 0;
         }
@@ -95,7 +96,7 @@ namespace Wordania.Features.Player
             int slot = 0;
             foreach (InventoryEntry item in allHeldItems)
             {
-                ItemSaveData itemSave = new(item.Data.Id, item.Quantity);
+                ItemSaveData itemSave = new(item.Data.Id.Hash, item.Quantity);
                 saveData.PlayerInventory.items[slot++] = itemSave;
             }
         }
@@ -108,9 +109,9 @@ namespace Wordania.Features.Player
 
             foreach(ItemSaveData itemSave in saveData.PlayerInventory.items)
             {
-                if (!string.IsNullOrEmpty(itemSave.Id) && itemSave.Quantity > 0)
+                if (itemSave.Id!= 0 && itemSave.Quantity > 0)
                 {
-                    AddItem(itemSave.Id, itemSave.Quantity);
+                    AddItem(new AssetId(itemSave.Id), itemSave.Quantity);
                 }
             }
         }

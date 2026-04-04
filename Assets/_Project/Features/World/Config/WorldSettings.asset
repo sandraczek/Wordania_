@@ -15,7 +15,7 @@ MonoBehaviour:
   TileSize: 1
   Width: 1280
   Height: 704
-  Seed: 956995
+  Seed: 862792
   ChunkSize: 32
   CollisionLayer: 3
   RenderingBatchSize: 10
@@ -36,7 +36,7 @@ MonoBehaviour:
   MacroWeight: 0.6
   MicroScale: 0.14
   MicroWeight: 0.4
-  CaveStartDepth: 0.9
+  CaveStartDepth: 0.85
   CaveFullDensityDepth: 0.65
   GraniteScale: 0.08
   GraniteThreshold: 0.01

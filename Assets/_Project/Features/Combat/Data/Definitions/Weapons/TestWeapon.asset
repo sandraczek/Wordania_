@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2208a9c97a4c44cfd8b7d9060b2340db, type: 3}
   m_Name: TestWeapon
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Combat.Data.WeaponData
-  Name: 
-  Id:
+  _id:
     _editorId: test_weapon
-    _hash: 0
+    _hash: 1249686462
+  Name: TestWeapon
   FireRate: 0.1
   Type: 0
   Prefab: {fileID: 7263036239168703021, guid: 9b3e8c295132944359bd173cbd8e4865, type: 3}

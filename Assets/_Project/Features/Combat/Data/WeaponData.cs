@@ -1,15 +1,16 @@
 using UnityEngine;
+using Wordania.Core.Data;
 using Wordania.Core.Identifiers;
 using Wordania.Features.Combat.Core;
 
 namespace Wordania.Features.Combat.Data
 {
     [CreateAssetMenu(fileName = "NewWeapon", menuName = "Combat/Weapon")]
-    public sealed class WeaponData : ScriptableObject
+    public sealed class WeaponData : DataAsset
     {
+        [Space]
         public string Name;
-        public AssetId Id;
-        public float FireRate;
+        [Min(0.001f)]public float FireRate;
         public WeaponType Type;
         public WeaponController Prefab;
         public ProjectileData Projectile;
@@ -18,7 +19,7 @@ namespace Wordania.Features.Combat.Data
     public enum WeaponType
     {
         Single,
-        Burst,
+        Barrel,
         Shotgun,
         Laser
     }
