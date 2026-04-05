@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71bf6feee3ffc49789cec97aa0c75e77, type: 3}
-  m_Name: TestProjectile
+  m_Name: FireballData
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Combat.Data.ProjectileData
   _id:
-    _editorId: test_projectile
-    _hash: 1375304909
-  Name: Projectile
+    _editorId: fireball
+    _hash: -2084906568
+  Name: fireball
   BaseDamage: 10
   Knockback: {x: 5, y: 6}
   Speed: 50

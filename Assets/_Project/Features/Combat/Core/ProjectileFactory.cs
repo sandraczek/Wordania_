@@ -71,7 +71,7 @@ namespace Wordania.Features.Combat.Core
             view.DataId = spawnData.Data.Id;
 
             float2 initialPosition = new(spawnData.Position.x, spawnData.Position.y);
-            float2 velocity = new float2(spawnData.Direction.x, spawnData.Direction.y) * spawnData.Data.Speed;
+            float2 velocity = spawnData.Data.Speed * spawnData.SpeedMultiplier * new float2(spawnData.Direction.x, spawnData.Direction.y);
 
             var runtimeData = new ProjectileRuntimeData
             {
@@ -85,7 +85,7 @@ namespace Wordania.Features.Combat.Core
                 PreviousPosition = initialPosition,
                 Velocity = velocity,
                 
-                RemainingLifetime = spawnData.Data.Lifetime,
+                RemainingLifetime = spawnData.Data.Lifetime * spawnData.LifetimeMultiplier,
                 CurrentSpeed = spawnData.Data.Speed,
                 GravityMultiplier = spawnData.Data.GravityScale,
                 

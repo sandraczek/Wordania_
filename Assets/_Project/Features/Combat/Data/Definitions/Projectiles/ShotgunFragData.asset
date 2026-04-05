@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71bf6feee3ffc49789cec97aa0c75e77, type: 3}
+  m_Name: ShotgunFragData
+  m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Combat.Data.ProjectileData
+  _id:
+    _editorId: shotgun_frag
+    _hash: 2111780526
+  Name: shotgun frag
+  BaseDamage: 8
+  Knockback: {x: 5, y: 8}
+  Speed: 60
+  Lifetime: 0.3
+  Piercing: 0
+  GravityScale: 0
+  damageType: 0
+  Prefab: {fileID: 790785413992721850, guid: c594138992b484e06b0d1269da0054bc, type: 3}

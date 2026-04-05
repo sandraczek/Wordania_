@@ -31,13 +31,13 @@ namespace Wordania.Features.Combat.Core
         }
         public bool Fire(WeaponFireContext context)
         {
-            if(Time.time < _lastFiredTime + Data.FireRate) return false;
+            if(Time.time < _lastFiredTime + Data.FireData.FireRate) return false;
             
             _lastFiredTime = Time.time;
             _spawnBuffer.Clear();
 
 
-            int projectilesToSpawn = _strategy.CalculateFireData(context, Data.Projectile, _spawnBuffer);
+            int projectilesToSpawn = _strategy.CalculateFireData(context, Data.FireData, _spawnBuffer);
 
             for (int i = 0; i < projectilesToSpawn; i++)
             {
@@ -46,6 +46,8 @@ namespace Wordania.Features.Combat.Core
 
             return true;
         }
+
+        
 #if UNITY_EDITOR
         private void OnDrawGizmos()
         {

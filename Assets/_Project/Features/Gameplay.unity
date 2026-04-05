@@ -457,7 +457,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dd61dff4efbc4524862b87ef57dcec1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Mapping.WorldMapView
-  _canvasGroup: {fileID: 278490712}
 --- !u!1 &279305404
 GameObject:
   m_ObjectHideFlags: 0
@@ -2536,7 +2535,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640699636}
   m_Enabled: 1
-  m_Alpha: 0.9637073
+  m_Alpha: 0.30638456
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0

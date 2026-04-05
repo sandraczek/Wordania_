@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Wordania.Core.Data;
 using Wordania.Core.Identifiers;
@@ -10,17 +11,29 @@ namespace Wordania.Features.Combat.Data
     {
         [Space]
         public string Name;
-        [Min(0.001f)]public float FireRate;
         public WeaponType Type;
         public WeaponController Prefab;
+
+        public WeaponFireData FireData;
+    }
+
+    [Serializable]
+    public sealed class WeaponFireData
+    {
+        [Min(0.001f)]public float FireRate = 0.3f;
+        public float Spread = 0f;
+        public float BarrelWidth = 0f;
+        public int ProjectileCount = 1;
+        public float SpeedMultRange = 0f;
+        public float LifetimeMultRange = 0f;
         public ProjectileData Projectile;
     }
 
     public enum WeaponType
     {
+        Dummy,
         Single,
-        Barrel,
-        Shotgun,
-        Laser
+        ConeSpread,
+        Beam
     }
 }

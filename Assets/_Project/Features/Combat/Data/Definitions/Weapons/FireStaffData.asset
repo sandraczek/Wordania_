@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2208a9c97a4c44cfd8b7d9060b2340db, type: 3}
-  m_Name: MinigunData
+  m_Name: FireStaffData
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Combat.Data.WeaponData
   _id:
-    _editorId: minigun
-    _hash: 1111055368
-  Name: minigun
+    _editorId: fire_staff
+    _hash: -987192408
+  Name: fire staff
   Type: 1
-  Prefab: {fileID: 7263036239168703021, guid: 5cf27ae611150446d867246209f7d3b4, type: 3}
+  Prefab: {fileID: 7263036239168703021, guid: 9b3e8c295132944359bd173cbd8e4865, type: 3}
   FireData:
-    FireRate: 0.03
-    Spread: 6
-    BarrelWidth: 1.5
+    FireRate: 0.3
+    Spread: 5
+    BarrelWidth: 0
     ProjectileCount: 1
-    Projectile: {fileID: 11400000, guid: f5b0facbdc5da4ef5adba5a956b4fa22, type: 2}
+    Projectile: {fileID: 11400000, guid: 1a2cd5bf481a04438a0f05f1244fb3f4, type: 2}

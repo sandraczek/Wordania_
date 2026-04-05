@@ -18,7 +18,7 @@ using Wordania.Features.Markers;
 
 namespace Wordania.Features.Combat.Core
 {
-    public sealed class WeaponFactory : IWeaponFactory, IDisposable
+    public sealed class WeaponFactory : IWeaponFactory, IStartable, IDisposable
     {
         private readonly IObjectResolver _resolver;
         private readonly Dictionary<AssetId, IObjectPool<WeaponController>> _pools = new();
@@ -26,11 +26,21 @@ namespace Wordania.Features.Combat.Core
         private readonly int _defaultPoolSize = 4;
         private readonly int _maxPoolSize = 8;
         private readonly int _prewarmBatchSize = 4;
+        private IWeaponFireStrategy _dummyStrategy;
 
         public WeaponFactory(IObjectResolver resolver, IEnumerable<IWeaponFireStrategy> strategies)
         {
             _resolver = resolver;
             _strategies = strategies.ToDictionary(s => s.Type, s => s);
+        }
+        public void Start()
+        {
+            if (!_strategies.TryGetValue(WeaponType.Dummy, out IWeaponFireStrategy strategy))
+            {
+                Debug.LogWarning($"Dummy strategy is not set");
+                return;
+            }
+            _dummyStrategy = strategy;
         }
         public void Dispose()
         {
@@ -51,8 +61,8 @@ namespace Wordania.Features.Combat.Core
 
             if (!_strategies.TryGetValue(data.Type, out IWeaponFireStrategy strategy))
             {
-                Debug.LogError($"No strategy for type: {data.Type}. Aborting!");
-                return null;
+                Debug.LogWarning($"No strategy for type: {data.Type}. Setting dummy strategy");
+                strategy = _dummyStrategy;
             }
 
             var weapon = pool.Get();

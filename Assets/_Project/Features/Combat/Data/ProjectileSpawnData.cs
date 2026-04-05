@@ -9,6 +9,8 @@ namespace Wordania.Features.Combat.Data
         public Vector2 Direction;
         public ProjectileData Data;
         public float DamageMultiplier;
+        public float SpeedMultiplier;
+        public float LifetimeMultiplier;
         public int InstigatorId;
         public EntityFaction TargetFactionMask;
     }

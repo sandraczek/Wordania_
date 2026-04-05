@@ -149,7 +149,7 @@ namespace Wordania.Features.Combat.Core
                 IDamageable damageable = _entities.GetDamageable(hitEvent.HitEntityId);
                 if (damageable == null) continue;
                 var data = _projectileDatabase.GetProjectile(hitEvent.ProjectileDataId);
-                if(data == null) Debug.LogError("Data is null");
+                if(data == null) Debug.LogError("Data is null. Try refreshing projectile database");
                 float damage = data.BaseDamage * hitEvent.DamageMultiplier; 
                 Vector2 knockback = new(data.Knockback.x * Mathf.Sign(hitEvent.Direction.x), data.Knockback.y);
 

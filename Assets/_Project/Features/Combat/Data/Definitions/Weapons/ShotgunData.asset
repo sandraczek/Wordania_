@@ -10,13 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2208a9c97a4c44cfd8b7d9060b2340db, type: 3}
-  m_Name: TestWeapon
+  m_Name: ShotgunData
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Combat.Data.WeaponData
   _id:
-    _editorId: test_weapon
-    _hash: 1249686462
-  Name: TestWeapon
-  FireRate: 0.1
-  Type: 0
-  Prefab: {fileID: 7263036239168703021, guid: 9b3e8c295132944359bd173cbd8e4865, type: 3}
-  Projectile: {fileID: 11400000, guid: 1a2cd5bf481a04438a0f05f1244fb3f4, type: 2}
+    _editorId: shotgun
+    _hash: 234279893
+  Name: shotgun
+  Type: 2
+  Prefab: {fileID: 7263036239168703021, guid: c754e2168d0c140f3b7cfe1fe0f68713, type: 3}
+  FireData:
+    FireRate: 1
+    Spread: 24
+    BarrelWidth: 0.6
+    ProjectileCount: 9
+    SpeedMultRange: 0.2
+    Projectile: {fileID: 11400000, guid: f2517745aa14d424fbf71c9c278da671, type: 2}

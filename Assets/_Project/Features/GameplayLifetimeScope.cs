@@ -105,7 +105,9 @@ namespace Wordania.Features
             builder.Register<EnemyRegistryService>(Lifetime.Scoped).As<IEnemyRegistryService>();
 
             //combat
-            builder.Register<StraightFireStrategy>(Lifetime.Singleton).As<IWeaponFireStrategy>();
+            builder.Register<DummyFireStrategy>(Lifetime.Singleton).As<IWeaponFireStrategy>();
+            builder.Register<SingleFireStrategy>(Lifetime.Singleton).As<IWeaponFireStrategy>();
+            builder.Register<ConeSpreadFireStrategy>(Lifetime.Singleton).As<IWeaponFireStrategy>();
 
             builder.RegisterInstance(_projectileFiredSignal);
             builder.RegisterInstance(_hitRegisteredSignal);

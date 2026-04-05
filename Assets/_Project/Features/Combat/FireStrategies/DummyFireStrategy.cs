@@ -5,17 +5,19 @@ using Wordania.Features.Combat.Data;
 
 namespace Wordania.Features.Combat.FireStrategies
 {
-    public sealed class StraightFireStrategy : IWeaponFireStrategy
+    public sealed class DummyFireStrategy : IWeaponFireStrategy
     {
-        public WeaponType Type => WeaponType.Single;
-        public int CalculateFireData(WeaponFireContext context, ProjectileData data, List<ProjectileSpawnData> resultsBuffer)
+        public WeaponType Type => WeaponType.Dummy;
+        public int CalculateFireData(WeaponFireContext context, WeaponFireData data, List<ProjectileSpawnData> resultsBuffer)
         {
             resultsBuffer.Add(new ProjectileSpawnData
             {
                 Position = context.position,
                 Direction = context.direction,
-                Data = data,
+                Data = data.Projectile,
                 DamageMultiplier = context.damageMultiplier,
+                SpeedMultiplier = 1f,
+                LifetimeMultiplier = 1f,
                 InstigatorId = context.instigatorId,
                 TargetFactionMask = context.TargetFactionMask
             });
