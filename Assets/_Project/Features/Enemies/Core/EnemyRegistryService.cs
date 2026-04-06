@@ -2,25 +2,13 @@ using System.Collections.Generic;
 using Unity.Collections;
 using UnityEngine;
 using Wordania.Core.Gameplay;
+using Wordania.Core.Services;
 using Wordania.Features.Combat.Core;
 
 namespace Wordania.Features.Enemies.Core
 {
-    public sealed class EnemyRegistryService : IEnemyRegistryService
+    public sealed class EnemyRegistryService : Registry<IEnemy>, IEnemyRegistryService
     {
-        private readonly HashSet<IEnemy> _enemies = new();
-        public void Register(IEnemy enemy)
-        {
-            _enemies.Add(enemy);
-        }
-
-        public void Unregister(IEnemy enemy)
-        {
-            _enemies.Remove(enemy);
-        }
-        public IReadOnlyCollection<IEnemy> GetActiveEnemies()
-        {
-            return _enemies;
-        }
+        
     }
 }

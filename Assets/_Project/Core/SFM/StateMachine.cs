@@ -7,13 +7,6 @@ namespace Wordania.Core.SFM
     {
         public TState CurrentState {get;private set;}
 
-        public void Initialize(TState initialState)
-        {
-            CurrentState?.Exit();
-            CurrentState = initialState;
-            CurrentState?.Enter(); 
-        }
-
         public void Update()
         {
             CurrentState?.Update();

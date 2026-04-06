@@ -82,7 +82,7 @@ namespace Wordania.Features.Enemies.Core
             _health.SetInitial(Data.Stats.MaxHealth);
             _maxFallSpeed = 0f;
             SetGravity(Data.Movement.GravityScale);
-            _states.Initialize(_stateFactory.InitialState);
+            _states.SwitchState(_stateFactory.InitialState);
 
             _mitigation.Initialize
             (
@@ -116,7 +116,7 @@ namespace Wordania.Features.Enemies.Core
         }
         private void OnDisable()
         {
-            _registry.Unregister(this);
+            _registry.Unregister(InstanceId);
             _health.OnDamageTaken -= Handlehurt;
             _health.OnDamageTaken -= HandleHurtVisuals;
             _health.OnDeath -= HandleDeath;

@@ -4,7 +4,7 @@ using Unity.Jobs;
 using Unity.Mathematics;
 using Wordania.Core.Gameplay;
 using Wordania.Features.Combat.Data;
-using Wordania.Features.Combat.Signals;
+using Wordania.Features.Combat.Events;
 
 namespace Wordania.Features.Combat.Core
 {

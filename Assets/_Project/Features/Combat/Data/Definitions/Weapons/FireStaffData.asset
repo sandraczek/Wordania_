@@ -19,8 +19,10 @@ MonoBehaviour:
   Type: 1
   Prefab: {fileID: 7263036239168703021, guid: 9b3e8c295132944359bd173cbd8e4865, type: 3}
   FireData:
-    FireRate: 0.3
+    FireRate: 0.14
     Spread: 5
     BarrelWidth: 0
     ProjectileCount: 1
+    SpeedMultRange: 0
+    LifetimeMultRange: 0
     Projectile: {fileID: 11400000, guid: 1a2cd5bf481a04438a0f05f1244fb3f4, type: 2}

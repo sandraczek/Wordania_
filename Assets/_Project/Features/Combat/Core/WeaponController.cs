@@ -5,7 +5,7 @@ using Wordania.Core;
 using Wordania.Core.Inputs;
 using Wordania.Features.Combat.Data;
 using Wordania.Features.Combat.FireStrategies;
-using Wordania.Features.Combat.Signals;
+using Wordania.Features.Combat.Events;
 
 namespace Wordania.Features.Combat.Core
 {

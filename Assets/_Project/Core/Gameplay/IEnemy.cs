@@ -1,11 +1,11 @@
 using UnityEngine;
 using Wordania.Core.Combat;
+using Wordania.Core.Identifiers;
 
 namespace Wordania.Core.Gameplay
 {
-    public interface IEnemy
+    public interface IEnemy: IEntity
     {
-        int InstanceId { get; }
         Vector2 Position { get; }
         bool IsAlive { get; }
         void Remove();

@@ -11,7 +11,7 @@ using Wordania.Core.Combat;
 using Wordania.Core.Gameplay;
 using Wordania.Core.Identifiers;
 using Wordania.Features.Combat.Data;
-using Wordania.Features.Combat.Signals;
+using Wordania.Features.Combat.Events;
 using Wordania.Features.Markers;
 
 namespace Wordania.Features.Combat.Core

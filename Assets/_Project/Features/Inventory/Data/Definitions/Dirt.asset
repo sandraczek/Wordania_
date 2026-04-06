@@ -16,5 +16,5 @@ MonoBehaviour:
     _editorId: dirt
     _hash: 1180566432
   _displayName: dirt
-  _icon: {fileID: -5443176891660902369, guid: 5d6517b6ca68d4fed802c4e5461dcefe, type: 3}
+  _icon: {fileID: 2604776321433222153, guid: 5d6517b6ca68d4fed802c4e5461dcefe, type: 3}
   _maxStackSize: 9999

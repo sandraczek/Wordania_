@@ -69,7 +69,7 @@ namespace Wordania.Features.Player
         }
         private void Init()
         {
-            _states.Initialize(_factory.InitialState);
+            _states.SwitchState(_factory.InitialState);
 
             _mitigation.Initialize(
                 _config.GeneralResistance,

@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using UnityEditor;
 using UnityEngine;
 using Wordania.Core.Attributes;
@@ -19,3 +20,4 @@ namespace Wordania.Core.Editor
         }
     }
 }
+#endif

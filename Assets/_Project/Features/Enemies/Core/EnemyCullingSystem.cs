@@ -37,7 +37,7 @@ namespace Wordania.Features.Enemies.Core
             _enemiesToRemove.Clear();
 
             Vector2 playerPos = _player.PlayerTransform.position;
-            var activeEnemies = _registry.GetActiveEnemies();
+            var activeEnemies = _registry.GetAll();
             float despawnRadiusSqr = _settings.DespawnRadius * _settings.DespawnRadius;
 
             foreach (var enemy in activeEnemies)

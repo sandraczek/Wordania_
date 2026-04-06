@@ -37,7 +37,7 @@ namespace Wordania.Features.Enemies.Spawning
         public void Tick()
         {
             if(!_playerProvider.IsPlayerSpawned) return;
-            if(_registry.GetActiveEnemies().Count >= _settings.MaxActiveEnemies) return;
+            if(_registry.Count >= _settings.MaxActiveEnemies) return;
 
             _timeSinceLastSpawn += Time.deltaTime;
 

@@ -6,7 +6,6 @@ using Wordania.Features.Player;
 using Wordania.Core.Gameplay;
 using Wordania.Features.World;
 using Wordania.Features.Markers;
-using Wordania.Features.Events;
 using Wordania.Features.Inventory;
 using Wordania.Features.Player.FSM;
 using Wordania.Features.Services;
@@ -25,10 +24,12 @@ using Wordania.Features.Mapping;
 using Wordania.Features.HUD.Mapping;
 using Wordania.Core.HUD;
 using Wordania.Features.Combat.Core;
-using Wordania.Features.Combat.Signals;
+using Wordania.Features.Combat.Events;
 using Wordania.Core.Services;
 using Wordania.Features.Combat.Data;
 using Wordania.Features.Combat.FireStrategies;
+using Wordania.Features.Inventory.Events;
+using Wordania.Core.Data;
 
 namespace Wordania.Features
 {
@@ -43,10 +44,10 @@ namespace Wordania.Features
         [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private Chunk _chunkPrefab;
         [SerializeField] private CameraService _cameraService;
-        [SerializeField] private BlockDatabase _blockDatabase;
-        [SerializeField] private ItemDatabase _itemDatabase;
-        [SerializeField] private ProjectileDatabase _projectileDatabase;
-        [SerializeField] private LootEvent _lootEvent;
+        [SerializeField] private BlockRegistry _blockRegistry;
+        [SerializeField] private ItemRegistry _itemRegistry;
+        [SerializeField] private ProjectileRegistry _projectileRegistry;
+        [SerializeField] private LootSignal _lootSignal;
         [SerializeField] private ProjectileFiredSignal _projectileFiredSignal;
         [SerializeField] private HitRegisteredSignal _hitRegisteredSignal;
         [SerializeField] private HealthBarUI _healthBarUI;
@@ -66,12 +67,12 @@ namespace Wordania.Features
 
         protected override void Configure(IContainerBuilder builder)
         {
-            _blockDatabase.Initialize();
-            builder.RegisterInstance<IBlockDatabase>(_blockDatabase);
-            _itemDatabase.Initialize();
-            builder.RegisterInstance<IItemDatabase>(_itemDatabase);
-            _projectileDatabase.Initialize();
-            builder.RegisterInstance<IProjectileDatabase>(_projectileDatabase);
+            _blockRegistry.Initialize();
+            builder.RegisterInstance<IBlockDatabase>(_blockRegistry);
+            _itemRegistry.Initialize();
+            builder.RegisterInstance<IAssetRegistry<ItemData>>(_itemRegistry);
+            _projectileRegistry.Initialize();
+            builder.RegisterInstance<IAssetRegistry<ProjectileData>>(_projectileRegistry);
             builder.RegisterInstance<ICameraService>(_cameraService);
 
             //markers
@@ -88,7 +89,7 @@ namespace Wordania.Features
             builder.Register<WorldGenerator>(Lifetime.Scoped).As<IWorldGenerator>();
             builder.RegisterComponentInHierarchy<Grid>();
 
-            builder.RegisterInstance(_lootEvent);
+            builder.RegisterInstance(_lootSignal);
             builder.RegisterEntryPoint<WorldService>(Lifetime.Scoped).As<IWorldService>();
             builder.RegisterEntryPoint<WorldCollisionJobService>(Lifetime.Scoped).As<IWorldCollisionJobService>();
 
@@ -168,3 +169,11 @@ namespace Wordania.Features
         }
     }
 }
+    /*
+    TODOS:
+    
+    - refactor BlockDatabase
+
+
+
+    */

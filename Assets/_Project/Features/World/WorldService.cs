@@ -5,7 +5,6 @@ using System.Data;
 using System;
 using TMPro;
 using VContainer;
-using Wordania.Features.Events;
 using Cysharp.Threading.Tasks;
 using System.Threading.Tasks;
 using VContainer.Unity;
@@ -14,6 +13,7 @@ using Wordania.Core.SaveSystem.Data;
 using System.Threading;
 using System.Security.Cryptography;
 using Wordania.Core.Config;
+using Wordania.Features.Inventory.Events;
 
 namespace Wordania.Features.World
 {
@@ -27,7 +27,7 @@ namespace Wordania.Features.World
 
         [Header("Data")]
         public WorldData Data {get; private set;}
-        private readonly LootEvent _lootEvent; // TO change (Message pipe or signal bus)
+        private readonly LootSignal _lootEvent; // TO change (Message pipe or signal bus)
 
         public string SaveId => "World";
 
@@ -38,7 +38,7 @@ namespace Wordania.Features.World
             WorldSettings settings,
             IWorldGenerator generator,
             ISaveService saveService,
-            LootEvent lootEvent
+            LootSignal lootEvent
             )
         {
             _blockDatabase = blockDatabase;
@@ -88,7 +88,7 @@ namespace Wordania.Features.World
                 Data.GetTile(x,y).Damage = 0f; 
 
                 //DROPPING LOOT
-                _lootEvent.Raise(data.loot, data.lootAmount);
+                _lootEvent.Raise(new(data.loot, data.lootAmount));
 
                 changedLayers = WorldLayer.Main | WorldLayer.Damage;
             }

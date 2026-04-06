@@ -4,27 +4,28 @@ using System.Collections.Generic;
 using VContainer;
 using VContainer.Unity;
 using Wordania.Features.Inventory;
-using Wordania.Features.Events;
 using Wordania.Core.SaveSystem;
 using Wordania.Core.SaveSystem.Data;
 using System.Linq;
 using Codice.CM.WorkspaceServer.Lock;
 using Wordania.Core.Identifiers;
+using Wordania.Features.Inventory.Events;
+using Wordania.Core.Data;
 
 namespace Wordania.Features.Player
 {
     public sealed class PlayerInventoryService : IInventoryService, IDisposable, IStartable, ISaveable
     {
         private readonly InventoryData _data = new();
-        private readonly IItemDatabase _database;
+        private readonly IAssetRegistry<ItemData> _database;
 
         public string SaveId => "PlayerInventory";
 
-        private readonly LootEvent _lootChannel; // temporary
+        private readonly LootSignal _lootChannel; // temporary
         public event Action OnInventoryChanged;
         private ISaveService _saveService;
 
-        public PlayerInventoryService(IItemDatabase database, LootEvent lootEvent, ISaveService saveService)
+        public PlayerInventoryService(IAssetRegistry<ItemData> database, LootSignal lootEvent, ISaveService saveService)
         {
             _database = database;
             _lootChannel = lootEvent;
@@ -43,7 +44,7 @@ namespace Wordania.Features.Player
                                                 // TO DO - SWITCH TO List<>
         public void AddItem(AssetId id, int amount) // to do - convert all to bool
         {       
-            var data = _database.GetItem(id);   //to do - and also structural refactor HandleLoot
+            var data = _database.Get(id);   //to do - and also structural refactor HandleLoot
             if (data == null) return;
             if (data == null || amount <= 0) return;
 
@@ -61,7 +62,7 @@ namespace Wordania.Features.Player
 
         public bool RemoveItem(AssetId id, int amount)
         {
-            var data = _database.GetItem(id);
+            var data = _database.Get(id);
             if (data == null || amount <= 0) return false;
 
             if (_data._content.TryGetValue(data.Id, out InventoryEntry entry))
@@ -83,8 +84,9 @@ namespace Wordania.Features.Player
             _data._content.Clear();
         }
 
-        private void HandleLoot(ItemData item, int amount) {
-            AddItem(item.Id, amount);
+        private void HandleLoot(LootData loot)
+        {
+            AddItem(loot.Item.Id, loot.Quantity);
         }
 
         public void CaptureState(GameSaveData saveData)

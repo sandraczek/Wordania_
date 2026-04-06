@@ -583,12 +583,12 @@ TextureImporter:
       name: roguelikeitems_0
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 224
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -605,12 +605,12 @@ TextureImporter:
       name: roguelikeitems_1
       rect:
         serializedVersion: 2
-        x: 17
+        x: 16
         y: 224
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -627,12 +627,12 @@ TextureImporter:
       name: roguelikeitems_2
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 224
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -649,12 +649,12 @@ TextureImporter:
       name: roguelikeitems_3
       rect:
         serializedVersion: 2
-        x: 49
+        x: 48
         y: 224
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -671,12 +671,12 @@ TextureImporter:
       name: roguelikeitems_4
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 224
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -693,12 +693,12 @@ TextureImporter:
       name: roguelikeitems_5
       rect:
         serializedVersion: 2
-        x: 81
+        x: 80
         y: 224
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -715,12 +715,12 @@ TextureImporter:
       name: roguelikeitems_6
       rect:
         serializedVersion: 2
-        x: 97
+        x: 96
         y: 224
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -737,12 +737,12 @@ TextureImporter:
       name: roguelikeitems_7
       rect:
         serializedVersion: 2
-        x: 113
-        y: 207
-        width: 14
-        height: 33
+        x: 112
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -759,12 +759,12 @@ TextureImporter:
       name: roguelikeitems_8
       rect:
         serializedVersion: 2
-        x: 129
-        y: 207
-        width: 14
-        height: 33
+        x: 128
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -781,12 +781,12 @@ TextureImporter:
       name: roguelikeitems_9
       rect:
         serializedVersion: 2
-        x: 145
-        y: 207
-        width: 14
-        height: 33
+        x: 144
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -803,12 +803,12 @@ TextureImporter:
       name: roguelikeitems_10
       rect:
         serializedVersion: 2
-        x: 161
-        y: 207
-        width: 14
-        height: 33
+        x: 160
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -825,12 +825,12 @@ TextureImporter:
       name: roguelikeitems_11
       rect:
         serializedVersion: 2
-        x: 177
-        y: 207
-        width: 14
-        height: 33
+        x: 176
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -847,12 +847,12 @@ TextureImporter:
       name: roguelikeitems_12
       rect:
         serializedVersion: 2
-        x: 193
-        y: 207
-        width: 14
-        height: 33
+        x: 192
+        y: 224
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -869,12 +869,12 @@ TextureImporter:
       name: roguelikeitems_13
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 208
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -891,12 +891,12 @@ TextureImporter:
       name: roguelikeitems_14
       rect:
         serializedVersion: 2
-        x: 17
+        x: 16
         y: 208
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -913,12 +913,12 @@ TextureImporter:
       name: roguelikeitems_15
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 208
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -935,12 +935,12 @@ TextureImporter:
       name: roguelikeitems_16
       rect:
         serializedVersion: 2
-        x: 49
+        x: 48
         y: 208
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -957,12 +957,12 @@ TextureImporter:
       name: roguelikeitems_17
       rect:
         serializedVersion: 2
-        x: 65
+        x: 64
         y: 208
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -979,12 +979,12 @@ TextureImporter:
       name: roguelikeitems_18
       rect:
         serializedVersion: 2
-        x: 81
+        x: 80
         y: 208
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1001,12 +1001,12 @@ TextureImporter:
       name: roguelikeitems_19
       rect:
         serializedVersion: 2
-        x: 97
+        x: 96
         y: 208
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1023,12 +1023,12 @@ TextureImporter:
       name: roguelikeitems_20
       rect:
         serializedVersion: 2
-        x: 111
-        y: 192
-        width: 97
+        x: 112
+        y: 208
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1045,12 +1045,12 @@ TextureImporter:
       name: roguelikeitems_21
       rect:
         serializedVersion: 2
-        x: 1
-        y: 192
-        width: 15
-        height: 15
+        x: 128
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1067,12 +1067,12 @@ TextureImporter:
       name: roguelikeitems_22
       rect:
         serializedVersion: 2
-        x: 17
-        y: 192
-        width: 15
-        height: 15
+        x: 144
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1089,12 +1089,12 @@ TextureImporter:
       name: roguelikeitems_23
       rect:
         serializedVersion: 2
-        x: 17
-        y: 176
-        width: 13
+        x: 160
+        y: 208
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1111,12 +1111,12 @@ TextureImporter:
       name: roguelikeitems_24
       rect:
         serializedVersion: 2
-        x: 33
-        y: 192
-        width: 15
-        height: 15
+        x: 176
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1133,12 +1133,12 @@ TextureImporter:
       name: roguelikeitems_25
       rect:
         serializedVersion: 2
-        x: 49
-        y: 192
-        width: 15
-        height: 15
+        x: 192
+        y: 208
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1155,12 +1155,12 @@ TextureImporter:
       name: roguelikeitems_26
       rect:
         serializedVersion: 2
-        x: 65
+        x: 0
         y: 192
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1177,12 +1177,12 @@ TextureImporter:
       name: roguelikeitems_27
       rect:
         serializedVersion: 2
-        x: 81
+        x: 16
         y: 192
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1199,12 +1199,12 @@ TextureImporter:
       name: roguelikeitems_28
       rect:
         serializedVersion: 2
-        x: 97
+        x: 32
         y: 192
-        width: 15
-        height: 15
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1221,12 +1221,12 @@ TextureImporter:
       name: roguelikeitems_29
       rect:
         serializedVersion: 2
-        x: 97
-        y: 176
-        width: 15
+        x: 48
+        y: 192
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1243,12 +1243,12 @@ TextureImporter:
       name: roguelikeitems_30
       rect:
         serializedVersion: 2
-        x: 111
-        y: 143
-        width: 18
-        height: 50
+        x: 64
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1265,12 +1265,12 @@ TextureImporter:
       name: roguelikeitems_31
       rect:
         serializedVersion: 2
-        x: 143
-        y: 176
-        width: 33
+        x: 80
+        y: 192
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1287,12 +1287,12 @@ TextureImporter:
       name: roguelikeitems_32
       rect:
         serializedVersion: 2
-        x: 192
-        y: 178
+        x: 96
+        y: 192
         width: 16
-        height: 14
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1309,12 +1309,12 @@ TextureImporter:
       name: roguelikeitems_33
       rect:
         serializedVersion: 2
-        x: 0
-        y: 176
+        x: 112
+        y: 192
         width: 16
-        height: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1331,12 +1331,12 @@ TextureImporter:
       name: roguelikeitems_34
       rect:
         serializedVersion: 2
-        x: 32
-        y: 176
+        x: 128
+        y: 192
         width: 16
-        height: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1353,12 +1353,12 @@ TextureImporter:
       name: roguelikeitems_35
       rect:
         serializedVersion: 2
-        x: 48
-        y: 176
+        x: 144
+        y: 192
         width: 16
-        height: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1375,12 +1375,12 @@ TextureImporter:
       name: roguelikeitems_36
       rect:
         serializedVersion: 2
-        x: 64
-        y: 176
-        width: 15
-        height: 15
+        x: 160
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1397,12 +1397,12 @@ TextureImporter:
       name: roguelikeitems_37
       rect:
         serializedVersion: 2
-        x: 79
-        y: 176
-        width: 17
-        height: 15
+        x: 176
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1419,12 +1419,12 @@ TextureImporter:
       name: roguelikeitems_38
       rect:
         serializedVersion: 2
-        x: 127
-        y: 178
-        width: 18
-        height: 11
+        x: 192
+        y: 192
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1441,12 +1441,12 @@ TextureImporter:
       name: roguelikeitems_39
       rect:
         serializedVersion: 2
-        x: 175
-        y: 179
-        width: 18
-        height: 10
+        x: 0
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1463,12 +1463,12 @@ TextureImporter:
       name: roguelikeitems_40
       rect:
         serializedVersion: 2
-        x: 0
-        y: 162
-        width: 17
-        height: 11
+        x: 16
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1485,12 +1485,12 @@ TextureImporter:
       name: roguelikeitems_41
       rect:
         serializedVersion: 2
-        x: 16
-        y: 162
-        width: 17
-        height: 11
+        x: 32
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1507,12 +1507,12 @@ TextureImporter:
       name: roguelikeitems_42
       rect:
         serializedVersion: 2
-        x: 32
-        y: 162
-        width: 17
-        height: 11
+        x: 48
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1529,12 +1529,12 @@ TextureImporter:
       name: roguelikeitems_43
       rect:
         serializedVersion: 2
-        x: 48
-        y: 162
-        width: 17
-        height: 11
+        x: 64
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1551,12 +1551,12 @@ TextureImporter:
       name: roguelikeitems_44
       rect:
         serializedVersion: 2
-        x: 64
-        y: 162
-        width: 17
-        height: 11
+        x: 80
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1573,12 +1573,12 @@ TextureImporter:
       name: roguelikeitems_45
       rect:
         serializedVersion: 2
-        x: 80
-        y: 162
-        width: 17
-        height: 11
+        x: 96
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1595,12 +1595,12 @@ TextureImporter:
       name: roguelikeitems_46
       rect:
         serializedVersion: 2
-        x: 96
-        y: 162
-        width: 17
-        height: 11
+        x: 112
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1617,12 +1617,12 @@ TextureImporter:
       name: roguelikeitems_47
       rect:
         serializedVersion: 2
-        x: 129
-        y: 143
-        width: 15
-        height: 34
+        x: 128
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1639,12 +1639,12 @@ TextureImporter:
       name: roguelikeitems_48
       rect:
         serializedVersion: 2
-        x: 145
-        y: 143
-        width: 15
-        height: 34
+        x: 144
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1661,12 +1661,12 @@ TextureImporter:
       name: roguelikeitems_49
       rect:
         serializedVersion: 2
-        x: 159
-        y: 111
-        width: 34
-        height: 66
+        x: 160
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1683,12 +1683,12 @@ TextureImporter:
       name: roguelikeitems_50
       rect:
         serializedVersion: 2
-        x: 191
-        y: 127
-        width: 17
-        height: 50
+        x: 176
+        y: 176
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1705,12 +1705,12 @@ TextureImporter:
       name: roguelikeitems_51
       rect:
         serializedVersion: 2
-        x: 0
-        y: 144
+        x: 192
+        y: 176
         width: 16
-        height: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1727,12 +1727,12 @@ TextureImporter:
       name: roguelikeitems_52
       rect:
         serializedVersion: 2
-        x: 15
-        y: 144
-        width: 17
-        height: 15
+        x: 0
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1749,12 +1749,12 @@ TextureImporter:
       name: roguelikeitems_53
       rect:
         serializedVersion: 2
-        x: 31
-        y: 144
-        width: 17
-        height: 15
+        x: 16
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1771,12 +1771,12 @@ TextureImporter:
       name: roguelikeitems_54
       rect:
         serializedVersion: 2
-        x: 47
-        y: 144
-        width: 17
-        height: 15
+        x: 32
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1793,12 +1793,12 @@ TextureImporter:
       name: roguelikeitems_55
       rect:
         serializedVersion: 2
-        x: 63
-        y: 144
-        width: 17
-        height: 15
+        x: 48
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1815,12 +1815,12 @@ TextureImporter:
       name: roguelikeitems_56
       rect:
         serializedVersion: 2
-        x: 63
-        y: 127
-        width: 18
-        height: 18
+        x: 64
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1837,12 +1837,12 @@ TextureImporter:
       name: roguelikeitems_57
       rect:
         serializedVersion: 2
-        x: 79
-        y: 144
-        width: 17
-        height: 15
+        x: 80
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1859,12 +1859,12 @@ TextureImporter:
       name: roguelikeitems_58
       rect:
         serializedVersion: 2
-        x: 79
-        y: 127
-        width: 18
-        height: 18
+        x: 96
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1881,12 +1881,12 @@ TextureImporter:
       name: roguelikeitems_59
       rect:
         serializedVersion: 2
-        x: 95
-        y: 144
-        width: 17
-        height: 15
+        x: 112
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1903,12 +1903,12 @@ TextureImporter:
       name: roguelikeitems_60
       rect:
         serializedVersion: 2
-        x: 127
-        y: 127
-        width: 18
-        height: 17
+        x: 128
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1925,12 +1925,12 @@ TextureImporter:
       name: roguelikeitems_61
       rect:
         serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 15
+        x: 144
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1947,12 +1947,12 @@ TextureImporter:
       name: roguelikeitems_62
       rect:
         serializedVersion: 2
-        x: 0
-        y: 95
-        width: 33
-        height: 34
+        x: 160
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1969,12 +1969,12 @@ TextureImporter:
       name: roguelikeitems_63
       rect:
         serializedVersion: 2
-        x: 15
-        y: 95
-        width: 34
-        height: 34
+        x: 176
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1991,12 +1991,12 @@ TextureImporter:
       name: roguelikeitems_64
       rect:
         serializedVersion: 2
-        x: 31
-        y: 95
-        width: 34
-        height: 34
+        x: 192
+        y: 160
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2013,12 +2013,12 @@ TextureImporter:
       name: roguelikeitems_65
       rect:
         serializedVersion: 2
-        x: 47
-        y: 95
-        width: 34
-        height: 34
+        x: 0
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2035,12 +2035,12 @@ TextureImporter:
       name: roguelikeitems_66
       rect:
         serializedVersion: 2
-        x: 79
-        y: 95
-        width: 34
-        height: 34
+        x: 16
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2057,12 +2057,12 @@ TextureImporter:
       name: roguelikeitems_67
       rect:
         serializedVersion: 2
-        x: 98
-        y: 129
-        width: 14
-        height: 14
+        x: 32
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2079,12 +2079,12 @@ TextureImporter:
       name: roguelikeitems_68
       rect:
         serializedVersion: 2
-        x: 111
-        y: 111
+        x: 48
+        y: 144
         width: 16
-        height: 18
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2101,12 +2101,12 @@ TextureImporter:
       name: roguelikeitems_69
       rect:
         serializedVersion: 2
-        x: 113
-        y: 129
-        width: 14
-        height: 12
+        x: 64
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2123,12 +2123,12 @@ TextureImporter:
       name: roguelikeitems_70
       rect:
         serializedVersion: 2
-        x: 127
-        y: 111
-        width: 18
-        height: 18
+        x: 80
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2145,12 +2145,12 @@ TextureImporter:
       name: roguelikeitems_71
       rect:
         serializedVersion: 2
-        x: 143
-        y: 129
-        width: 18
-        height: 13
+        x: 96
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2167,12 +2167,12 @@ TextureImporter:
       name: roguelikeitems_72
       rect:
         serializedVersion: 2
-        x: 143
-        y: 111
-        width: 18
-        height: 18
+        x: 112
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2189,12 +2189,12 @@ TextureImporter:
       name: roguelikeitems_73
       rect:
         serializedVersion: 2
-        x: 175
-        y: 95
-        width: 33
-        height: 34
+        x: 128
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2211,12 +2211,12 @@ TextureImporter:
       name: roguelikeitems_74
       rect:
         serializedVersion: 2
-        x: 0
-        y: 79
+        x: 144
+        y: 144
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2233,12 +2233,12 @@ TextureImporter:
       name: roguelikeitems_75
       rect:
         serializedVersion: 2
-        x: 16
-        y: 79
+        x: 160
+        y: 144
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2255,12 +2255,12 @@ TextureImporter:
       name: roguelikeitems_76
       rect:
         serializedVersion: 2
-        x: 32
-        y: 79
+        x: 176
+        y: 144
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2277,12 +2277,12 @@ TextureImporter:
       name: roguelikeitems_77
       rect:
         serializedVersion: 2
-        x: 47
-        y: 47
-        width: 34
-        height: 50
+        x: 192
+        y: 144
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2299,12 +2299,12 @@ TextureImporter:
       name: roguelikeitems_78
       rect:
         serializedVersion: 2
-        x: 79
-        y: 79
-        width: 34
-        height: 17
+        x: 0
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2321,12 +2321,12 @@ TextureImporter:
       name: roguelikeitems_79
       rect:
         serializedVersion: 2
-        x: 111
-        y: 95
-        width: 18
-        height: 18
+        x: 16
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2343,12 +2343,12 @@ TextureImporter:
       name: roguelikeitems_80
       rect:
         serializedVersion: 2
-        x: 112
-        y: 79
-        width: 17
-        height: 17
+        x: 32
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2365,12 +2365,12 @@ TextureImporter:
       name: roguelikeitems_81
       rect:
         serializedVersion: 2
-        x: 127
-        y: 95
-        width: 18
-        height: 18
+        x: 48
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2387,12 +2387,12 @@ TextureImporter:
       name: roguelikeitems_82
       rect:
         serializedVersion: 2
-        x: 128
-        y: 80
+        x: 64
+        y: 128
         width: 16
-        height: 15
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2409,12 +2409,12 @@ TextureImporter:
       name: roguelikeitems_83
       rect:
         serializedVersion: 2
-        x: 143
-        y: 95
-        width: 18
-        height: 18
+        x: 80
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2431,12 +2431,12 @@ TextureImporter:
       name: roguelikeitems_84
       rect:
         serializedVersion: 2
-        x: 144
-        y: 79
-        width: 17
-        height: 17
+        x: 96
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2453,12 +2453,12 @@ TextureImporter:
       name: roguelikeitems_85
       rect:
         serializedVersion: 2
-        x: 159
-        y: 95
-        width: 17
-        height: 17
+        x: 112
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2475,12 +2475,12 @@ TextureImporter:
       name: roguelikeitems_86
       rect:
         serializedVersion: 2
-        x: 161
-        y: 79
-        width: 15
-        height: 17
+        x: 128
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2497,12 +2497,12 @@ TextureImporter:
       name: roguelikeitems_87
       rect:
         serializedVersion: 2
-        x: 175
-        y: 79
-        width: 17
-        height: 17
+        x: 144
+        y: 128
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2519,12 +2519,12 @@ TextureImporter:
       name: roguelikeitems_88
       rect:
         serializedVersion: 2
-        x: 191
-        y: 79
-        width: 17
+        x: 160
+        y: 128
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2541,12 +2541,12 @@ TextureImporter:
       name: roguelikeitems_89
       rect:
         serializedVersion: 2
-        x: 0
-        y: 64
-        width: 48
+        x: 176
+        y: 128
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2563,12 +2563,12 @@ TextureImporter:
       name: roguelikeitems_90
       rect:
         serializedVersion: 2
-        x: 0
-        y: 48
+        x: 192
+        y: 128
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2585,12 +2585,12 @@ TextureImporter:
       name: roguelikeitems_91
       rect:
         serializedVersion: 2
-        x: 31
-        y: 47
-        width: 18
-        height: 18
+        x: 0
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2607,12 +2607,12 @@ TextureImporter:
       name: roguelikeitems_92
       rect:
         serializedVersion: 2
-        x: 80
-        y: 64
-        width: 17
-        height: 14
+        x: 16
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2629,12 +2629,12 @@ TextureImporter:
       name: roguelikeitems_93
       rect:
         serializedVersion: 2
-        x: 96
-        y: 64
+        x: 32
+        y: 112
         width: 16
-        height: 12
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2651,12 +2651,12 @@ TextureImporter:
       name: roguelikeitems_94
       rect:
         serializedVersion: 2
-        x: 96
-        y: 48
-        width: 17
-        height: 17
+        x: 48
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2673,12 +2673,12 @@ TextureImporter:
       name: roguelikeitems_95
       rect:
         serializedVersion: 2
-        x: 111
-        y: 15
-        width: 97
-        height: 50
+        x: 64
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2695,12 +2695,12 @@ TextureImporter:
       name: roguelikeitems_96
       rect:
         serializedVersion: 2
-        x: 112
-        y: 65
+        x: 80
+        y: 112
         width: 16
-        height: 8
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2717,12 +2717,12 @@ TextureImporter:
       name: roguelikeitems_97
       rect:
         serializedVersion: 2
-        x: 128
-        y: 64
-        width: 17
-        height: 14
+        x: 96
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2739,12 +2739,12 @@ TextureImporter:
       name: roguelikeitems_98
       rect:
         serializedVersion: 2
-        x: 144
-        y: 64
+        x: 112
+        y: 112
         width: 16
-        height: 12
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2761,12 +2761,12 @@ TextureImporter:
       name: roguelikeitems_99
       rect:
         serializedVersion: 2
-        x: 161
-        y: 63
-        width: 15
-        height: 17
+        x: 128
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2783,12 +2783,12 @@ TextureImporter:
       name: roguelikeitems_100
       rect:
         serializedVersion: 2
-        x: 176
-        y: 64
-        width: 15
-        height: 15
+        x: 144
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2805,12 +2805,12 @@ TextureImporter:
       name: roguelikeitems_101
       rect:
         serializedVersion: 2
-        x: 193
-        y: 63
-        width: 14
-        height: 17
+        x: 160
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2827,12 +2827,12 @@ TextureImporter:
       name: roguelikeitems_102
       rect:
         serializedVersion: 2
-        x: 0
-        y: 31
+        x: 176
+        y: 112
         width: 16
-        height: 18
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2849,12 +2849,12 @@ TextureImporter:
       name: roguelikeitems_103
       rect:
         serializedVersion: 2
-        x: 15
-        y: 47
-        width: 17
-        height: 17
+        x: 192
+        y: 112
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2871,12 +2871,12 @@ TextureImporter:
       name: roguelikeitems_104
       rect:
         serializedVersion: 2
-        x: 16
-        y: 31
+        x: 0
+        y: 96
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2893,12 +2893,12 @@ TextureImporter:
       name: roguelikeitems_105
       rect:
         serializedVersion: 2
-        x: 32
-        y: 31
+        x: 16
+        y: 96
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2915,12 +2915,12 @@ TextureImporter:
       name: roguelikeitems_106
       rect:
         serializedVersion: 2
-        x: 50
-        y: 32
-        width: 13
+        x: 32
+        y: 96
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2937,12 +2937,12 @@ TextureImporter:
       name: roguelikeitems_107
       rect:
         serializedVersion: 2
-        x: 65
-        y: 32
+        x: 48
+        y: 96
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2959,12 +2959,12 @@ TextureImporter:
       name: roguelikeitems_108
       rect:
         serializedVersion: 2
-        x: 80
-        y: 48
-        width: 17
+        x: 64
+        y: 96
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -2981,12 +2981,12 @@ TextureImporter:
       name: roguelikeitems_109
       rect:
         serializedVersion: 2
-        x: 83
-        y: 32
-        width: 13
+        x: 80
+        y: 96
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3003,12 +3003,12 @@ TextureImporter:
       name: roguelikeitems_110
       rect:
         serializedVersion: 2
-        x: 31
-        y: 16
-        width: 17
+        x: 96
+        y: 96
+        width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3025,12 +3025,12 @@ TextureImporter:
       name: roguelikeitems_111
       rect:
         serializedVersion: 2
-        x: 80
-        y: 16
+        x: 112
+        y: 96
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3047,12 +3047,12 @@ TextureImporter:
       name: roguelikeitems_112
       rect:
         serializedVersion: 2
-        x: 96
-        y: 17
-        width: 15
-        height: 15
+        x: 128
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3069,12 +3069,12 @@ TextureImporter:
       name: roguelikeitems_113
       rect:
         serializedVersion: 2
-        x: 97
-        y: 32
-        width: 13
-        height: 15
+        x: 144
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3091,12 +3091,12 @@ TextureImporter:
       name: roguelikeitems_114
       rect:
         serializedVersion: 2
-        x: 0
-        y: 16
+        x: 160
+        y: 96
         width: 16
-        height: 12
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3113,12 +3113,12 @@ TextureImporter:
       name: roguelikeitems_115
       rect:
         serializedVersion: 2
-        x: 18
-        y: 16
-        width: 14
-        height: 14
+        x: 176
+        y: 96
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3135,12 +3135,12 @@ TextureImporter:
       name: roguelikeitems_116
       rect:
         serializedVersion: 2
-        x: 48
-        y: 18
+        x: 192
+        y: 96
         width: 16
-        height: 12
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3157,12 +3157,12 @@ TextureImporter:
       name: roguelikeitems_117
       rect:
         serializedVersion: 2
-        x: 65
-        y: 16
+        x: 0
+        y: 80
         width: 16
-        height: 14
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3179,12 +3179,12 @@ TextureImporter:
       name: roguelikeitems_118
       rect:
         serializedVersion: 2
-        x: 0
-        y: 9
-        width: 6
-        height: 7
+        x: 16
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3201,12 +3201,12 @@ TextureImporter:
       name: roguelikeitems_119
       rect:
         serializedVersion: 2
-        x: 5
-        y: 7
-        width: 6
-        height: 8
+        x: 32
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3223,12 +3223,12 @@ TextureImporter:
       name: roguelikeitems_120
       rect:
         serializedVersion: 2
-        x: 14
-        y: 9
-        width: 6
-        height: 7
+        x: 48
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3245,12 +3245,12 @@ TextureImporter:
       name: roguelikeitems_121
       rect:
         serializedVersion: 2
-        x: 19
-        y: 9
-        width: 6
-        height: 6
+        x: 64
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3267,12 +3267,12 @@ TextureImporter:
       name: roguelikeitems_122
       rect:
         serializedVersion: 2
-        x: 24
-        y: 9
-        width: 6
-        height: 6
+        x: 80
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3289,12 +3289,12 @@ TextureImporter:
       name: roguelikeitems_123
       rect:
         serializedVersion: 2
-        x: 33
-        y: 9
-        width: 11
-        height: 7
+        x: 96
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3311,12 +3311,12 @@ TextureImporter:
       name: roguelikeitems_124
       rect:
         serializedVersion: 2
-        x: 43
-        y: 9
-        width: 10
-        height: 7
+        x: 112
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3333,12 +3333,12 @@ TextureImporter:
       name: roguelikeitems_125
       rect:
         serializedVersion: 2
-        x: 52
-        y: 9
-        width: 7
-        height: 6
+        x: 128
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3355,12 +3355,12 @@ TextureImporter:
       name: roguelikeitems_126
       rect:
         serializedVersion: 2
-        x: 58
-        y: 9
-        width: 6
-        height: 6
+        x: 144
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3377,12 +3377,12 @@ TextureImporter:
       name: roguelikeitems_127
       rect:
         serializedVersion: 2
-        x: 63
-        y: 9
-        width: 6
-        height: 6
+        x: 160
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3399,12 +3399,12 @@ TextureImporter:
       name: roguelikeitems_128
       rect:
         serializedVersion: 2
-        x: 68
-        y: 9
-        width: 6
-        height: 6
+        x: 176
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3421,12 +3421,12 @@ TextureImporter:
       name: roguelikeitems_129
       rect:
         serializedVersion: 2
-        x: 115
-        y: 9
-        width: 14
-        height: 7
+        x: 192
+        y: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3443,12 +3443,12 @@ TextureImporter:
       name: roguelikeitems_130
       rect:
         serializedVersion: 2
-        x: 128
-        y: 9
-        width: 10
-        height: 7
+        x: 0
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3465,12 +3465,12 @@ TextureImporter:
       name: roguelikeitems_131
       rect:
         serializedVersion: 2
-        x: 137
-        y: 9
-        width: 8
-        height: 7
+        x: 16
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3487,12 +3487,12 @@ TextureImporter:
       name: roguelikeitems_132
       rect:
         serializedVersion: 2
-        x: 144
-        y: 9
-        width: 6
-        height: 6
+        x: 32
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3509,12 +3509,12 @@ TextureImporter:
       name: roguelikeitems_133
       rect:
         serializedVersion: 2
-        x: 153
-        y: 9
-        width: 10
-        height: 7
+        x: 48
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3531,12 +3531,12 @@ TextureImporter:
       name: roguelikeitems_134
       rect:
         serializedVersion: 2
-        x: 162
-        y: 9
-        width: 7
-        height: 6
+        x: 64
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3553,12 +3553,12 @@ TextureImporter:
       name: roguelikeitems_135
       rect:
         serializedVersion: 2
-        x: 168
-        y: 9
-        width: 7
-        height: 6
+        x: 80
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3575,12 +3575,12 @@ TextureImporter:
       name: roguelikeitems_136
       rect:
         serializedVersion: 2
-        x: 174
-        y: 9
-        width: 6
-        height: 6
+        x: 96
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3597,12 +3597,12 @@ TextureImporter:
       name: roguelikeitems_137
       rect:
         serializedVersion: 2
-        x: 179
-        y: 9
-        width: 6
-        height: 6
+        x: 112
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3619,12 +3619,12 @@ TextureImporter:
       name: roguelikeitems_138
       rect:
         serializedVersion: 2
-        x: 184
-        y: 9
-        width: 6
-        height: 6
+        x: 128
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3641,12 +3641,12 @@ TextureImporter:
       name: roguelikeitems_139
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 20
-        height: 7
+        x: 144
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3663,12 +3663,12 @@ TextureImporter:
       name: roguelikeitems_140
       rect:
         serializedVersion: 2
-        x: 19
-        y: 0
-        width: 14
-        height: 7
+        x: 160
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3685,12 +3685,12 @@ TextureImporter:
       name: roguelikeitems_141
       rect:
         serializedVersion: 2
-        x: 36
-        y: 0
-        width: 7
-        height: 7
+        x: 176
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3707,12 +3707,12 @@ TextureImporter:
       name: roguelikeitems_142
       rect:
         serializedVersion: 2
-        x: 42
-        y: 0
-        width: 6
-        height: 7
+        x: 192
+        y: 64
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3729,12 +3729,12 @@ TextureImporter:
       name: roguelikeitems_143
       rect:
         serializedVersion: 2
-        x: 47
-        y: 0
-        width: 6
-        height: 6
+        x: 0
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3751,12 +3751,12 @@ TextureImporter:
       name: roguelikeitems_144
       rect:
         serializedVersion: 2
-        x: 52
-        y: 0
-        width: 10
-        height: 7
+        x: 16
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3773,12 +3773,12 @@ TextureImporter:
       name: roguelikeitems_145
       rect:
         serializedVersion: 2
-        x: 61
-        y: 0
-        width: 10
-        height: 6
+        x: 32
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3795,12 +3795,12 @@ TextureImporter:
       name: roguelikeitems_146
       rect:
         serializedVersion: 2
-        x: 70
-        y: 0
-        width: 10
-        height: 7
+        x: 48
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3817,12 +3817,12 @@ TextureImporter:
       name: roguelikeitems_147
       rect:
         serializedVersion: 2
-        x: 79
-        y: 0
-        width: 6
-        height: 6
+        x: 64
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3839,12 +3839,12 @@ TextureImporter:
       name: roguelikeitems_148
       rect:
         serializedVersion: 2
-        x: 84
-        y: 0
-        width: 9
-        height: 7
+        x: 80
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3861,12 +3861,12 @@ TextureImporter:
       name: roguelikeitems_149
       rect:
         serializedVersion: 2
-        x: 115
-        y: 0
-        width: 10
-        height: 7
+        x: 96
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3883,12 +3883,12 @@ TextureImporter:
       name: roguelikeitems_150
       rect:
         serializedVersion: 2
-        x: 124
-        y: 0
+        x: 112
+        y: 48
         width: 16
-        height: 7
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3905,12 +3905,12 @@ TextureImporter:
       name: roguelikeitems_151
       rect:
         serializedVersion: 2
-        x: 139
-        y: 0
-        width: 10
-        height: 7
+        x: 128
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3927,12 +3927,12 @@ TextureImporter:
       name: roguelikeitems_152
       rect:
         serializedVersion: 2
-        x: 148
-        y: 0
-        width: 8
-        height: 7
+        x: 144
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3949,12 +3949,12 @@ TextureImporter:
       name: roguelikeitems_153
       rect:
         serializedVersion: 2
-        x: 155
-        y: 0
-        width: 10
-        height: 6
+        x: 176
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3971,12 +3971,12 @@ TextureImporter:
       name: roguelikeitems_154
       rect:
         serializedVersion: 2
-        x: 164
-        y: 0
-        width: 6
-        height: 7
+        x: 192
+        y: 48
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -3993,12 +3993,12 @@ TextureImporter:
       name: roguelikeitems_155
       rect:
         serializedVersion: 2
-        x: 169
-        y: 0
-        width: 6
-        height: 7
+        x: 0
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4015,12 +4015,12 @@ TextureImporter:
       name: roguelikeitems_156
       rect:
         serializedVersion: 2
-        x: 174
-        y: 0
-        width: 10
-        height: 6
+        x: 16
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4037,12 +4037,12 @@ TextureImporter:
       name: roguelikeitems_157
       rect:
         serializedVersion: 2
-        x: 183
-        y: 0
-        width: 6
-        height: 6
+        x: 32
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4059,12 +4059,12 @@ TextureImporter:
       name: roguelikeitems_158
       rect:
         serializedVersion: 2
-        x: 188
-        y: 0
-        width: 8
-        height: 7
+        x: 48
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4081,12 +4081,12 @@ TextureImporter:
       name: roguelikeitems_159
       rect:
         serializedVersion: 2
-        x: 195
-        y: 0
-        width: 8
-        height: 7
+        x: 64
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4103,12 +4103,12 @@ TextureImporter:
       name: roguelikeitems_160
       rect:
         serializedVersion: 2
-        x: 202
-        y: 0
-        width: 6
-        height: 6
+        x: 80
+        y: 32
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -4121,11 +4121,715 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_161
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57ba2509f86714c0f9793d8ce28feba8
+      internalID: -541116533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_162
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07bd254edd22e49da86a0fb9c3fbee69
+      internalID: 1186180891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_163
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c3bfabcf547f4ff29eb941be0540d45
+      internalID: -1310423239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_164
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cadeb38ac61447a2b46fd4f583d1242
+      internalID: -1017288632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_165
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 183fe3ac438124e41893bd3e5d16f5ac
+      internalID: -282394047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_166
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83eba821738874188acc4f4c8d7c4077
+      internalID: 976102615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_167
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 889dcf991fd6043debf8acc9d5cb054e
+      internalID: 1757369826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_168
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9a61bb373d2c4b7db5721bcb1d389c2
+      internalID: 524416603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_169
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0954917dd944ca2a544664bbdb6ff4
+      internalID: 1870213998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_170
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ebc3925e2d344d08b2a73572e47e698
+      internalID: -1970779140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_171
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 162f95c480e9c4782a45d51d49337c9e
+      internalID: 1016942899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_172
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d4a9d7518f5409b9fea7fc929057a2
+      internalID: -96891612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_173
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd0d54ddffc1b4e5db48d4193ab930a8
+      internalID: -319552095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_174
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 610de2e23fdeb4ee68e58c8808f8a239
+      internalID: 1806929091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_175
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ee61065ef62749a4955db69960910d8
+      internalID: -2090815752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_176
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e2516e503e846c7aa285d231c6baa7
+      internalID: -458457569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_177
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6d19af3fe76a431b82cc08b2c9a2f45
+      internalID: -975177324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_178
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa0ae54e34cbe44d0aac4006d765d63a
+      internalID: -2108543875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_179
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbdc33229accb4bec865ae21de447341
+      internalID: 649529505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_180
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c485ad5f95c84f32bab7a6d535b1df3
+      internalID: 1210689186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_181
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 963866a17e98a4d82a0e3d9c52fb5eb1
+      internalID: -1596196819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_182
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6e3fa7a71804da5902c5fcab0f470c
+      internalID: -1951116083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_183
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695fb2bb0505f42168ab9070c4b25748
+      internalID: -1979580036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_184
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf39df46d76e460388b0e40f4c10776
+      internalID: -444573151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_185
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e95f8a3e3dce4a2a8b1071d76f54fab
+      internalID: 124453505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_186
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9cecf64c69984687973564c3f30bb05
+      internalID: -255342233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_187
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edc45c7154a0049fabcb7360169ab913
+      internalID: -953130088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_188
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b7fbbb06fb14c538ed6b1aae9ff0db
+      internalID: -1106337171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_189
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5bd4effca99544d5842776c0c70b2f8
+      internalID: -1930962693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_190
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4eedd152c36314e799f7c405836e3da4
+      internalID: -466958747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_191
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47700c8ad3a3148c8a115e50598c88e6
+      internalID: 1602694748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: roguelikeitems_192
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d615ff20afcf45e1bd6efba900b01a8
+      internalID: 129974716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 541ff3cba11fa48569f44defb85d0515
     internalID: 0
     vertices: []
     indices: 
@@ -4133,7 +4837,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       roguelikeitems_0: 5786248460588832156
       roguelikeitems_1: -6100301934867516981
@@ -4205,9 +4911,41 @@ TextureImporter:
       roguelikeitems_159: -2046105579474861117
       roguelikeitems_16: -5232538134608421308
       roguelikeitems_160: 2241540800713797428
+      roguelikeitems_161: -541116533
+      roguelikeitems_162: 1186180891
+      roguelikeitems_163: -1310423239
+      roguelikeitems_164: -1017288632
+      roguelikeitems_165: -282394047
+      roguelikeitems_166: 976102615
+      roguelikeitems_167: 1757369826
+      roguelikeitems_168: 524416603
+      roguelikeitems_169: 1870213998
       roguelikeitems_17: 1064241264874364920
+      roguelikeitems_170: -1970779140
+      roguelikeitems_171: 1016942899
+      roguelikeitems_172: -96891612
+      roguelikeitems_173: -319552095
+      roguelikeitems_174: 1806929091
+      roguelikeitems_175: -2090815752
+      roguelikeitems_176: -458457569
+      roguelikeitems_177: -975177324
+      roguelikeitems_178: -2108543875
+      roguelikeitems_179: 649529505
       roguelikeitems_18: -9021702216150894085
+      roguelikeitems_180: 1210689186
+      roguelikeitems_181: -1596196819
+      roguelikeitems_182: -1951116083
+      roguelikeitems_183: -1979580036
+      roguelikeitems_184: -444573151
+      roguelikeitems_185: 124453505
+      roguelikeitems_186: -255342233
+      roguelikeitems_187: -953130088
+      roguelikeitems_188: -1106337171
+      roguelikeitems_189: -1930962693
       roguelikeitems_19: -4663133007799939943
+      roguelikeitems_190: -466958747
+      roguelikeitems_191: 1602694748
+      roguelikeitems_192: 129974716
       roguelikeitems_2: 2890575639023603587
       roguelikeitems_20: 5105014834286726108
       roguelikeitems_21: 1229741282281883554

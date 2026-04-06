@@ -20,7 +20,6 @@ namespace Wordania.Features.Enemies.Data
         [SerializeField] public DamageType DamageType = DamageType.Physical;
         [SerializeField] public HealthChangeSource DamageSource = HealthChangeSource.Generic;
 
-        [Header("Damage")]
         [SerializeField] public float HitStunDuration = 0.2f;
         [SerializeField] public float InvincibilityDuration = 0.2f;
         [SerializeField] public float GeneralResistance = 0f;
