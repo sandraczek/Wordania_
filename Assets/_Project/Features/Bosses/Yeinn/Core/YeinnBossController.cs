@@ -16,7 +16,7 @@ namespace Wordania.Features.Bosses.Yeinn.Core
     public sealed class YeinnBossController : BossController<YeinnTemplate>, IEnemy
     {
         [Header("Dependencies")]
-        private IEnemyRegistryService _enemyRegistry;
+        private IActiveEnemiesRegistryService _enemyRegistry;
         private BossDefeatedSignal _defeatedSignal;
         [Header("Boss Parts")]
         [SerializeField] private YeinnHeadController _head;
@@ -40,7 +40,7 @@ namespace Wordania.Features.Bosses.Yeinn.Core
         public int InstanceId => GetInstanceID();
 
         [Inject]
-        public void Construct(BossDefeatedSignal defeatedSignal, IEnemyRegistryService enemyRegistry)
+        public void Construct(BossDefeatedSignal defeatedSignal, IActiveEnemiesRegistryService enemyRegistry)
         {
             _defeatedSignal = defeatedSignal;
             _enemyRegistry = enemyRegistry;

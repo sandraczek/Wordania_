@@ -14,7 +14,7 @@ namespace Wordania.Features.Enemies.Spawning
     public sealed class EnemySpawnSystem : ITickable
     {
         private readonly EnemySystemSettings _settings;
-        private readonly IEnemyRegistryService _registry;
+        private readonly IActiveEnemiesRegistryService _registry;
         private readonly IEnemyFactory _factory;
         private readonly IPlayerProvider _playerProvider;
         private readonly IReadOnlyList<ISpawnValidator> _validators;
@@ -24,7 +24,7 @@ namespace Wordania.Features.Enemies.Spawning
         //DEBUG
         private readonly EnemyTemplate _enemyToSpawn;
 
-        public EnemySpawnSystem(EnemySystemSettings settings, IEnemyRegistryService registry, IEnemyFactory enemyFactory, IPlayerProvider playerProvider, IReadOnlyList<ISpawnValidator> validators, /*DEBUG*/EnemyTemplate enemyTemplate)
+        public EnemySpawnSystem(EnemySystemSettings settings, IActiveEnemiesRegistryService registry, IEnemyFactory enemyFactory, IPlayerProvider playerProvider, IReadOnlyList<ISpawnValidator> validators, /*DEBUG*/EnemyTemplate enemyTemplate)
         {
             _settings = settings;
             _registry = registry;

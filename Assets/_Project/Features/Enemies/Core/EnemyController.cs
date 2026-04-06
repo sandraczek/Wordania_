@@ -20,7 +20,7 @@ namespace Wordania.Features.Enemies.Core
     public sealed class EnemyController : MonoBehaviour, IEnemy, ICharacterMovement, IDamageable, ITrackable
     {
         public EnemyTemplate Data;
-        private IEnemyRegistryService _registry;
+        private IActiveEnemiesRegistryService _registry;
         private HealthComponent _health;
         private Rigidbody2D _rb;
         private Collider2D _col;
@@ -62,7 +62,7 @@ namespace Wordania.Features.Enemies.Core
         public event Action<float> OnLanded;
 
         [Inject]
-        public void Construct(IEnemyRegistryService registry)
+        public void Construct(IActiveEnemiesRegistryService registry)
         {
             _registry = registry;
         }

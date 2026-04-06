@@ -111,9 +111,9 @@ namespace Wordania.Features
             builder.RegisterEntryPoint<WorldRenderer>(Lifetime.Scoped);
 
             //registries
-            builder.Register<EntityRegistryService>(Lifetime.Scoped).As<IEntityRegistryService>();
+            builder.Register<DamageableEntitiesRegistryService>(Lifetime.Scoped).As<IDamageableEntitiesRegistryService>();
             builder.RegisterEntryPoint<EntityTrackerService>(Lifetime.Scoped).As<IEntityTrackerService>();
-            builder.Register<EnemyRegistryService>(Lifetime.Scoped).As<IEnemyRegistryService>();
+            builder.Register<ActiveEnemiesRegistryService>(Lifetime.Scoped).As<IActiveEnemiesRegistryService>();
 
             //combat
             builder.Register<DummyFireStrategy>(Lifetime.Singleton).As<IWeaponFireStrategy>();

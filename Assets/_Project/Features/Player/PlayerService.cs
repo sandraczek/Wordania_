@@ -17,7 +17,7 @@ namespace Wordania.Features.Player
         private readonly GameObject _playerPrefab;
         private readonly IObjectResolver _resolver;
         private readonly ISaveService _save;
-        private readonly IEntityRegistryService _entityRegistry;
+        private readonly IDamageableEntitiesRegistryService _entityRegistry;
         private readonly IEntityTrackerService _entityTracker;
 
         public event Action OnPlayerRegistered;
@@ -33,7 +33,7 @@ namespace Wordania.Features.Player
         public Bounds Hitbox => _player.Hitbox;
         public string SaveId => "Player";
 
-        public PlayerService(GameObject playerPrefab, IObjectResolver resolver, ISaveService save, MarkerEntityParent playerParent, IEntityTrackerService entityTracker, IEntityRegistryService entityRegistry)
+        public PlayerService(GameObject playerPrefab, IObjectResolver resolver, ISaveService save, MarkerEntityParent playerParent, IEntityTrackerService entityTracker, IDamageableEntitiesRegistryService entityRegistry)
         {
             _playerPrefab = playerPrefab;
             _resolver = resolver;
@@ -91,7 +91,7 @@ namespace Wordania.Features.Player
             ReadOnlyHealth = player.GetComponent<HealthComponent>();
             
 
-            _entityRegistry.Register(player.InstanceId, player);
+            _entityRegistry.Register(player);
             _entityTracker.Register(player);
             
             Debug.Log($"<color=#4AF626>[GAMEPLAY]:</color> Player spawned at {position}");

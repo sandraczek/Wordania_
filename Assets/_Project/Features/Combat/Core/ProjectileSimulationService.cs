@@ -19,7 +19,7 @@ namespace Wordania.Features.Combat.Core
 {
     public sealed class ProjectileSimulationService : IProjectileSimulationService, IDisposable, ITickable, ILateTickable
     {   
-        private readonly IEntityRegistryService _entities;
+        private readonly IDamageableEntitiesRegistryService _entities;
         private readonly IEntityTrackerService _trackables;
         private readonly IAssetRegistry<ProjectileData> _projectileRegistry;
         private readonly HitRegisteredSignal _hitSignal;
@@ -34,7 +34,7 @@ namespace Wordania.Features.Combat.Core
 
         public ProjectileSimulationService
             (
-            IEntityRegistryService entityRegistry,
+            IDamageableEntitiesRegistryService entityRegistry,
             IEntityTrackerService trackables,
             IAssetRegistry<ProjectileData> projectileRegistry,
             HitRegisteredSignal hitSignal,
@@ -148,8 +148,8 @@ namespace Wordania.Features.Combat.Core
         {
             while (_hitEventsQueue.TryDequeue(out ProjectileHitEvent hitEvent))
             {
-                IDamageable damageable = _entities.GetDamageable(hitEvent.HitEntityId);
-                if (damageable == null) continue;
+                if(!_entities.TryGet(hitEvent.HitEntityId, out IDamageable damageable)) continue;
+                
                 var data = _projectileRegistry.Get(new AssetId(hitEvent.ProjectileDataId));
                 if(data == null) Debug.LogError("Data is null. Try refreshing projectile database");
                 float damage = data.BaseDamage * hitEvent.DamageMultiplier; 

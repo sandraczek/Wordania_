@@ -10,12 +10,12 @@ namespace Wordania.Features.Enemies.Core
     {
         private readonly EnemySystemSettings _settings;
         private readonly IPlayerProvider _player;
-        private readonly IEnemyRegistryService _registry;
+        private readonly IActiveEnemiesRegistryService _registry;
 
         private readonly List<IEnemy> _enemiesToRemove = new(32);
         private float _timeSinceLastCheck;
 
-        public EnemyCullingSystem(EnemySystemSettings settings, IPlayerProvider playerProvider, IEnemyRegistryService registry)
+        public EnemyCullingSystem(EnemySystemSettings settings, IPlayerProvider playerProvider, IActiveEnemiesRegistryService registry)
         {
             _settings = settings;
             _player = playerProvider;

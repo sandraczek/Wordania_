@@ -20,7 +20,7 @@ namespace Wordania.Features.Bosses.Yeinn.Parts
     {
         [Header("Dependencies")]
         private IEntityTrackerService _entityTracker;
-        private IEntityRegistryService _entityRegistry;
+        private IDamageableEntitiesRegistryService _entityRegistry;
         protected IPlayerProvider _playerProvider;
 
         protected T _data;
@@ -45,7 +45,7 @@ namespace Wordania.Features.Bosses.Yeinn.Parts
         public Vector2 Position => _rb.position;
 
         [Inject]
-        public void Construct(IPlayerProvider playerProvider, IEntityRegistryService entityRegistry, IEntityTrackerService entityTracker)
+        public void Construct(IPlayerProvider playerProvider, IDamageableEntitiesRegistryService entityRegistry, IEntityTrackerService entityTracker)
         {
             _entityRegistry = entityRegistry;
             _entityTracker = entityTracker;
@@ -68,7 +68,7 @@ namespace Wordania.Features.Bosses.Yeinn.Parts
             _health.SetInitial(_data.MaxHealth);
 
             _entityTracker.Register(this);
-            _entityRegistry.Register(InstanceId, this);
+            _entityRegistry.Register(this);
 
             if(TryGetComponent(out ContactDamageDealer damage))
             {

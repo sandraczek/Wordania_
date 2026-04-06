@@ -17,7 +17,7 @@ namespace Wordania.Features.Enemies.Core
     {
         private readonly IObjectResolver _resolver;
         private readonly IPlayerProvider _playerProvider;
-        private readonly IEntityRegistryService _entityRegistry;
+        private readonly IDamageableEntitiesRegistryService _entityRegistry;
         private readonly IEntityTrackerService _entityTracker;
         private readonly Transform _parent;
         private readonly Dictionary<string, IObjectPool<EnemyController>> _pools = new();
@@ -25,7 +25,7 @@ namespace Wordania.Features.Enemies.Core
         private readonly int _maxPoolSize = 100;
         private readonly int _prewarmBatchSize = 5;
 
-        public EnemyFactory(IObjectResolver resolver, IPlayerProvider playerProvider, MarkerEntityParent enemiesParent, IEntityRegistryService entityRegistry, IEntityTrackerService entityTracker)
+        public EnemyFactory(IObjectResolver resolver, IPlayerProvider playerProvider, MarkerEntityParent enemiesParent, IDamageableEntitiesRegistryService entityRegistry, IEntityTrackerService entityTracker)
         {
             _resolver = resolver;
             _playerProvider = playerProvider;
@@ -60,7 +60,7 @@ namespace Wordania.Features.Enemies.Core
                     pool.Release(enemy);
                 }); //to change
 
-            _entityRegistry.Register(enemy.InstanceId, enemy);
+            _entityRegistry.Register(enemy);
             _entityTracker.Register(enemy);
 
             return enemy;

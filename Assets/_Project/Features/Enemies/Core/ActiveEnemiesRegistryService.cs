@@ -7,7 +7,7 @@ using Wordania.Features.Combat.Core;
 
 namespace Wordania.Features.Enemies.Core
 {
-    public sealed class EnemyRegistryService : Registry<IEnemy>, IEnemyRegistryService
+    public sealed class ActiveEnemiesRegistryService : Registry<IEnemy>, IActiveEnemiesRegistryService
     {
         
     }

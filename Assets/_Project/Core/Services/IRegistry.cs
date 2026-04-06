@@ -9,5 +9,6 @@ namespace Wordania.Core.Services
         void Register(T entity);
         void Unregister(int entityId);
         IReadOnlyList<T> GetAll();
+        public bool TryGet(int entityId, out T entity);
     }
 }
