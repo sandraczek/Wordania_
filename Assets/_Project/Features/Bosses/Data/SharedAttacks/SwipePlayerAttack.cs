@@ -8,6 +8,6 @@ namespace Wordania.Features.Bosses.Data.SharedAttacks
         public float TimeToAttack;
         public float DistanceFromPlayer;
         public float AttackDistance;
-        public float Speed;
+        public float SwipeSpeed;
     }
 }

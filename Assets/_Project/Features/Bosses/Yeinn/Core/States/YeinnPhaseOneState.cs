@@ -48,9 +48,9 @@ namespace Wordania.Features.Bosses.Yeinn.Core
         }
         public void Enter()
         {
-            _head.CommandHover();
-            _leftHand.CommandIdle();
-            _rightHand.CommandIdle();
+            _head.CommandHoverAttack();
+            _leftHand.CommandIdleAttack();
+            _rightHand.CommandIdleAttack();
             _attackCooldown = _data.InitialCooldown;
         }
 

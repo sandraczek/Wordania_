@@ -7,6 +7,8 @@ namespace Wordania.Features.Bosses.Data.SharedAttacks
     {
         public float TimeToAttack;
         public float LiftHeight;
-        public float Speed;
+        public float SlamSpeed;
+        public float MaxDistanceBelowDynamicPlayer;
+        public float RecoveryDuration;
     }
 }

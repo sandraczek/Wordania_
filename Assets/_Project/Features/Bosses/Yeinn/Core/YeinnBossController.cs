@@ -12,6 +12,7 @@ using Wordania.Features.Enemies.Core;
 
 namespace Wordania.Features.Bosses.Yeinn.Core
 {
+    //TODO: move some to parent BossController
     public sealed class YeinnBossController : BossController<YeinnTemplate>, IEnemy
     {
         [Header("Dependencies")]
@@ -21,6 +22,9 @@ namespace Wordania.Features.Bosses.Yeinn.Core
         [SerializeField] private YeinnHeadController _head;
         [SerializeField] private YeinnHandController _leftHand;
         [SerializeField] private YeinnHandController _rightHand;
+
+        [SerializeField] private Transform _leftHandAnchor;
+        [SerializeField] private Transform _rightHandAnchor;
 
         private StateMachine<IState> _phaseStateMachine;
         
@@ -32,6 +36,7 @@ namespace Wordania.Features.Bosses.Yeinn.Core
         public bool AreBothHandsDefeated => _leftHand.IsDefeated && _rightHand.IsDefeated;
         public Vector2 Position => transform.position;
         public bool IsAlive {get;set;} = true;
+        public bool IsPersistent {get;} = true;
         public int InstanceId => GetInstanceID();
 
         [Inject]
@@ -45,8 +50,8 @@ namespace Wordania.Features.Bosses.Yeinn.Core
             _template = template;
 
             _head.Initialize(template.Head);
-            _leftHand.Initialize(template.LeftHand, _head.transform);
-            _rightHand.Initialize(template.RightHand, _head.transform);
+            _leftHand.Initialize(template.LeftHand, _leftHandAnchor);
+            _rightHand.Initialize(template.RightHand, _rightHandAnchor);
 
             _phaseStateMachine = new StateMachine<IState>();
 

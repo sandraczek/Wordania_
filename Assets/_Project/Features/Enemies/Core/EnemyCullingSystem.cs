@@ -42,6 +42,8 @@ namespace Wordania.Features.Enemies.Core
 
             foreach (var enemy in activeEnemies)
             {   
+                if(enemy.IsPersistent) continue;
+                
                 float distanceSqr = (enemy.Position - playerPos).sqrMagnitude;
 
                 if (distanceSqr > despawnRadiusSqr)

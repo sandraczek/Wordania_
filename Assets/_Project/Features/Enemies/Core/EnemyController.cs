@@ -30,6 +30,7 @@ namespace Wordania.Features.Enemies.Core
         private readonly DamageMitigator _mitigation = new();
         private readonly InvincibilityController _invincibility = new();
         public int InstanceId => gameObject.GetInstanceID();
+        public bool IsPersistent { get; } = false;
         public EntityFaction Faction {get; private set;} = EntityFaction.Enemy;
 
         public float VelocityX

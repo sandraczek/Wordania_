@@ -38,7 +38,7 @@ namespace Wordania.Features.Bosses.Yeinn.Core
         {
             _attackCooldown = _data.InitialCooldown;
             _head.SetGeneralResistance(_data.HeadResistance);
-            _head.CommandChase();
+            _head.CommandChaseAttack();
         }
 
         public void Update()

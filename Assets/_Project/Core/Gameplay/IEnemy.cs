@@ -8,6 +8,7 @@ namespace Wordania.Core.Gameplay
     {
         Vector2 Position { get; }
         bool IsAlive { get; }
+        bool IsPersistent { get; }
         void Remove();
     }
 }

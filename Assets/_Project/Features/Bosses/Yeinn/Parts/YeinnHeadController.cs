@@ -8,128 +8,34 @@ using Wordania.Features.Services;
 using Wordania.Core.Services;
 using Wordania.Core.Identifiers;
 using System;
+using Wordania.Features.Bosses.Yeinn.Data;
 
 namespace Wordania.Features.Bosses.Yeinn.Parts
 {
     [RequireComponent(typeof(HealthComponent))]
     [RequireComponent(typeof(Collider2D))]
-    public sealed class YeinnHeadController : MonoBehaviour, IDamageable, ITrackable
+    public sealed class YeinnHeadController : BossPartController<YeinnHeadData>
     {
-        [Header("Dependencies")]
-        private IEntityTrackerService _entityTracker;
-        private IEntityRegistryService _entityRegistry;
-        private IPlayerProvider _playerProvider;
-
-        private BossPartData _data;
-        private StateMachine<IState> _stateMachine;
-        private HealthComponent _health;
-        private Collider2D _col;
-        private readonly DamageMitigator _mitigation = new();
-
-        // Local States
+        // states
         private IState _hoverState;
         private IState _chaseState;
         private IState _slamState;
 
-        public event Action OnDefeated;
-        public bool IsDefeated { get; private set; }
-        public int InstanceId => GetInstanceID();
-        public EntityFaction Faction => EntityFaction.Enemy; // enemy or boss ?
-        public Bounds Hitbox => _col.bounds;
-
-        [Inject]
-        public void Construct(IPlayerProvider playerProvider, IEntityRegistryService entityRegistry, IEntityTrackerService entityTracker)
+        public override void Initialize(YeinnHeadData headData)
         {
-            _entityRegistry = entityRegistry;
-            _entityTracker = entityTracker;
-            _playerProvider = playerProvider;
+            base.Initialize(headData);
+
+            _hoverState = new YeinnHeadHoverState(_data.Hover, this, _playerProvider);
+            _chaseState = new YeinnHeadChaseState(_data.Chase, this, _playerProvider);
+            _slamState = new YeinnHeadSlamState(_data.Slam, this, _playerProvider);
+
+            SwitchState(_hoverState);
         }
-        public void Initialize(BossPartData headData)
-        {
-            _data = headData;
+       
+        public void CommandSlamAttack() => SwitchState(_slamState);
+        public void CommandChaseAttack() => SwitchState(_chaseState);
+        public void CommandHoverAttack() => SwitchState(_hoverState);
 
-            _stateMachine = new StateMachine<IState>();
-
-            _hoverState = new YeinnHeadHoverState(this, _playerProvider);
-            _chaseState = new YeinnHeadChaseState(this, _playerProvider);
-            _chaseState = new YeinnHeadSlamState(this, _playerProvider);
-
-            _stateMachine.SwitchState(_hoverState);
-
-            _mitigation.Initialize
-            (
-                _data.GeneralResistance,
-                _data.PhysicalResistance,
-                _data.MagicalResistance,
-                _data.EnvironmentalResistance,
-                _data.FallResistance
-            );
-            _health.SetInitial(_data.MaxHealth);
-
-            _entityTracker.Register(this);
-            _entityRegistry.Register(InstanceId, this);
-
-            if(TryGetComponent(out ContactDamageDealer damage))
-            {
-                damage.Initialize(_data.ContactDamage,_data.Knockback,_data.DamageType,_data.DamageSource);
-            }
-        }
-        private void Awake()
-        {
-            _health = GetComponent<HealthComponent>();
-            _col = GetComponent<Collider2D>();
-        }
-        private void OnEnable()
-        {
-            _health.OnDeath += HandleDeath;
-        }
-        private void OnDisable()
-        {
-            _health.OnDeath -= HandleDeath;
-        }
-
-        private void Update()
-        {
-            if (IsDefeated) return;
-            
-            _stateMachine.Update();
-        }
-        private void FixedUpdate()
-        {
-            if (IsDefeated) return;
-            
-            _stateMachine.FixedUpdate();
-        }
-
-        public void CommandSlamAttack() => ChangeStateIfNotDefeated(_slamState);
-        public void CommandChase() => ChangeStateIfNotDefeated(_chaseState);
-        public void CommandHover() => ChangeStateIfNotDefeated(_hoverState);
-
-        private void ChangeStateIfNotDefeated(IState newState)
-        {
-            if (IsDefeated) return;
-
-            _stateMachine.SwitchState(newState);
-        }
-
-        public void ApplyDamage(DamagePayload payload)
-        { 
-            if(IsDefeated) return;
-
-            DamageResult damageResult = _mitigation.ProcessDamage(payload);
-            _health.ApplyDamage(damageResult);
-        } 
-        private void HandleDeath()
-        {
-            if(IsDefeated) return;
-
-            Debug.Log("Yeinn head defeated");
-            IsDefeated = true;
-            OnDefeated?.Invoke();
-
-            _entityRegistry.Unregister(InstanceId);
-            _entityTracker.Unregister(InstanceId);
-        }
         public void SetGeneralResistance(float res)
         {
             _mitigation.SetGeneralResistance(res);

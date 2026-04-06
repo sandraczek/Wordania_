@@ -1,4 +1,5 @@
 using UnityEngine;
+using Wordania.Core.Gameplay;
 using Wordania.Features.Bosses.Data;
 
 namespace Wordania.Features.Bosses.Core
