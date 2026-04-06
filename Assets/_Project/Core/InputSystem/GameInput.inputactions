@@ -942,6 +942,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SetGodMode",
+                    "type": "Button",
+                    "id": "e1c3360c-769f-4fec-a944-f85a5166dc56",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -953,6 +962,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "ShowChunks",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ddcbe5e6-58f6-4dc6-bbc4-90f6c65d9958",
+                    "path": "<Keyboard>/equals",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShowChunks",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "443a9b75-0321-4e68-8392-bb5fbae35f14",
+                    "path": "<Keyboard>/f2",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SetGodMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2cbac4d4-5886-4a3d-8260-fff0783f29cc",
+                    "path": "<Keyboard>/minus",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SetGodMode",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

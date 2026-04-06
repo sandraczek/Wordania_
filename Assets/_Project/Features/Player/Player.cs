@@ -84,6 +84,10 @@ namespace Wordania.Features.Player
             {
                 fall.Initialize(_config.FallDamageThreshold,_config.FallDamageMultiplier);
             }
+            if(TryGetComponent(out PlayerDebugHandler debug))
+            {
+                debug.Initialize(_invincibility);
+            }
         }
         public void OnDestroy()
         {

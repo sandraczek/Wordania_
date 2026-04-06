@@ -1028,6 +1028,15 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SetGodMode"",
+                    ""type"": ""Button"",
+                    ""id"": ""e1c3360c-769f-4fec-a944-f85a5166dc56"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -1039,6 +1048,39 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""ShowChunks"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ddcbe5e6-58f6-4dc6-bbc4-90f6c65d9958"",
+                    ""path"": ""<Keyboard>/equals"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ShowChunks"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""443a9b75-0321-4e68-8392-bb5fbae35f14"",
+                    ""path"": ""<Keyboard>/f2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetGodMode"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""2cbac4d4-5886-4a3d-8260-fff0783f29cc"",
+                    ""path"": ""<Keyboard>/minus"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SetGodMode"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1138,6 +1180,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         // Debug
         m_Debug = asset.FindActionMap("Debug", throwIfNotFound: true);
         m_Debug_ShowChunks = m_Debug.FindAction("ShowChunks", throwIfNotFound: true);
+        m_Debug_SetGodMode = m_Debug.FindAction("SetGodMode", throwIfNotFound: true);
     }
 
     ~@GameInput()
@@ -1708,6 +1751,7 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Debug;
     private List<IDebugActions> m_DebugActionsCallbackInterfaces = new List<IDebugActions>();
     private readonly InputAction m_Debug_ShowChunks;
+    private readonly InputAction m_Debug_SetGodMode;
     /// <summary>
     /// Provides access to input actions defined in input action map "Debug".
     /// </summary>
@@ -1723,6 +1767,10 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Debug/ShowChunks".
         /// </summary>
         public InputAction @ShowChunks => m_Wrapper.m_Debug_ShowChunks;
+        /// <summary>
+        /// Provides access to the underlying input action "Debug/SetGodMode".
+        /// </summary>
+        public InputAction @SetGodMode => m_Wrapper.m_Debug_SetGodMode;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -1752,6 +1800,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @ShowChunks.started += instance.OnShowChunks;
             @ShowChunks.performed += instance.OnShowChunks;
             @ShowChunks.canceled += instance.OnShowChunks;
+            @SetGodMode.started += instance.OnSetGodMode;
+            @SetGodMode.performed += instance.OnSetGodMode;
+            @SetGodMode.canceled += instance.OnSetGodMode;
         }
 
         /// <summary>
@@ -1766,6 +1817,9 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
             @ShowChunks.started -= instance.OnShowChunks;
             @ShowChunks.performed -= instance.OnShowChunks;
             @ShowChunks.canceled -= instance.OnShowChunks;
+            @SetGodMode.started -= instance.OnSetGodMode;
+            @SetGodMode.performed -= instance.OnSetGodMode;
+            @SetGodMode.canceled -= instance.OnSetGodMode;
         }
 
         /// <summary>
@@ -2049,5 +2103,12 @@ public partial class @GameInput: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnShowChunks(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "SetGodMode" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSetGodMode(InputAction.CallbackContext context);
     }
 }

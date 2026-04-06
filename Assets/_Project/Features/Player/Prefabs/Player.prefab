@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 6168264530602995032}
   - component: {fileID: 2980194849477195786}
   - component: {fileID: 3826486884661152737}
+  - component: {fileID: 7215793108923115953}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -233,6 +234,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Player.Interaction.PlayerMiningTool
   _actionRange: 8
   _actionRate: 0.05
+--- !u!114 &7215793108923115953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5377237029528584182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157c2f12912d541c9878eacd90163f5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Player.PlayerDebugHandler
 --- !u!1 &7354028105140276930
 GameObject:
   m_ObjectHideFlags: 0
@@ -311,7 +324,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: -1448162153
-  m_SortingLayer: 3
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: -6648494525843530367, guid: 7a44f0adc73de4b5d877a1b007fbe3fc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

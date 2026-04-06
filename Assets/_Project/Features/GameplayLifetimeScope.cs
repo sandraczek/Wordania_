@@ -103,7 +103,6 @@ namespace Wordania.Features
             builder.RegisterInstance(_lootSignal);
             builder.RegisterEntryPoint<WorldService>(Lifetime.Scoped).As<IWorldService>();
             builder.RegisterEntryPoint<WorldCollisionJobService>(Lifetime.Scoped).As<IWorldCollisionJobService>();
-
             
             builder.Register<ChunkFactory>(Lifetime.Scoped)
                 .As<IChunkFactory>()
@@ -191,6 +190,7 @@ namespace Wordania.Features
 
     - refactor BlockDatabase
     - refactor EntityRegistry
+    - fix conflict with dash invincibility
 
 
 

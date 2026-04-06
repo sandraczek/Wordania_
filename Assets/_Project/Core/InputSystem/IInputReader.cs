@@ -21,6 +21,7 @@ namespace Wordania.Core.Inputs
     event Action OnToggleInventory;
     event Action OnToggleMap;
     event Action OnToggleChunks;
+    event Action OnToggleGodMode;
 
     public void SetGameplayMode();
     public void SetHUDMode();

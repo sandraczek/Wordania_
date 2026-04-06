@@ -15,7 +15,7 @@ MonoBehaviour:
   _id:
     _editorId: boss_yeinn
     _hash: -1348982482
-  <Name>k__BackingField: Yeinn the Abhorrent
+  <DisplayName>k__BackingField: Yeinn the Abhorrent
   <Prefab>k__BackingField: {fileID: 8657881721284743941, guid: a6b3b60a2c78a4899b69b4e289c6c854, type: 3}
   <Head>k__BackingField:
     MaxHealth: 300
@@ -30,8 +30,16 @@ MonoBehaviour:
     FallResistance: 1
     <Slam>k__BackingField:
       TimeToAttack: 0.5
-      LiftHeight: 4
-      Speed: 30
+      LiftHeight: 10
+      SlamSpeed: 50
+      MaxDistanceBelowDynamicPlayer: 20
+      RecoveryDuration: 2.4
+    <Chase>k__BackingField:
+      Speed: 15
+    <Hover>k__BackingField:
+      Speed: 6
+      VectorFromPlayer: {x: 0, y: 5}
+      MaxDistanceFromPlayer: 10
   <LeftHand>k__BackingField:
     MaxHealth: 100
     ContactDamage: 15
@@ -45,13 +53,17 @@ MonoBehaviour:
     FallResistance: 1
     <Slam>k__BackingField:
       TimeToAttack: 0.7
-      LiftHeight: 2
-      Speed: 20
+      LiftHeight: 10
+      SlamSpeed: 50
+      MaxDistanceBelowDynamicPlayer: 20
+      RecoveryDuration: 1
     <Swipe>k__BackingField:
       TimeToAttack: 1.4
-      DistanceFromPlayer: 10
-      AttackDistance: 22
-      Speed: 10
+      DistanceFromPlayer: 20
+      AttackDistance: 50
+      SwipeSpeed: 70
+    <Idle>k__BackingField:
+      returnSpeed: 20
   <RightHand>k__BackingField:
     MaxHealth: 100
     ContactDamage: 15
@@ -66,12 +78,16 @@ MonoBehaviour:
     <Slam>k__BackingField:
       TimeToAttack: 0.7
       LiftHeight: 2
-      Speed: 20
+      SlamSpeed: 50
+      MaxDistanceBelowDynamicPlayer: 20
+      RecoveryDuration: 1
     <Swipe>k__BackingField:
       TimeToAttack: 1.4
-      DistanceFromPlayer: 10
-      AttackDistance: 22
-      Speed: 10
+      DistanceFromPlayer: 20
+      AttackDistance: 50
+      SwipeSpeed: 70
+    <Idle>k__BackingField:
+      returnSpeed: 15
   <PhaseOneData>k__BackingField:
     <InitialCooldown>k__BackingField: 6
     <AttackInterval>k__BackingField: 5

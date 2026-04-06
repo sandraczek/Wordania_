@@ -29,7 +29,11 @@ namespace Wordania.Core.Inputs
         public event Action OnCycleActionSettings;
         public event Action OnToggleInventory;
         public event Action OnToggleMap;
+
+            // debug service
         public event Action OnToggleChunks;
+        public event Action OnToggleGodMode;
+
         public void Initialize()
         {
             if (_inputActions != null) return;
@@ -122,6 +126,10 @@ namespace Wordania.Core.Inputs
         {
             if(context.performed) OnToggleChunks?.Invoke();
         }
+        public void OnSetGodMode(InputAction.CallbackContext context)
+        {
+            if(context.performed) OnToggleGodMode?.Invoke();
+        }
 
         public void SetGameplayMode()
         {
@@ -129,10 +137,8 @@ namespace Wordania.Core.Inputs
             _inputActions.UI.Disable();
             _inputActions.Player.Enable();
 
-            if(!_inputActions.HUD.enabled)
-                _inputActions.HUD.Enable();
-            if(!_inputActions.Debug.enabled)
-                _inputActions.Debug.Enable();
+            _inputActions.HUD.Enable();
+            _inputActions.Debug.Enable();
         }
         public void SetHUDMode()
         {
@@ -140,10 +146,8 @@ namespace Wordania.Core.Inputs
             _inputActions.Player.Disable();
             _inputActions.UI.Enable();
 
-            if(!_inputActions.HUD.enabled)
-                _inputActions.HUD.Enable();
-            if(!_inputActions.Debug.enabled)
-                _inputActions.Debug.Enable();
+            _inputActions.HUD.Enable();
+            _inputActions.Debug.Enable();
         }
     }
 }
