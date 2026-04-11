@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sand_Wall
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
   m_Sprite: {fileID: 6087057004831310022, guid: 64180abf35a3443f4af39af87af3fb6d, type: 3}
-  m_Color: {r: 0.6745098, g: 0.5360799, b: 0.16470589, a: 1}
+  m_Color: {r: 0.7075472, g: 0.5952279, b: 0.29036137, a: 1}
   m_Transform:
     e00: 1
     e01: 0

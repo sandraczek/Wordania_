@@ -17,12 +17,18 @@ MonoBehaviour:
   - Name: Plains
     Palette: {fileID: 11400000, guid: ba8a3ac9e611d4972abe25f11e26e89d, type: 2}
     MinTemperature: 0
-    MaxTemperature: 0.5
+    MaxTemperature: 0.4
+    MinDepth: 0
+    MaxDepth: 1
+  - Name: Stone Lands
+    Palette: {fileID: 11400000, guid: c1c7603fb3ae545e0a45e18a321aa4b9, type: 2}
+    MinTemperature: 0.4
+    MaxTemperature: 0.55
     MinDepth: 0
     MaxDepth: 1
   - Name: Desert
     Palette: {fileID: 11400000, guid: c1c7603fb3ae545e0a45e18a321aa4b9, type: 2}
-    MinTemperature: 0.5
+    MinTemperature: 0.55
     MaxTemperature: 1
     MinDepth: 0
     MaxDepth: 1

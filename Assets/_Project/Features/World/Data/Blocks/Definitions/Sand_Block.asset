@@ -18,7 +18,7 @@ MonoBehaviour:
   Tile: {fileID: 11400000, guid: 50beb8fbc783a48aabb2698d1da5b398, type: 2}
   MapColor:
     serializedVersion: 2
-    rgba: 4282421160
+    rgba: 4283078836
   Hardness: 1
   recipe: {fileID: 11400000, guid: d5a23c9b75a9142fca1463bbc01c3159, type: 2}
   loot: {fileID: 11400000, guid: 0a66a74d856cb44679704ed76d1af76a, type: 2}

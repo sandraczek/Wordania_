@@ -200,7 +200,13 @@ TODOS:
 - player visual (change dependency and move data to settings)
 - consult visual rotation change in boss part controler
 - somehow make projectiles hitbox not a point
+- make boss stop after player dies
+
+features:
+boss spawning
+block builder picker soon? later?
 
 */
+
 
 #endif
