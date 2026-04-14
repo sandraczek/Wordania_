@@ -11,11 +11,12 @@ namespace Wordania.Features.World
     public interface IWorldService
     {
         public event Action<Vector2Int, WorldLayer> OnChunkChanged;
+        public event Action<Vector2Int, WorldLayer> OnBlockChanged;
         public WorldData Data { get; }
 
         public void RandomizeSeed();
         public UniTask GenerateWorldAsync(CancellationToken token);
-        public bool TryDamageBlock(Vector3 worldPosition, float damagePower);
+        public bool TryDamageSingleBlock(Vector3 worldPosition, float damagePower);
         public WorldLayer DamageTile(int x, int y, float damagePower);
         public bool TryDamageCircle(Vector2 worldPos, float radius, float damagePower);
 

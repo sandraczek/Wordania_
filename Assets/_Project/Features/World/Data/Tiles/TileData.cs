@@ -8,5 +8,6 @@ namespace Wordania.Features.World
         public AssetId M;
         public AssetId F;
         public float Damage;        // [0f - 1f]
+        public byte Light;
     }
 }

@@ -35,6 +35,8 @@ using Wordania.Features.Bosses.Core;
 using Wordania.Features.World.Config;
 using Wordania.Features.World.Data;
 using Wordania.Features.World.Passes;
+using Wordania.World.Lighting;
+using UnityEngine.UI;
 
 namespace Wordania.Features
 {
@@ -100,8 +102,13 @@ namespace Wordania.Features
             builder.Register<WorldPassTerrain>(Lifetime.Scoped).As<IWorldGenerationPass>();
             builder.Register<WorldPassCave>(Lifetime.Scoped).As<IWorldGenerationPass>();
             builder.Register<WorldPassFeature>(Lifetime.Scoped).As<IWorldGenerationPass>();
-            builder.Register<WorldPassTransition>(Lifetime.Scoped).As<IWorldGenerationPass>();
+            builder.Register<WorldPassStones>(Lifetime.Scoped).As<IWorldGenerationPass>();
             builder.Register<WorldPassBarrier>(Lifetime.Scoped).As<IWorldGenerationPass>();
+
+            //lighting
+            builder.RegisterEntryPoint<LightingService>(Lifetime.Scoped).As<ILightingService>();
+            builder.RegisterEntryPoint<GlobalLightmapRenderer>(Lifetime.Scoped).As<ILightmapRenderer>();
+            builder.RegisterEntryPoint<LightmapPresenter>(Lifetime.Scoped);
 
             builder.Register<WorldGenerator>(Lifetime.Scoped).As<IWorldGenerator>();
             builder.RegisterComponentInHierarchy<Grid>();
@@ -205,6 +212,7 @@ TODOS:
 features:
 boss spawning
 block builder picker soon? later?
+lightning system
 
 */
 

@@ -214,12 +214,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Player.Interaction.PlayerBuildingTool
   _currentBlockIndex: 0
   _buildingBlocks:
+  - {fileID: 11400000, guid: a88a74e71c89c409e9726a50c901820b, type: 2}
   - {fileID: 11400000, guid: 5d154869ac4e94c23997e3d3d5cfbe3f, type: 2}
   - {fileID: 11400000, guid: a15f13d08cbc44381b286379ca46a9a5, type: 2}
   - {fileID: 11400000, guid: 28948730022624828ac5373b290d985d, type: 2}
   - {fileID: 11400000, guid: ac2e6dc4b81884de1bec820e48ea8cf3, type: 2}
   - {fileID: 11400000, guid: 2c8c6a670e61a4dbb882e00f461fb8b9, type: 2}
   - {fileID: 11400000, guid: c8d9887c8a618481093519ec5709ed59, type: 2}
+  - {fileID: 11400000, guid: 415dd3c6a0d774725b9cadcddcb9a2f5, type: 2}
   _actionRange: 8
   _actionRate: 0.05
 --- !u!114 &3826486884661152737

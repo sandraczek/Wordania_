@@ -20,6 +20,8 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4280690214
   Hardness: 6
+  _lightEmission: 0
+  _lightOpacity: 31
   recipe: {fileID: 11400000, guid: 594b11ee8c9fc47edbdfe1311bc2d066, type: 2}
   loot: {fileID: 11400000, guid: 98d0304250b7249699c37fdd4046cfc2, type: 2}
   lootAmount: 3

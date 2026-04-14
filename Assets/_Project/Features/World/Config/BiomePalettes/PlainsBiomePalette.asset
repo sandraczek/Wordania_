@@ -17,5 +17,5 @@ MonoBehaviour:
   <SubSurfaceBlock>k__BackingField: {fileID: 11400000, guid: 5d154869ac4e94c23997e3d3d5cfbe3f, type: 2}
   <SubSurfaceWall>k__BackingField: {fileID: 11400000, guid: 1ecdcbddd74fc4a418dd65c9462987c2, type: 2}
   <UndergroundBlock>k__BackingField: {fileID: 11400000, guid: 28948730022624828ac5373b290d985d, type: 2}
-  <UndergroundWall>k__BackingField: {fileID: 11400000, guid: a88a74e71c89c409e9726a50c901820b, type: 2}
+  <UndergroundWall>k__BackingField: {fileID: 11400000, guid: 415dd3c6a0d774725b9cadcddcb9a2f5, type: 2}
   <BarrierBlock>k__BackingField: {fileID: 11400000, guid: 03949464310c74b2abb9910d4d1e237d, type: 2}

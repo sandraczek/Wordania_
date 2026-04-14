@@ -97,13 +97,13 @@ namespace Wordania.Features.World
                     {
                         data.GetTile(x, y).M = surfaceBlockId;
                     }
-                    else if (y < stoneHeight - dirtStoneTransitionMargin)
-                    {
-                        data.GetTile(x, y).M = undergroundBlockId;
-                    }
                     else if (y > stoneHeight + dirtStoneTransitionMargin)
                     {
                         data.GetTile(x, y).M = subSurfaceBlockId;
+                    }
+                    else if (y < stoneHeight - dirtStoneTransitionMargin)
+                    {
+                        data.GetTile(x, y).M = undergroundBlockId;
                     }
                     else
                     {

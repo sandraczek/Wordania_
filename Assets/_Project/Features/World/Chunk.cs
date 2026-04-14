@@ -54,8 +54,7 @@ namespace Wordania.Features.World
             {
                 for (int y = 0; y < _settings.ChunkSize; y++)
                 {
-                    _positionsCache[index] = new Vector3Int(x, y, 0);
-                    index++;
+                    _positionsCache[index++] = new Vector3Int(x, y, 0);
                 }
             }
 
@@ -73,8 +72,7 @@ namespace Wordania.Features.World
                     int worldX = _chunkCoord.x * size + x;
                     int worldY = _chunkCoord.y * size + y;
 
-                    _tilesCache[index] = _world.GetTileBase(worldX, worldY, layerType);
-                    index++;
+                    _tilesCache[index++] = _world.GetTileBase(worldX, worldY, layerType);
                 }
             }
 

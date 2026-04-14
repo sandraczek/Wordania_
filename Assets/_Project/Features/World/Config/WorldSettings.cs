@@ -12,7 +12,8 @@ namespace Wordania.Features.World.Config
         public int Width;
         public int Height;
 
-        public int Seed;
+        public const int MaxSeed = 1000000;
+        [Range(0, MaxSeed)] public int Seed;
         public int ChunkSize;
         [Layer] public int CollisionLayer;
         [Header("Rendering")]
@@ -76,6 +77,10 @@ namespace Wordania.Features.World.Config
                 (y * TileSize) + (TileSize * 0.5f),
                 0
             );
+        }
+        public bool WithinBoundaries(int x, int y)
+        {
+            return x >= 0 && x < Width && y >= 0 && y < Height;
         }
 #if UNITY_EDITOR
         private void OnValidate()

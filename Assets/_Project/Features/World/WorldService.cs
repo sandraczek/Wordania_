@@ -18,6 +18,7 @@ using Wordania.Features.World.Config;
 using Wordania.Features.World.Data;
 using Wordania.Core.Identifiers;
 using UnityEditor.VersionControl;
+using Wordania.World.Lighting;
 
 namespace Wordania.Features.World
 {
@@ -29,13 +30,15 @@ namespace Wordania.Features.World
         private readonly IWorldGenerator _generator;
         private readonly ISaveService _save;
 
+
         [Header("Data")]
         public WorldData Data { get; private set; }
-        private readonly LootSignal _lootEvent; // TO change (Message pipe or signal bus)
+        private readonly LootSignal _lootSignal; // TO change (Message pipe or signal bus)
 
         public string SaveId => "World";
 
         public event Action<Vector2Int, WorldLayer> OnChunkChanged;
+        public event Action<Vector2Int, WorldLayer> OnBlockChanged;
 
         public WorldService(
             IBlockRegistry blockDatabase,
@@ -49,7 +52,7 @@ namespace Wordania.Features.World
             _settings = settings;
             _generator = generator;
             _save = saveService;
-            _lootEvent = lootEvent;
+            _lootSignal = lootEvent;
         }
         public void Start()
         {
@@ -61,7 +64,7 @@ namespace Wordania.Features.World
         }
         public void RandomizeSeed()
         {
-            _settings.Seed = Mathf.Abs(Guid.NewGuid().GetHashCode()) % 1000000;
+            _settings.Seed = Mathf.Abs(Guid.NewGuid().GetHashCode()) % WorldSettings.MaxSeed;
         }
         public async UniTask GenerateWorldAsync(CancellationToken token)
         {
@@ -69,10 +72,10 @@ namespace Wordania.Features.World
             Debug.Assert(_settings.Width % _settings.ChunkSize == 0 && _settings.Height % _settings.ChunkSize == 0);
             Data = await _generator.GenerateWorldAsync(token);
         }
-        public bool TryDamageBlock(Vector3 worldPosition, float damagePower)
+        public bool TryDamageSingleBlock(Vector3 worldPosition, float damagePower)
         {
             Vector2Int pos = _settings.WorldToGrid(worldPosition);
-            if (!IsWithinBounds(pos.x, pos.y)) return false;
+            if (!_settings.WithinBoundaries(pos.x, pos.y)) return false;
             WorldLayer result = DamageTile(pos.x, pos.y, damagePower);
             if (result == WorldLayer.None) return false;
 
@@ -82,7 +85,7 @@ namespace Wordania.Features.World
         }
         public WorldLayer DamageTile(int x, int y, float damagePower)
         {
-            if (!IsWithinBounds(x, y)) return WorldLayer.None;
+            if (!_settings.WithinBoundaries(x, y)) return WorldLayer.None;
             BlockData data = _blockDatabase.Get(Data.GetTile(x, y).M);
             if (data == null) return WorldLayer.None;
             Data.GetTile(x, y).Damage += damagePower / data.Hardness;
@@ -92,8 +95,10 @@ namespace Wordania.Features.World
                 Data.GetTile(x, y).M = new(0);
                 Data.GetTile(x, y).Damage = 0f;
 
+                OnBlockChanged?.Invoke(new(x, y), WorldLayer.Main);
+
                 //DROPPING LOOT
-                _lootEvent.Raise(new(data.loot, data.lootAmount));
+                _lootSignal.Raise(new(data.loot, data.lootAmount));
 
                 changedLayers = WorldLayer.Main | WorldLayer.Damage;
             }
@@ -118,7 +123,7 @@ namespace Wordania.Features.World
             {
                 for (int y = minY; y <= maxY; y++)
                 {
-                    if (!IsWithinBounds(x, y)) continue;
+                    if (!_settings.WithinBoundaries(x, y)) continue;
 
                     float closestX = Mathf.Clamp(worldPos.x, x, x + 1f);
                     float closestY = Mathf.Clamp(worldPos.y, y, y + 1f);
@@ -158,12 +163,14 @@ namespace Wordania.Features.World
         {
             Vector2Int pos = _settings.WorldToGrid(worldPosition);
 
-            if (!IsWithinBounds(pos.x, pos.y)) return false;
+            if (!_settings.WithinBoundaries(pos.x, pos.y)) return false;
             if (_blockDatabase.Get(Data.GetTile(pos.x, pos.y).M) != null) return false;
+
 
             Data.GetTile(pos.x, pos.y).M = blockID;
             Vector2Int coord = GetChunkCoord(pos.x, pos.y);
             OnChunkChanged?.Invoke(coord, WorldLayer.Main);
+            OnBlockChanged?.Invoke(pos, WorldLayer.Main);
             return true;
         }
         public Vector2 GetCellCenter(Vector2 worldPosition)
@@ -206,11 +213,6 @@ namespace Wordania.Features.World
             var color = _blockDatabase.Get(id).MapColor;
             if (color.a != 0) return color;
             return null;
-        }
-
-        private bool IsWithinBounds(int x, int y)
-        {
-            return !(x >= _settings.Width || x < 0 || y >= _settings.Height || y < 0);
         }
         private Vector2Int GetChunkCoord(int x, int y)
         {

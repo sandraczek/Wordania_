@@ -34,7 +34,7 @@ namespace Wordania.Features.World.Passes
                 for (int y = 0; y < height; y++)
                 {
                     float temperature = Mathf.PerlinNoise((x + seed - 105) * biomeNoiseFrequency, (y + seed - 478) * biomeNoiseFrequency);
-                    float normalizedDepth = 1f - (y / height);
+                    float normalizedDepth = 1f - ((float)y / height);
 
                     data.BiomeMap[x + y * width] = ResolveBiome(temperature, normalizedDepth, rules, fallback);
                 }

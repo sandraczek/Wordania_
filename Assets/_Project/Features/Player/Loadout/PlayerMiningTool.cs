@@ -88,7 +88,7 @@ namespace Wordania.Features.Player.Loadout
         {
             if (!_areaMine)
             {
-                if (!_world.TryDamageBlock(targetWorldPos, _minePower)) return false;
+                if (!_world.TryDamageSingleBlock(targetWorldPos, _minePower)) return false;
             }
             else
             {

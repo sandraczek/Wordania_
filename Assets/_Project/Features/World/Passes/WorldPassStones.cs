@@ -9,10 +9,10 @@ using Wordania.Features.World.Data;
 
 namespace Wordania.Features.World
 {
-    public sealed class WorldPassTransition : IWorldGenerationPass
+    public sealed class WorldPassStones : IWorldGenerationPass // this pass may get deleted later.
     {
         private readonly WorldSettings _settings;
-        public WorldPassTransition(WorldSettings settings)
+        public WorldPassStones(WorldSettings settings)
         {
             _settings = settings;
         }
@@ -49,7 +49,6 @@ namespace Wordania.Features.World
                         if (data.GetTile(x, y).M == subSurfaceBlockId)
                         {
                             data.GetTile(x, y).M = undergroundBlockId;
-                            continue;
                         }
                     }
                 }
