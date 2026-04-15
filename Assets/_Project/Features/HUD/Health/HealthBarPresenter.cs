@@ -20,7 +20,7 @@ namespace Wordania.Features.HUD.Health
         }
         public void Start()
         {
-            if(_playerProvider.IsPlayerSpawned)
+            if (_playerProvider.IsPlayerSpawned)
                 HandlePlayerRegistered();
 
             _playerProvider.OnPlayerRegistered += HandlePlayerRegistered;
@@ -41,7 +41,7 @@ namespace Wordania.Features.HUD.Health
         }
         private void UnsubscribeFromCurrent()
         {
-            if(_playerProvider != null)
+            if (_playerProvider != null && _playerProvider.ReadOnlyHealth != null)
                 _playerProvider.ReadOnlyHealth.OnHealthChange -= HandleHealthChange;
         }
         public void Dispose()

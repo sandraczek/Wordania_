@@ -4,7 +4,7 @@ using Wordania.Features.World.Data;
 
 namespace Wordania.World.Lighting
 {
-    public interface ILightingService
+    public interface IStaticLightingService
     {
         event Action OnLightingUpdated;
         byte GetLightLevel(int x, int y);

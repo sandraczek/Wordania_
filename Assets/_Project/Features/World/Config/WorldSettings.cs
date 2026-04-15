@@ -18,6 +18,7 @@ namespace Wordania.Features.World.Config
         [Layer] public int CollisionLayer;
         [Header("Rendering")]
         public int RenderingBatchSize = 10;
+        public byte MinimumLight = 15;
 
         [Header("Biomes")]
         public WorldBiomeConfiguration BiomeConfig;

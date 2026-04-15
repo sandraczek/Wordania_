@@ -13,14 +13,14 @@ namespace Wordania.World.Lighting // lub Wordania.World.Presentation
     public class LightmapPresenter : IStartable, IDisposable, ILateTickable
     {
         private readonly IWorldService _world;
-        private readonly ILightingService _lightingService;
+        private readonly IStaticLightingService _lightingService;
         private readonly ILightmapRenderer _lightmapRenderer;
 
         private bool _isDirty = false;
 
         public LightmapPresenter(
             IWorldService world,
-            ILightingService lightingService,
+            IStaticLightingService lightingService,
             ILightmapRenderer lightmapRenderer)
         {
             _world = world;

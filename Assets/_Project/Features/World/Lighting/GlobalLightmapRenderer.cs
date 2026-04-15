@@ -13,7 +13,6 @@ namespace Wordania.World.Lighting
     {
         private Texture2D _lightmapTexture;
         private readonly WorldSettings _settings;
-        private readonly byte _minLight = 10;
 
         private static readonly int GlobalLightmapId = Shader.PropertyToID("_GlobalLightMap");
         private static readonly int GlobalWorldSizeId = Shader.PropertyToID("_WorldSize");
@@ -42,12 +41,10 @@ namespace Wordania.World.Lighting
 
             for (int i = 0; i < tiles.Length; i++)
             {
-                textureData[i] = (byte)(_minLight + (255 - _minLight) * tiles[i].Light / 31);
-                // textureData[i] = byte.MaxValue;
+                textureData[i] = (byte)(_settings.MinimumLight + (255 - _settings.MinimumLight) * tiles[i].Light / 31);
             }
 
             _lightmapTexture.Apply(false, false);
-            Debug.Log("rendering");
         }
 
         public void Dispose()

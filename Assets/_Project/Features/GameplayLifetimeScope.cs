@@ -106,8 +106,9 @@ namespace Wordania.Features
             builder.Register<WorldPassBarrier>(Lifetime.Scoped).As<IWorldGenerationPass>();
 
             //lighting
-            builder.RegisterEntryPoint<LightingService>(Lifetime.Scoped).As<ILightingService>();
+            builder.RegisterEntryPoint<StaticLightingService>(Lifetime.Scoped).As<IStaticLightingService>();
             builder.RegisterEntryPoint<GlobalLightmapRenderer>(Lifetime.Scoped).As<ILightmapRenderer>();
+            builder.RegisterEntryPoint<DynamicLightingService>(Lifetime.Scoped).As<IDynamicLightingService>();
             builder.RegisterEntryPoint<LightmapPresenter>(Lifetime.Scoped);
 
             builder.Register<WorldGenerator>(Lifetime.Scoped).As<IWorldGenerator>();
@@ -212,7 +213,6 @@ TODOS:
 features:
 boss spawning
 block builder picker soon? later?
-lightning system
 
 */
 

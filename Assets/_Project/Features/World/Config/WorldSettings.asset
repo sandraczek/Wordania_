@@ -19,6 +19,7 @@ MonoBehaviour:
   ChunkSize: 32
   CollisionLayer: 3
   RenderingBatchSize: 10
+  MinimumLight: 5
   BiomeConfig: {fileID: 11400000, guid: 5e6a8626d9243413ba49514ea508d59f, type: 2}
   BiomeNoiseFrequency: 0.003
   HeightMultiplier: 400

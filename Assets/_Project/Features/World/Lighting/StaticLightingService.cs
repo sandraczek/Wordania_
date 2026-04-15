@@ -1,4 +1,3 @@
-// LightingService.cs
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +13,7 @@ namespace Wordania.World.Lighting
         I can put vertex color to the shader graph.
 
     */
-    public class LightingService : ILightingService, IStartable, IDisposable
+    public class StaticLightingService : IStaticLightingService, IStartable, IDisposable
     {
         private readonly IBlockRegistry _blockRegistry;
         private readonly IWorldService _worldService;
@@ -34,7 +33,7 @@ namespace Wordania.World.Lighting
 
         public event Action OnLightingUpdated;
 
-        public LightingService(IBlockRegistry blockRegistry, IWorldService worldService, WorldSettings settings)
+        public StaticLightingService(IBlockRegistry blockRegistry, IWorldService worldService, WorldSettings settings)
         {
             _blockRegistry = blockRegistry;
             _settings = settings;
@@ -87,7 +86,6 @@ namespace Wordania.World.Lighting
                 int nx = x + _neighborX[i];
                 int ny = y + _neighborY[i];
 
-                // FIX: Tutaj musi być (nx, ny)!
                 if (!_settings.WithinBoundaries(nx, ny)) continue;
 
                 ref TileData neighbourTile = ref _worldService.Data.GetTile(nx, ny);

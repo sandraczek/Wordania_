@@ -57,7 +57,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 888ad8ac1b89d4c2aa76bdf91f5ebe0b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 657393709
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 6087057004831310022, guid: 64180abf35a3443f4af39af87af3fb6d, type: 3}
   m_Color: {r: 0.8784314, g: 0.64032584, b: 0.3019608, a: 1}
@@ -100,6 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4317268449643662006}
   - component: {fileID: 790785413992721850}
+  - component: {fileID: -7239934409904947283}
   m_Layer: 0
   m_Name: SmallBulletPrefab
   m_TagString: Untagged
@@ -138,3 +139,18 @@ MonoBehaviour:
   DataId:
     _editorId: 
     _hash: 0
+--- !u!114 &-7239934409904947283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7615915911720685853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9c3d0e1e55a24429bc7f693ebef3d0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Wordania.Gameplay::Wordania.World.Lighting.DynamicLightSource
+  Radius: 1
+  Intensity: 1
+  Color: {r: 1, g: 0.6236163, b: 0, a: 1}
