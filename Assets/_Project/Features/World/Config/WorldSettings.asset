@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed81fbf14d0dd4cb287744e0bdef05f3, type: 3}
   m_Name: WorldSettings
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Gameplay.World.WorldSettings
-  TileSize: 1
   Width: 1280
   Height: 704
-  Seed: 833423
+  OverworldStartHeight: 400
+  Seed: 0
   ChunkSize: 32
   CollisionLayer: 3
   RenderingBatchSize: 10

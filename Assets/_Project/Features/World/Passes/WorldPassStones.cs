@@ -46,9 +46,9 @@ namespace Wordania.Features.World
 
                     if (stoneValue > _settings.DirtStoneThreshold)
                     {
-                        if (data.GetTile(x, y).M == subSurfaceBlockId)
+                        if (data.GetTile(x, y).Main == subSurfaceBlockId)
                         {
-                            data.GetTile(x, y).M = undergroundBlockId;
+                            data.GetTile(x, y).Main = undergroundBlockId;
                         }
                     }
                 }

@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
+using VContainer.Unity;
 using Wordania.Features.World.Config;
 using Wordania.Features.World.Data;
 
 namespace Wordania.Features.World.Lighting
 {
-    public sealed class SkyLightService : ISkyLightService
+    public sealed class SkyLightService : ISkyLightService, IStartable, IDisposable
     {
         private readonly WorldSettings _settings;
         private readonly IWorldService _world;
@@ -47,7 +48,7 @@ namespace Wordania.Features.World.Lighting
             _world.OnBlockChanged -= HandleBlockChanged;
         }
 
-        public async UniTask InitializeSkyLightAsync(CancellationToken token)
+        public async UniTask InitializeSkyLightAsync(CancellationToken token, int batchSize)
         {
             var stopwatch = System.Diagnostics.Stopwatch.StartNew();
 
@@ -59,7 +60,7 @@ namespace Wordania.Features.World.Lighting
                 {
                     if (hasHit && y >= _settings.OverworldStartHeight)
                     {
-                        BlockData wall = _registry.Get(_world.Data.GetTile(x, y).B);
+                        BlockData wall = _registry.Get(_world.Data.GetTile(x, y).Background);
                         byte wallOpacity = wall != null ? wall.LightOpacity : (byte)1;
                         light = Math.Max(light, (byte)(31 - wallOpacity));
                     }
@@ -70,13 +71,13 @@ namespace Wordania.Features.World.Lighting
 
                     if (!hasHit)
                     {
-                        if (_world.Data.GetTile(x, y).M.Hash != 0)
+                        if (_world.Data.GetTile(x, y).Main.Hash != 0)
                             hasHit = true;
                         else
                             continue;
                     }
 
-                    BlockData block = _registry.Get(_world.Data.GetTile(x, y).M);
+                    BlockData block = _registry.Get(_world.Data.GetTile(x, y).Main);
                     byte opacity = block != null ? block.LightOpacity : (byte)1;
                     light = (byte)Math.Max(0, light - opacity);
                 }
@@ -90,20 +91,20 @@ namespace Wordania.Features.World.Lighting
                 }
             }
 
-            await PropagateLightAsync(token);
+            await PropagateLightAsync(token, batchSize);
         }
-        private async UniTask PropagateLightAsync(CancellationToken? token)
+        private void ProcessLightQueue(int batchSize = int.MaxValue)
         {
-            var stopwatch = System.Diagnostics.Stopwatch.StartNew();
+            int counter = 0;
 
-            while (_indexQueue.Count > 0)
+            while (_indexQueue.Count > 0 && counter < batchSize)
             {
                 int currentIndex = _indexQueue.Dequeue();
 
                 int x = currentIndex % _settings.Width;
                 int y = currentIndex / _settings.Width;
 
-                BlockData currentBlockData = _registry.Get(_world.Data.GetTile(x, y).M);
+                BlockData currentBlockData = _registry.Get(_world.Data.GetTile(x, y).Main);
                 byte opacity = currentBlockData != null ? currentBlockData.LightOpacity : (byte)1;
 
                 if (_world.Data.GetTile(x, y).SkyLight <= opacity) continue;
@@ -124,13 +125,20 @@ namespace Wordania.Features.World.Lighting
                     }
                 }
 
-                if (stopwatch.ElapsedMilliseconds > 16)
-                {
-                    await UniTask.Yield();
-                    token?.ThrowIfCancellationRequested();
-
-                    stopwatch.Restart();
-                }
+                counter++;
+            }
+        }
+        private void PropagateLight()
+        {
+            ProcessLightQueue();
+            _lightChanged.Raise();
+        }
+        private async UniTask PropagateLightAsync(CancellationToken token, int batchSize)
+        {
+            while (_indexQueue.Count > 0)
+            {
+                ProcessLightQueue(batchSize);
+                await UniTask.Yield();
             }
             _lightChanged.Raise();
         }
@@ -139,7 +147,8 @@ namespace Wordania.Features.World.Lighting
             ref TileData tile = ref _world.Data.GetTile(x, y);
             byte oldLight = tile.SkyLight;
 
-            BlockData wallData = _registry.Get(tile.B);
+            BlockData wallData = _registry.Get(tile.Background);
+            byte opacity = wallData != null ? wallData.LightOpacity : (byte)1;
 
             if (oldLight > 0)
             {
@@ -149,7 +158,7 @@ namespace Wordania.Features.World.Lighting
             }
 
             if (y >= _settings.OverworldStartHeight)
-                tile.SkyLight = (byte)(31 - wallData.LightOpacity);
+                tile.SkyLight = (byte)(31 - opacity);
             _indexQueue.Enqueue(x + _settings.Width * y);
 
             for (int i = 0; i < 4; i++)
@@ -166,7 +175,7 @@ namespace Wordania.Features.World.Lighting
                 }
             }
 
-            _ = PropagateLightAsync(null);
+            PropagateLight();
         }
         private void RemoveLight()
         {

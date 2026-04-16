@@ -100,7 +100,7 @@ namespace Wordania.Features
                 await _save.LoadGameAsync(_save.DefaultPrefix + _saveSlot.ToString());
             }
             _loadingScreen.UpdateProgress(0.3f, "Lighting the World up");
-            await _skyLightService.InitializeSkyLightAsync(cancellation);
+            await _skyLightService.InitializeSkyLightAsync(cancellation, 5000);
             await _staticLightingService.InitializeLightAsync(cancellation);
 
             _loadingScreen.UpdateProgress(0.4f, "Rendering World");

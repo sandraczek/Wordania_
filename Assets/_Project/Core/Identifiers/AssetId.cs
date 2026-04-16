@@ -9,7 +9,7 @@ namespace Wordania.Core.Identifiers
         [SerializeField, Tooltip("Designer-friendly string identifier. Hashed automatically.")]
         private string _editorId;
 
-        [SerializeField, HideInInspector] 
+        [SerializeField, HideInInspector]
         private int _hash;
 
         public static readonly AssetId Empty = new(string.Empty);
@@ -45,7 +45,7 @@ namespace Wordania.Core.Identifiers
         private static int GenerateHash(string input)
         {
             if (string.IsNullOrEmpty(input)) return 0;
-            
+
             unchecked
             {
                 int hash = (int)2166136261;
@@ -63,7 +63,7 @@ namespace Wordania.Core.Identifiers
 
         public static bool operator ==(AssetId left, AssetId right) => left.Equals(right);
         public static bool operator !=(AssetId left, AssetId right) => !left.Equals(right);
-        
+
         public override string ToString()
         {
 #if UNITY_EDITOR

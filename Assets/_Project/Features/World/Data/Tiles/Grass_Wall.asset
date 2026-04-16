@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Grass_Wall
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
   m_Sprite: {fileID: 6087057004831310022, guid: 64180abf35a3443f4af39af87af3fb6d, type: 3}
-  m_Color: {r: 0.038180854, g: 0.20754719, b: 0.07906237, a: 1}
+  m_Color: {r: 0.062477753, g: 0.33962262, b: 0.12693007, a: 1}
   m_Transform:
     e00: 1
     e01: 0

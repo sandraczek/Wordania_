@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dirt
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
   m_Sprite: {fileID: 6087057004831310022, guid: 64180abf35a3443f4af39af87af3fb6d, type: 3}
-  m_Color: {r: 0.23584908, g: 0.16950922, b: 0.12126203, a: 1}
+  m_Color: {r: 0.3490566, g: 0.2535032, b: 0.18605375, a: 1}
   m_Transform:
     e00: 1
     e01: 0

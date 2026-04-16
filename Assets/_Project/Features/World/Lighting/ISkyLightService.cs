@@ -5,6 +5,6 @@ namespace Wordania.Features.World.Lighting
 {
     public interface ISkyLightService
     {
-        UniTask InitializeSkyLightAsync(CancellationToken token);
+        UniTask InitializeSkyLightAsync(CancellationToken token, int batchSize);
     }
 }

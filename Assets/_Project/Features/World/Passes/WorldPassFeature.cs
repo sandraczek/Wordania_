@@ -38,7 +38,7 @@ namespace Wordania.Features.World.Passes
             {
                 for (int y = 0; y < height; y++)
                 {
-                    if (!replaceables.Contains(data.Tiles[x + y * width].M)) continue;
+                    if (!replaceables.Contains(data.Tiles[x + y * width].Main)) continue;
 
                     float depth = 1f - ((float)y / height);
 
@@ -80,9 +80,9 @@ namespace Wordania.Features.World.Passes
             {
                 if (x < 0 || x >= width || y < 0 || y >= height) break;
 
-                if (replaceables.Contains(data.Tiles[x + y * width].M))
+                if (replaceables.Contains(data.Tiles[x + y * width].Main))
                 {
-                    data.Tiles[x + y * width].M = blockId;
+                    data.Tiles[x + y * width].Main = blockId;
                 }
 
                 int direction = rng.Next(0, 4);

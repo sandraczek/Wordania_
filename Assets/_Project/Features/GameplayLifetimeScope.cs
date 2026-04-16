@@ -38,6 +38,7 @@ using Wordania.Features.World.Passes;
 using UnityEngine.UI;
 using Wordania.Features.World.Lighting;
 using Wordania.Features.Day;
+using Wordania.Core.SaveSystem;
 
 namespace Wordania.Features
 {
@@ -108,18 +109,6 @@ namespace Wordania.Features
             builder.Register<WorldPassStones>(Lifetime.Scoped).As<IWorldGenerationPass>();
             builder.Register<WorldPassBarrier>(Lifetime.Scoped).As<IWorldGenerationPass>();
 
-            //lighting
-            builder.RegisterInstance(_lightChangedSignal);
-            builder.RegisterEntryPoint<StaticLightingService>(Lifetime.Scoped).As<IStaticLightingService>();
-            builder.RegisterEntryPoint<SkyLightService>(Lifetime.Scoped).As<ISkyLightService>();
-            builder.RegisterEntryPoint<GlobalLightmapRenderer>(Lifetime.Scoped).As<ILightmapRenderer>();
-            builder.RegisterEntryPoint<DynamicLightingService>(Lifetime.Scoped).As<IDynamicLightingService>();
-            builder.RegisterEntryPoint<LightmapPresenter>(Lifetime.Scoped);
-
-            //day
-            builder.RegisterInstance(_daySettings);
-            builder.RegisterEntryPoint<DayNightCycle>(Lifetime.Scoped);
-
             builder.Register<WorldGenerator>(Lifetime.Scoped).As<IWorldGenerator>();
             builder.RegisterComponentInHierarchy<Grid>();
 
@@ -132,6 +121,18 @@ namespace Wordania.Features
                 .WithParameter(_chunkPrefab);
 
             builder.RegisterEntryPoint<WorldRenderer>(Lifetime.Scoped);
+
+            //lighting
+            builder.RegisterInstance(_lightChangedSignal);
+            builder.RegisterEntryPoint<StaticLightingService>(Lifetime.Scoped).As<IStaticLightingService>();
+            builder.RegisterEntryPoint<SkyLightService>(Lifetime.Scoped).As<ISkyLightService>();
+            builder.RegisterEntryPoint<GlobalLightmapRenderer>(Lifetime.Scoped).As<ILightmapRenderer>();
+            builder.RegisterEntryPoint<DynamicLightingService>(Lifetime.Scoped).As<IDynamicLightingService>();
+            builder.RegisterEntryPoint<LightmapPresenter>(Lifetime.Scoped);
+
+            //day
+            builder.RegisterInstance(_daySettings);
+            builder.RegisterEntryPoint<DayNightCycle>(Lifetime.Scoped);
 
             //registries
             builder.Register<DamageableEntitiesRegistryService>(Lifetime.Scoped).As<IDamageableEntitiesRegistryService>();
@@ -213,12 +214,16 @@ namespace Wordania.Features
 /*
 TODOS:
 
+- divide sky color and light color
+
 - fix conflict with dash invincibility
 - player visual (change dependency and move data to settings)
 - consult visual rotation change in boss part controler
 - somehow make projectiles hitbox not a point
 - make boss stop after player dies
 - fix magic color in light shader graph
+- change all 1f to WorldSettings.TileSize
+- fix player clipping 
 
 features:
 boss spawning

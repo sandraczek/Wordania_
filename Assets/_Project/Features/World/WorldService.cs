@@ -85,13 +85,13 @@ namespace Wordania.Features.World
         public WorldLayer DamageTile(int x, int y, float damagePower)
         {
             if (!_settings.WithinBoundaries(x, y)) return WorldLayer.None;
-            BlockData data = _blockDatabase.Get(Data.GetTile(x, y).M);
+            BlockData data = _blockDatabase.Get(Data.GetTile(x, y).Main);
             if (data == null) return WorldLayer.None;
             Data.GetTile(x, y).Damage += damagePower / data.Hardness;
             WorldLayer changedLayers;
             if (Data.GetTile(x, y).Damage >= 1f)
             {
-                Data.GetTile(x, y).M = new(0);
+                Data.GetTile(x, y).Main = new(0);
                 Data.GetTile(x, y).Damage = 0f;
 
                 OnBlockChanged?.Invoke(new(x, y), WorldLayer.Main);
@@ -163,10 +163,10 @@ namespace Wordania.Features.World
             Vector2Int pos = _settings.WorldToGrid(worldPosition);
 
             if (!_settings.WithinBoundaries(pos.x, pos.y)) return false;
-            if (_blockDatabase.Get(Data.GetTile(pos.x, pos.y).M) != null) return false;
+            if (_blockDatabase.Get(Data.GetTile(pos.x, pos.y).Main) != null) return false;
 
 
-            Data.GetTile(pos.x, pos.y).M = blockID;
+            Data.GetTile(pos.x, pos.y).Main = blockID;
             Vector2Int coord = GetChunkCoord(pos.x, pos.y);
             OnChunkChanged?.Invoke(coord, WorldLayer.Main);
             OnBlockChanged?.Invoke(pos, WorldLayer.Main);
@@ -184,9 +184,9 @@ namespace Wordania.Features.World
             TileData data = Data.GetTile(x, y);
             AssetId id;
 
-            if (layer == WorldLayer.Main) id = data.M;
-            else if (layer == WorldLayer.Background) id = data.B;
-            else if (layer == WorldLayer.Foreground) id = data.F;
+            if (layer == WorldLayer.Main) id = data.Main;
+            else if (layer == WorldLayer.Background) id = data.Background;
+            else if (layer == WorldLayer.Foreground) id = data.Foreground;
             else if (layer == WorldLayer.Damage)
             {
                 return _blockDatabase.GetCracks(data.Damage);
@@ -203,9 +203,9 @@ namespace Wordania.Features.World
             TileData data = Data.GetTile(x, y);
             AssetId id = new(0);
 
-            if (layer == WorldLayer.Main) id = data.M;
-            else if (layer == WorldLayer.Background) id = data.B;
-            else if (layer == WorldLayer.Foreground) id = data.F;
+            if (layer == WorldLayer.Main) id = data.Main;
+            else if (layer == WorldLayer.Background) id = data.Background;
+            else if (layer == WorldLayer.Foreground) id = data.Foreground;
 
             if (id.Hash == 0) return null;
 
@@ -222,8 +222,8 @@ namespace Wordania.Features.World
         public Vector2 GetSpawnPoint()
         {
             return new Vector2(
-                Data.SpawnPoint.x * _settings.TileSize,
-                Data.SpawnPoint.y * _settings.TileSize
+                Data.SpawnPoint.x * WorldSettings.TileSize,
+                Data.SpawnPoint.y * WorldSettings.TileSize
                 );
         }
 
@@ -231,15 +231,16 @@ namespace Wordania.Features.World
         {
             saveData.World.Width = Data.Width;
             saveData.World.Height = Data.Height;
+            saveData.World.Seed = _settings.Seed;
             int totalTiles = Data.Width * Data.Height;
             saveData.World.Tiles = new TileSaveData[totalTiles];
 
             for (int i = 0; i < totalTiles; i++)
             {
                 saveData.World.Tiles[i] = new(
-                    Data.Tiles[i].B.Hash,
-                    Data.Tiles[i].M.Hash,
-                    Data.Tiles[i].F.Hash
+                    Data.Tiles[i].Background.Hash,
+                    Data.Tiles[i].Main.Hash,
+                    Data.Tiles[i].Foreground.Hash
                     );
             }
 
@@ -252,19 +253,19 @@ namespace Wordania.Features.World
         {
             Debug.Assert(Data == null);
 
-            _settings.Width = saveData.World.Width;
-            _settings.Height = saveData.World.Height;
-            _settings.Seed = saveData.World.Seed;
-
-            Debug.Assert(_settings.Width % _settings.ChunkSize == 0 && _settings.Height % _settings.ChunkSize == 0);
             if (saveData.World == null || saveData.World.Tiles == null || saveData.World.Tiles.Length == 0)
             {
                 Debug.LogWarning("Failed to Load saved world - no saved data. World not loaded");
                 return;
             }
-            if (saveData.World.Width != _settings.Width || saveData.World.Height != _settings.Height)
+
+            _settings.Width = saveData.World.Width;
+            _settings.Height = saveData.World.Height;
+            _settings.Seed = saveData.World.Seed;
+
+            if (!(_settings.Width % _settings.ChunkSize == 0 && _settings.Height % _settings.ChunkSize == 0))
             {
-                Debug.LogError("Saved world size does not match current world settings. World not loaded");
+                Debug.LogWarning("Loading data corrupted");
                 return;
             }
 
@@ -273,9 +274,9 @@ namespace Wordania.Features.World
             int totalTiles = Data.Width * Data.Height;
             for (int i = 0; i < totalTiles; i++)
             {
-                Data.Tiles[i].B = new(saveData.World.Tiles[i].Background);
-                Data.Tiles[i].M = new(saveData.World.Tiles[i].Main);
-                Data.Tiles[i].F = new(saveData.World.Tiles[i].Foreground);
+                Data.Tiles[i].Background = new(saveData.World.Tiles[i].B);
+                Data.Tiles[i].Main = new(saveData.World.Tiles[i].M);
+                Data.Tiles[i].Foreground = new(saveData.World.Tiles[i].F);
             }
 
             Data.SpawnPoint = new Vector2Int(saveData.World.SpawnPoint[0], saveData.World.SpawnPoint[1]);

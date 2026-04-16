@@ -8,17 +8,17 @@ namespace Wordania.Features.World.Config
     [CreateAssetMenu(fileName = "WorldSettings", menuName = "World/WorldSettings")]
     public sealed class WorldSettings : ScriptableObject
     {
-        public float TileSize = 1f;
-        public int Width;
-        public int Height;
+        public const float TileSize = 1f;
+        [Delayed][Min(1)] public int Width;
+        [Delayed][Min(1)] public int Height;
         public int OverworldStartHeight;
 
         public const int MaxSeed = 1000000;
         [Range(0, MaxSeed)] public int Seed;
-        public int ChunkSize;
+        [Delayed][Min(1)] public int ChunkSize;
         [Layer] public int CollisionLayer;
         [Header("Rendering")]
-        public int RenderingBatchSize = 10;
+        [Min(1)] public int RenderingBatchSize = 10;
         public byte MinimumLight = 15;
 
         [Header("Biomes")]
@@ -92,6 +92,17 @@ namespace Wordania.Features.World.Config
             {
                 if (block == null) continue;
                 ReplaceableBlockIds.Add(block.Id);
+            }
+            if (ChunkSize < 1) ChunkSize = 1;
+            if (Width < 1) Width = 1;
+            if (Height < 1) Height = 1;
+            if (Width % ChunkSize != 0)
+            {
+                Width = Width - Width % ChunkSize + ChunkSize;
+            }
+            if (Height % ChunkSize != 0)
+            {
+                Height = Height - Height % ChunkSize + ChunkSize;
             }
         }
 #endif

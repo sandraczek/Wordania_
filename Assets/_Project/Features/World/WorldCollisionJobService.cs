@@ -73,7 +73,7 @@ namespace Wordania.Features.World
                 for (int x = 0; x < size; x++)
                 {
                     int i = worldChunkI + y * _settings.Width + x;
-                    _collisionGrid[i] = _world.Data.Tiles[i].M.Hash != 0;
+                    _collisionGrid[i] = _world.Data.Tiles[i].Main.Hash != 0;
                 }
             }
         }
@@ -87,7 +87,7 @@ namespace Wordania.Features.World
 
             for (int i = 0; i < length; i++)
             {
-                _collisionGrid[i] = _world.Data.Tiles[i].M.Hash != 0;
+                _collisionGrid[i] = _world.Data.Tiles[i].Main.Hash != 0;
             }
         }
 

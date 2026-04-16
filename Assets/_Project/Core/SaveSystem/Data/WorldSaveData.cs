@@ -13,18 +13,18 @@ namespace Wordania.Core.SaveSystem.Data
         public TileSaveData[] Tiles;
     }
 
-    [Serializable] 
+    [Serializable]
     public struct TileSaveData
     {
-        public short Background;
-        public short Main;
-        public short Foreground;
+        public int B;
+        public int M;
+        public int F;
 
         public TileSaveData(int bg, int main, int fg)
         {
-            Background = (short)bg;
-            Main = (short)main;
-            Foreground = (short)fg;
+            B = bg;
+            M = main;
+            F = fg;
         }
     }
 }

@@ -91,46 +91,46 @@ namespace Wordania.Features.World
 
                     if (y > terrainHeight)
                     {
-                        data.GetTile(x, y).M = airId;
+                        data.GetTile(x, y).Main = airId;
                     }
                     else if (y >= terrainHeight - 1)
                     {
-                        data.GetTile(x, y).M = surfaceBlockId;
+                        data.GetTile(x, y).Main = surfaceBlockId;
                     }
                     else if (y > stoneHeight + dirtStoneTransitionMargin)
                     {
-                        data.GetTile(x, y).M = subSurfaceBlockId;
+                        data.GetTile(x, y).Main = subSurfaceBlockId;
                     }
                     else if (y < stoneHeight - dirtStoneTransitionMargin)
                     {
-                        data.GetTile(x, y).M = undergroundBlockId;
+                        data.GetTile(x, y).Main = undergroundBlockId;
                     }
                     else
                     {
                         float stoneChance = Mathf.InverseLerp(stoneHeight + dirtStoneTransitionMargin, stoneHeight - dirtStoneTransitionMargin, y);
-                        data.GetTile(x, y).M = (Random.value < stoneChance) ? undergroundBlockId : subSurfaceBlockId;
+                        data.GetTile(x, y).Main = (Random.value < stoneChance) ? undergroundBlockId : subSurfaceBlockId;
                     }
 
                     if (y > wallTerrainHeight)
                     {
-                        data.GetTile(x, y).B = airId;
+                        data.GetTile(x, y).Background = airId;
                     }
                     else if (y >= wallTerrainHeight - 1 || y > terrainHeight)
                     {
-                        data.GetTile(x, y).B = surfaceWallId;
+                        data.GetTile(x, y).Background = surfaceWallId;
                     }
                     else if (y < stoneHeight - dirtStoneTransitionMargin)
                     {
-                        data.GetTile(x, y).B = undergroundWallId;
+                        data.GetTile(x, y).Background = undergroundWallId;
                     }
                     else if (y > stoneHeight + dirtStoneTransitionMargin)
                     {
-                        data.GetTile(x, y).B = subSurfaceWallId;
+                        data.GetTile(x, y).Background = subSurfaceWallId;
                     }
                     else
                     {
                         float stoneChance = Mathf.InverseLerp(stoneHeight + dirtStoneTransitionMargin, stoneHeight - dirtStoneTransitionMargin, y);
-                        data.GetTile(x, y).B = (Random.value < stoneChance) ? undergroundWallId : subSurfaceWallId;
+                        data.GetTile(x, y).Background = (Random.value < stoneChance) ? undergroundWallId : subSurfaceWallId;
                     }
                 }
 

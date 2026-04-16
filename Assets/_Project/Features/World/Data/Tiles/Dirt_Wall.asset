@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dirt_Wall
   m_EditorClassIdentifier: UnityEngine.dll::UnityEngine.Tilemaps.Tile
   m_Sprite: {fileID: 6087057004831310022, guid: 64180abf35a3443f4af39af87af3fb6d, type: 3}
-  m_Color: {r: 0.16981131, g: 0.12144768, b: 0.087308645, a: 1}
+  m_Color: {r: 0.2830189, g: 0.20597062, b: 0.14818442, a: 1}
   m_Transform:
     e00: 1
     e01: 0

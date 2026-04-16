@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b019609b0a57348a2967a4ef51fc3539, type: 3}
   m_Name: DaySettings
   m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Day.DaySettings
-  StartingTime: 12
-  TimeSpeed: 0.1
+  StartingTime: 5
+  TimeSpeed: 0.016
   SkyColorGradient:
     serializedVersion: 2
     key0: {r: 0.08627451, g: 0.10980392, b: 0.26666668, a: 1}
-    key1: {r: 0.6037736, g: 0.22244294, b: 0, a: 1}
+    key1: {r: 1, g: 0.7322347, b: 0.33490568, a: 1}
     key2: {r: 1, g: 0.9595312, b: 0.8443396, a: 0}
     key3: {r: 1, g: 0.9607843, b: 0.84313726, a: 0}
     key4: {r: 0.7410708, g: 0.15083174, b: 0.25808632, a: 0}
@@ -25,12 +25,12 @@ MonoBehaviour:
     key6: {r: 0.08627451, g: 0.10980392, b: 0.26666668, a: 0}
     key7: {r: 0, g: 0, b: 0, a: 0}
     ctime0: 13107
-    ctime1: 16577
-    ctime2: 19661
+    ctime1: 15806
+    ctime2: 17348
     ctime3: 45875
     ctime4: 47609
-    ctime5: 48959
-    ctime6: 52428
+    ctime5: 48573
+    ctime6: 49922
     ctime7: 0
     atime0: 0
     atime1: 65535
@@ -48,8 +48,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0.0019226877
-      value: 0
+      time: 0.0019234158
+      value: 0.30001947
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -57,8 +57,8 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0.13592179
     - serializedVersion: 3
-      time: 4.77155
-      value: 0
+      time: 4.7946215
+      value: 0.3000183
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -66,7 +66,7 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 7.179491
+      time: 7.2025623
       value: 1.0000012
       inSlope: 0
       outSlope: 0

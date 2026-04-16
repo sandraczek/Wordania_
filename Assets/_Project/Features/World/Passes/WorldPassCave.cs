@@ -36,7 +36,7 @@ namespace Wordania.Features.World
             {
                 for (int y = 0; y < height; y++)
                 {
-                    if (data.GetTile(x, y).M.Hash == 0) continue;
+                    if (data.GetTile(x, y).Main.Hash == 0) continue;
 
                     float currentDepth = (float)y / height;
                     float depthMask = Mathf.InverseLerp(caveStartDepth, caveFullDensityDepth, currentDepth);
@@ -49,7 +49,7 @@ namespace Wordania.Features.World
 
                     if (combinedNoise > globalCaveDensity)
                     {
-                        data.GetTile(x, y).M = airId;
+                        data.GetTile(x, y).Main = airId;
                     }
                 }
 

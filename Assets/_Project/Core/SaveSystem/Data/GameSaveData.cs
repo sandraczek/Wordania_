@@ -11,5 +11,6 @@ namespace Wordania.Core.SaveSystem.Data
         public PlayerSaveData Player = new();
         public InventorySaveData PlayerInventory = new();
         public WorldSaveData World = new();
+        public TimeSaveData Time = new();
     }
 }

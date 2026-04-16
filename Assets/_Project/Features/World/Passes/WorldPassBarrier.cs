@@ -22,13 +22,13 @@ namespace Wordania.Features.World
 
             for (int x = 0; x < width; x++)
             {
-                data.GetTile(x, 0).M = data.BiomeMap[x].BarrierBlock.Id;
-                data.GetTile(x, height - 1).M = data.BiomeMap[x + width * (height - 1)].BarrierBlock.Id;
+                data.GetTile(x, 0).Main = data.BiomeMap[x].BarrierBlock.Id;
+                data.GetTile(x, height - 1).Main = data.BiomeMap[x + width * (height - 1)].BarrierBlock.Id;
             }
             for (int y = 0; y < height; y++)
             {
-                data.GetTile(0, y).M = data.BiomeMap[width * y].BarrierBlock.Id;
-                data.GetTile(width - 1, y).M = data.BiomeMap[width - 1 + y * width].BarrierBlock.Id;
+                data.GetTile(0, y).Main = data.BiomeMap[width * y].BarrierBlock.Id;
+                data.GetTile(width - 1, y).Main = data.BiomeMap[width - 1 + y * width].BarrierBlock.Id;
             }
 
             await UniTask.Yield();

@@ -61,7 +61,7 @@ namespace Wordania.Features.World.Lighting
             {
                 for (int y = 0; y < _settings.Height; y++)
                 {
-                    BlockData block = _blockRegistry.Get(_worldService.Data.GetTile(x, y).M);
+                    BlockData block = _blockRegistry.Get(_worldService.Data.GetTile(x, y).Main);
                     byte emission = block != null ? block.LightEmission : (byte)0;
 
                     if (emission > 0)
@@ -96,7 +96,7 @@ namespace Wordania.Features.World.Lighting
             ref TileData tile = ref _worldService.Data.GetTile(x, y);
             byte oldLight = tile.Light;
 
-            BlockData blockData = _blockRegistry.Get(tile.M);
+            BlockData blockData = _blockRegistry.Get(tile.Main);
 
             byte emission = blockData != null ? blockData.LightEmission : (byte)0;
 
@@ -172,7 +172,7 @@ namespace Wordania.Features.World.Lighting
                 int y = currentIndex / _settings.Width;
 
                 ref TileData currentTile = ref _worldService.Data.GetTile(x, y);
-                BlockData currentBlockData = _blockRegistry.Get(currentTile.M);
+                BlockData currentBlockData = _blockRegistry.Get(currentTile.Main);
                 byte opacity = currentBlockData != null ? currentBlockData.LightOpacity : (byte)1;
 
                 if (currentTile.Light <= opacity) continue;

@@ -10,12 +10,15 @@ using UnityEditor;
 
 namespace Wordania.Core.Data
 {
-    public abstract class AssetRegistry<T> : ScriptableObject, IAssetRegistry<T> where T: DataAsset
+    public abstract class AssetRegistry<T> : ScriptableObject, IAssetRegistry<T> where T : DataAsset
     {
         [SerializeField]
         private List<T> _assets = new();
         private Dictionary<AssetId, T> _lookupTable;
         public IReadOnlyList<T> Assets => _assets;
+
+        //debug
+        private bool asdasd = true;
 
         public void Initialize()
         {
@@ -23,16 +26,17 @@ namespace Wordania.Core.Data
             foreach (var asset in _assets)
             {
                 if (asset == null) continue;
-                if(!_lookupTable.TryAdd(asset.Id, asset))
+                if (!_lookupTable.TryAdd(asset.Id, asset))
                 {
                     Debug.LogWarning($"[{typeof(T).Name}] Duplicated ID: {asset.Id} for asset: {asset.name}.");
                 }
             }
+            asdasd = true;
         }
 
         public T Get(AssetId id)
         {
-            if(id.Hash==0) return null;
+            if (id.Hash == 0) return null;
 
             if (_lookupTable == null)
             {
@@ -41,11 +45,21 @@ namespace Wordania.Core.Data
             }
 
             if (_lookupTable.TryGetValue(id, out var asset)) return asset;
-            else Debug.LogError($"[{GetType().Name}] Asset with ID {id} was not found.");
+
+            string dump = "Available hashes: ";
+            int count = 0;
+            foreach (var key in _lookupTable.Keys)
+            {
+                dump += $"{key.Hash} ({key}), ";
+                if (++count >= 5) break; // dump up to 5 elements for brevity
+            }
+
+            Debug.LogError($"[{GetType().Name}] Asset with ID {id.Hash} was not found.");
+            if (asdasd) { Debug.Log(dump); asdasd = false; }
             return null;
         }
 
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         public void Editor_FindAllAssets()
         {
             _assets ??= new();
@@ -57,18 +71,18 @@ namespace Wordania.Core.Data
             {
                 string path = AssetDatabase.GUIDToAssetPath(guid);
                 T asset = AssetDatabase.LoadAssetAtPath<T>(path);
-                
+
                 if (asset != null)
                 {
                     _assets.Add(asset);
                 }
             }
-            
+
             //Debug.Log($"Success! Found and added {_assets.Count} assets to {typeof(T).Name}.");
-            
-            EditorUtility.SetDirty(this); 
+
+            EditorUtility.SetDirty(this);
             UnityEditor.AssetDatabase.SaveAssets();
         }
-        #endif
+#endif
     }
 }
