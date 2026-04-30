@@ -44,9 +44,10 @@ namespace Wordania.Features.Day
 
             float sunIntensity = _settings.SunIntensityCurve.Evaluate(_currentTime);
             Color skyColor = _settings.SkyColorGradient.Evaluate(_currentTime / 24f);
+            Color lightColor = _settings.LightColorGradient.Evaluate(_currentTime / 24f);
 
             Shader.SetGlobalFloat(GlobalSunIntensityId, sunIntensity);
-            Shader.SetGlobalColor(SkyColorId, skyColor);
+            Shader.SetGlobalColor(SkyColorId, lightColor);
 
             Camera.main.backgroundColor = skyColor;
         }
