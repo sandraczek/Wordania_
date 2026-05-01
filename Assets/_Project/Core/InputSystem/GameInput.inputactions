@@ -1043,6 +1043,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "ShowSkillTree",
+                    "type": "Button",
+                    "id": "77e59920-3e74-4a97-9f94-dcab18c6467f",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1065,6 +1074,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "ShowMap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "8d379105-9070-4277-8479-bba12396c56b",
+                    "path": "<Keyboard>/o",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ShowSkillTree",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

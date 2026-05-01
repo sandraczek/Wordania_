@@ -30,6 +30,7 @@ namespace Wordania.Features.Player
         private PlayerSaveData _cachedSaveData;
         private readonly Transform _parent;
         public IReadOnlyHealth ReadOnlyHealth { get; private set; }
+        public IPlayerSkillContext SkillContext { get; private set; }
         public bool IsPlayerSpawned => _player != null;
         public Vector2 Position => _player.Position;
         public Bounds Hitbox => _player.Hitbox;
@@ -91,6 +92,7 @@ namespace Wordania.Features.Player
 
             _player = player;
             ReadOnlyHealth = player.GetComponent<HealthComponent>();
+            SkillContext = player;
 
 
             _entityRegistry.Register(player);

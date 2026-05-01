@@ -15,6 +15,7 @@ using Wordania.Core.SFM;
 using Wordania.Core.Stats;
 using Wordania.Features.Combat;
 using Wordania.Features.Inventory;
+using Wordania.Features.Mechanics;
 using Wordania.Features.Movement;
 using Wordania.Features.Player.FSM;
 using Wordania.Features.Player.View;
@@ -24,13 +25,15 @@ namespace Wordania.Features.Player
     [RequireComponent(typeof(PlayerController))]
     [RequireComponent(typeof(HealthComponent))]
     [RequireComponent(typeof(StatComponent))]
-    public sealed class Player : MonoBehaviour, IDamageable, ITrackable
+    [RequireComponent(typeof(EntityMechanicController))]
+    public sealed class Player : MonoBehaviour, IDamageable, ITrackable, IPlayerSkillContext
     {
         [Header("Components")]
         private PlayerController _controller;
         private StateMachine<PlayerBaseState> _stateMachine;
         private HealthComponent _health;
         private StatComponent _stats;
+        private EntityMechanicController _mechanics;
         private readonly InvincibilityController _invincibility = new();
         private readonly DamageMitigator _mitigation = new();
         [SerializeField] private PlayerVisuals visuals;
@@ -50,6 +53,7 @@ namespace Wordania.Features.Player
             _controller = GetComponent<PlayerController>();
             _health = GetComponent<HealthComponent>();
             _stats = GetComponent<StatComponent>();
+            _mechanics = GetComponent<EntityMechanicController>();
 
             _playerService = playerService; // TODO: make interface ?
             _config = config;
@@ -160,6 +164,26 @@ namespace Wordania.Features.Player
         {
             visuals.PlayHurtEffect();
         }
+        public void UnlockMechanic(AssetId mechanicId)
+        {
+            _mechanics.EnableMechanic(mechanicId);
+        }
+
+        public void LockMechanic(AssetId mechanicId)
+        {
+            _mechanics.DisableMechanic(mechanicId);
+        }
+
+        public void AddModifier(StatType type, StatModifier modifier)
+        {
+            _stats.Stats[type].AddModifier(modifier);
+        }
+
+        public void RemoveModifiers(StatType type, AssetId modifier)
+        {
+            _stats.Stats[type].RemoveAllModifiersFromSource(modifier);
+        }
+
         public PlayerSaveData GetSaveData()
         {
             PlayerSaveData data = new();

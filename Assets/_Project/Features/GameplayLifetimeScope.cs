@@ -40,6 +40,7 @@ using Wordania.Features.World.Lighting;
 using Wordania.Features.Day;
 using Wordania.Core.SaveSystem;
 using Wordania.Features.Skills;
+using Wordania.Features.HUD.Skills;
 
 namespace Wordania.Features
 {
@@ -75,6 +76,8 @@ namespace Wordania.Features
         [SerializeField] private WorldMapView _worldMapView;
         [SerializeField] private BossDefeatedSignal _bossDefeatedSignal;
         [SerializeField] private BossSpawnedSignal _bossSpawnedSignal;
+        [SerializeField] private SkillTreeView _skillTreeView;
+        [SerializeField] private SkillTreeDisplay _skillTreeDisplay;
 
         //debug
         [Header("Save Slot 0 For a New Game")]
@@ -165,6 +168,9 @@ namespace Wordania.Features
                 .As<IPlayerSpawner>()
                 .WithParameter(_playerPrefab);
 
+            //skills
+            builder.RegisterEntryPoint<PlayerSkillService>(Lifetime.Scoped).As<IPlayerSkillService>();
+
             //enemies
             builder.RegisterInstance(_enemySpawnSettings);
             builder.RegisterEntryPoint<EnemyFactory>(Lifetime.Scoped).As<IEnemyFactory>();
@@ -202,6 +208,10 @@ namespace Wordania.Features
             builder.RegisterComponent(_worldMapController);
             builder.RegisterComponent(_worldMapView);
 
+            builder.RegisterComponent(_skillTreeView);
+            builder.RegisterComponent(_skillTreeDisplay);
+            builder.RegisterEntryPoint<SkillTreePresenter>(Lifetime.Scoped);
+
             //
             //DEBUG
             if (TryGetComponent(out DebugSaveComponent saveComponent))
@@ -230,6 +240,7 @@ TODOS:
 - remove DS_Store from repository
 - change enemies speed
 - fix player speed (after adding stats)
+- refactor inventory display
 
 features:
 boss spawning

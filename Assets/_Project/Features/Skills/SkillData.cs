@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
+using Wordania.Core.Attributes;
 using Wordania.Core.Data;
 using Wordania.Core.Identifiers;
+using Wordania.Features.Skills.Effects;
 
 namespace Wordania.Features.Skills
 {
@@ -12,8 +14,11 @@ namespace Wordania.Features.Skills
         [field: SerializeField] public string Description { get; private set; }
         [field: SerializeField] public Sprite Icon { get; private set; }
         [field: SerializeField] public int Cost { get; private set; }
+        [SerializeReference, SubclassSelector] private List<ISkillEffect> _effects = new();
+
+        public IReadOnlyList<ISkillEffect> Effects => _effects;
 
         [Tooltip("List of skill IDs required to unlock this skill.")]
-        [field: SerializeField] public List<AssetId> Prerequisites { get; private set; } = new List<AssetId>();
+        [field: SerializeField] public List<SkillData> Prerequisites { get; private set; } = new();
     }
 }

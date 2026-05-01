@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f0aa1fdb0e943c395530db10f806ac, type: 3}
+  m_Name: MaxHealthIncrease3
+  m_EditorClassIdentifier: Wordania.Gameplay::Wordania.Features.Skills.SkillData
+  _id:
+    _editorId: skill_max_health_3
+    _hash: 434760860
+  <SkillName>k__BackingField: Max Health Increase 3
+  <Description>k__BackingField: 
+  <Icon>k__BackingField: {fileID: 0}
+  <Cost>k__BackingField: 1000
+  _effects:
+  - rid: 5391011761781997645
+  <Prerequisites>k__BackingField:
+  - {fileID: 11400000, guid: 709b9200db7844b2e924fb36866afc05, type: 2}
+  references:
+    version: 2
+    RefIds:
+    - rid: 5391011761781997645
+      type: {class: StatSkillEffect, ns: Wordania.Features.Skills.Effects, asm: Wordania.Gameplay}
+      data:
+        <TargetStat>k__BackingField: 0
+        <ModifierType>k__BackingField: 1000
+        <Value>k__BackingField: 10

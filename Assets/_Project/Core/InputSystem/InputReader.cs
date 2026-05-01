@@ -29,6 +29,7 @@ namespace Wordania.Core.Inputs
         public event Action OnCycleActionSettings;
         public event Action OnToggleInventory;
         public event Action OnToggleMap;
+        public event Action OnToggleSkillTree;
 
         // debug service
         public event Action OnToggleChunks;
@@ -122,6 +123,10 @@ namespace Wordania.Core.Inputs
         public void OnShowMap(InputAction.CallbackContext context)
         {
             if (context.performed) OnToggleMap?.Invoke();
+        }
+        public void OnShowSkillTree(InputAction.CallbackContext context)
+        {
+            if (context.performed) OnToggleSkillTree?.Invoke();
         }
 
         public void ConsumeJump()

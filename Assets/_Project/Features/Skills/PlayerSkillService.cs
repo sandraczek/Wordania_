@@ -1,0 +1,112 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+using VContainer.Unity;
+using Wordania.Core.Data;
+using Wordania.Core.Gameplay;
+using Wordania.Core.Identifiers;
+using Wordania.Core.SaveSystem;
+using Wordania.Core.SaveSystem.Data;
+using Wordania.Features.Player;
+
+namespace Wordania.Features.Skills
+{
+    public class PlayerSkillService : IPlayerSkillService, ISaveable, IStartable, IDisposable
+    {
+        private readonly IAssetRegistry<SkillData> _registry;
+        private readonly ISaveService _save;
+        private readonly IPlayerProvider _player;
+
+        private HashSet<AssetId> _unlockedSkills = new();
+        public int SkillPoints { get; private set; } = 1000; // TODO: skill points
+
+        public string SaveId => "playerSkills";
+
+        public event Action<int> OnPointsChanged;
+        public event Action<AssetId> OnSkillUnlocked;
+
+        public PlayerSkillService(IAssetRegistry<SkillData> registry, ISaveService save, IPlayerProvider player)
+        {
+            _registry = registry;
+            _save = save;
+            _player = player;
+        }
+        public void Start()
+        {
+            _save.Register(this);
+        }
+        public void Dispose()
+        {
+            _save.Unregister(this);
+        }
+
+        public bool IsSkillUnlocked(AssetId skillId)
+        {
+            return _unlockedSkills.Contains(skillId);
+        }
+
+        public bool CanUnlock(SkillData skill)
+        {
+            if (skill == null || IsSkillUnlocked(skill.Id) || SkillPoints < skill.Cost)
+            {
+                return false;
+            }
+
+            foreach (var reqId in skill.Prerequisites)
+            {
+                if (!IsSkillUnlocked(reqId.Id))
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
+        public void UnlockSkill(AssetId skillId)
+        {
+            var skill = _registry.Get(skillId);
+
+            if (!CanUnlock(skill))
+            {
+                throw new InvalidOperationException($"Cannot unlock skill {skillId}. Prerequisites not met or insufficient points.");
+            }
+
+            SkillPoints -= skill.Cost;
+            _unlockedSkills.Add(skillId);
+
+            OnPointsChanged?.Invoke(SkillPoints);
+            OnSkillUnlocked?.Invoke(skillId);
+
+            ApplySkillEffects(skill);
+        }
+
+        public void AddPoints(int points)
+        {
+            if (points <= 0) return;
+            SkillPoints += points;
+            OnPointsChanged?.Invoke(SkillPoints);
+        }
+
+        public void CaptureState(GameSaveData saveData)
+        {
+            saveData.Skills.SkillPoints = SkillPoints;
+            saveData.Skills.UnlockedSkills = _unlockedSkills;
+        }
+
+        public void RestoreState(GameSaveData saveData)
+        {
+            SkillPoints = saveData.Skills.SkillPoints;
+            if (_unlockedSkills != null)
+                _unlockedSkills = saveData.Skills.UnlockedSkills;
+        }
+
+        public void ApplySkillEffects(SkillData skill)
+        {
+            foreach (var effect in skill.Effects)
+            {
+                effect.Apply(_player.SkillContext, skill.Id);
+            }
+        }
+    }
+}
